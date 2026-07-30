@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-carf-schema",
+  "version": "1.0.0",
+  "sha256": "f9755b7ab6af947e578ed3e0c1f40366cca03c659c521b62814e4cb6fdd9f549",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-carf-schema/1.0.0/f9755b7ab6af947e.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "bab870426cdbe632946fc585b063806f1f25bcb56d46ff6a55c571d96007988be611758d2d02ecf5cbfddc3b7e388c92e5acc0bc4093b06374daece2149fcb09",
+  "publish_event_id": "01KYRKHW1MGNJ11RHQC5B4KD52",
+  "immutable": true
+}

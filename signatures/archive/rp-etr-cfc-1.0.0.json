@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-etr-cfc",
+  "version": "1.0.0",
+  "sha256": "30f19fb74b294bc54917c1f478101c50c67a1ba257a2e9569bfa21796f4b6f24",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-cfc/1.0.0/30f19fb74b294bc5.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "602a2f508722ea0b94dac7f17a9eb21031bd8f5efdeeaba5322661c574bfa36ac22c40a3d0625d492ee72899508586086ce478261fbcaaef3adb9d2ea892f906",
+  "publish_event_id": "01KYRKHW5FNF012WBZRGS8ZXCD",
+  "immutable": true
+}

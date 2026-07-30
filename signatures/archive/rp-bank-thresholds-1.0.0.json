@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-bank-thresholds",
+  "version": "1.0.0",
+  "sha256": "eeacd32281bfca962f8cd60edd973badf2adb277676b9f36bd8f15fa23254cd4",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-bank-thresholds/1.0.0/eeacd32281bfca96.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "2cc87a52578bd18d38da47cea421c8a3fe1715bf5bbc0d0c20faad36f06fc0e0795b55dd6dd0466a72fcd894d49042b5b0d8ccdd6a9aa947d3844a1a9f69730d",
+  "publish_event_id": "01KYRKHW0NS2CQ4900R3ZYCTZ2",
+  "immutable": true
+}

@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-education-ng",
+  "version": "1.0.0",
+  "sha256": "033151344d5a938987ad82fe0284be351116a42b1485a69691545e71a4e010ee",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-education-ng/1.0.0/033151344d5a9389.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "9cd922ab698d558dc337e27c039effbf5efa0b16fab1028b679475484251f985a8f2a1458f4dfb6fdc10b1b104a86265fd73aafc4660f9db89e9e46f810d190e",
+  "publish_event_id": "01KYRKHW4TQQKGGWBPZED48FM8",
+  "immutable": true
+}

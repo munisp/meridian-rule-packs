@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-fmt-fct",
+  "version": "1.0.0",
+  "sha256": "c32e5d3f842335eadcb7907e43b0edf45b34290486870bea55b5d686057d5cbf",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-fmt-fct/1.0.0/c32e5d3f842335ea.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "bb642bcea69318273698ad247160c3701c76efd54065e7552c11463ee6d578cda7c7611b2b911b53949957a898e8d3630d740325d65cc0905e05663759a2e906",
+  "publish_event_id": "01KYRKHW8PZNKYP7PA4HYPV86W",
+  "immutable": true
+}

@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-etr-nta",
+  "version": "1.0.0",
+  "sha256": "1f4e47992981c6f761c9d34ef9122fe379b5c8282cf1879f98971065a3a72146",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-nta/1.0.0/1f4e47992981c6f7.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "222236468a9d92c9cff7a420ef53ab61e4a95fdca43a513f43050bf19c7011a6639cc1dd0b9c64f7a2506b2435c25b06d6007526242d2505846981753e783f02",
+  "publish_event_id": "01KYRKHW6AQ674RTEPTY0Z5X1X",
+  "immutable": true
+}

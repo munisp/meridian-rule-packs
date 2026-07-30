@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-disclosure-control",
+  "version": "1.0.0",
+  "sha256": "da3fbddca0776fa6bcdb77c3a4ab6d39402e94778671153c925f1460cfc7d426",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-disclosure-control/1.0.0/da3fbddca0776fa6.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "0b8b30cc09b129ce02196d6a98241a1cbbf0975e8003f6c8a64737514b5184b20cdb8934df95f33d0635daf9c4aa29eb794976ef0e122cc4dc17c8013004480b",
+  "publish_event_id": "01KYRKHW35B5W8H6F4QRDRHCDY",
+  "immutable": true
+}

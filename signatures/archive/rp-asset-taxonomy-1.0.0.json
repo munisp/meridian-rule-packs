@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-asset-taxonomy",
+  "version": "1.0.0",
+  "sha256": "7fca854fb9a8352758cb29d3180b663bbe1c3ba3b88f63264b7f07577088b390",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-asset-taxonomy/1.0.0/7fca854fb9a83527.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "d19508bc9f510482c0766ea36f45db83642897a66bb4cc8f4d21139e5cd549c3e56b912db890727fe45743619da3290054ecd422ebd21ec97916b80ff14cb707",
+  "publish_event_id": "01KYRKHVZ5HD09M7126JVWHBWA",
+  "immutable": true
+}
