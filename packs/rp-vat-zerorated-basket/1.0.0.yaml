@@ -1,0 +1,81 @@
+# rp-vat-zerorated-basket v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# VAT zero-rated basket (goods and services)
+id: rp-vat-zerorated-basket
+version: 1.0.0
+title: VAT zero-rated basket (goods and services)
+description: 'Zero-rated supplies: basic food items, medical and pharmaceutical products, educational books/materials, exports
+  of goods and (from 2026) services, electricity generation/transmission, CNG/LPG and renewable equipment.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Finance Act 2019/2020 zero-rating of basic food; Nigeria Tax Act 2025 zero-rated schedule (basic food, medical,
+    education, exports)
+  as_gazetted: null
+  source_citation: Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)
+rules:
+- id: vat.zero.basic-food
+  when:
+    item_class: basic_food_items
+  then:
+    rate_bps: 0
+    narrate: Basic food items (unprocessed staples per FIRS circular list) zero-rated; input VAT recoverable.
+- id: vat.zero.medical-products
+  when:
+    item_class:
+      in:
+      - pharmaceutical_products
+      - medical_equipment
+      - medical_devices
+  then:
+    rate_bps: 0
+    narrate: Medical and pharmaceutical products zero-rated.
+- id: vat.zero.education-materials
+  when:
+    item_class:
+      in:
+      - educational_books
+      - educational_materials
+  then:
+    rate_bps: 0
+    narrate: Educational books and materials zero-rated.
+- id: vat.zero.export-goods
+  when:
+    item_class: export_of_goods
+  then:
+    rate_bps: 0
+    narrate: Exports of goods zero-rated (oil and non-oil).
+- id: vat.zero.export-services
+  when:
+    item_class: export_of_services
+    date:
+      gte: '2026-01-01'
+  then:
+    rate_bps: 0
+    narrate: From 1 Jan 2026 exported services are ZERO-RATED (previously exempt) — full input VAT recovery.
+  effective_from: '2026-01-01'
+- id: vat.zero.electricity
+  when:
+    item_class:
+      in:
+      - electricity_generation
+      - electricity_transmission
+  then:
+    rate_bps: 0
+    narrate: Electricity generation and transmission zero-rated.
+- id: vat.zero.clean-energy
+  when:
+    item_class:
+      in:
+      - cng
+      - lpg
+      - renewable_energy_equipment
+      - electric_vehicle_parts
+  then:
+    rate_bps: 0
+    narrate: CNG, LPG, renewable energy equipment and EV parts zero-rated per energy-transition incentives.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 86ce4a90729c6c5aabcf7178d1296423c5d12163e31a7ac4dbfe0d21705732dfca884e6e62d043e8c2c389301733ab255b5ba980e106e50f06a3e6554f592100

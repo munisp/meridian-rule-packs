@@ -1,0 +1,58 @@
+# rp-vat-rates v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# VAT rate table (standard 7.5%) with effective dates
+id: rp-vat-rates
+version: 1.0.0
+title: VAT rate table (standard 7.5%) with effective dates
+description: 'VAT rates: standard 7.5% (from 1 Feb 2020), zero-rated and exempt classes referenced to basket packs; rate history
+  retained for back-period computations.'
+effective_from: '2020-02-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Finance Act 2019 s.34 (VAT rate 5% -> 7.5%, effective 1 Feb 2020); Nigeria Tax Act 2025 (rate retained 7.5%)
+  as_gazetted: null
+  source_citation: Finance Act 2019; VAT Act Cap V1 LFN 2004 (as amended); Nigeria Tax Act 2025
+rules:
+- id: vat.rate.standard
+  when:
+    supply_class: standard
+    date:
+      gte: '2020-02-01'
+  then:
+    rate_bps: 750
+    narrate: VAT standard rate 7.5%.
+  effective_from: '2020-02-01'
+- id: vat.rate.standard-legacy
+  when:
+    supply_class: standard
+    date:
+      lt: '2020-02-01'
+  then:
+    rate_bps: 500
+    narrate: Legacy 5% rate for back periods before 1 Feb 2020.
+  effective_from: '1994-01-01'
+  effective_to: '2020-01-31'
+- id: vat.rate.zero
+  when:
+    supply_class: zero_rated
+  then:
+    rate_bps: 0
+    narrate: 'Zero-rated supplies: 0% with full input VAT recovery (basket in rp-vat-zerorated-basket).'
+- id: vat.rate.exempt
+  when:
+    supply_class: exempt
+  then:
+    decision: no_vat_no_input_recovery
+    narrate: 'Exempt supplies: no output VAT, no input VAT recovery (basket in rp-vat-exempt-basket).'
+- id: vat.registration.threshold
+  when:
+    person: taxable
+  then:
+    threshold:
+      annual_taxable_supplies_kobo: 10000000000
+    narrate: NTA registration threshold N100m taxable supplies (N25m under pre-2026 VAT Act).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: ca038b8f9dff25736cb35e70e2134a7840c34bf4d5f05fa3aa4f4840be2ee4ec801b2e20d38257a610e9073e37dc97bf25139df6f6dbaa06c170b1ed49517302
