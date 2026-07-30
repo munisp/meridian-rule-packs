@@ -1,0 +1,100 @@
+# rp-carf-schema v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# OECD Crypto-Asset Reporting Framework (CARF) message structure rules
+id: rp-carf-schema
+version: 1.0.0
+title: OECD Crypto-Asset Reporting Framework (CARF) message structure rules
+description: 'CARF XML message rules for T10: MessageSpec, CARF body with ReportableJurisdiction, ReportingCryptoAssetServiceProvider,
+  ReportableUser, crypto-asset transactions by type, and correction/void message types.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: OECD, Crypto-Asset Reporting Framework and Amendments to the Common Reporting Standard (2022), incl. CARF XML
+    Schema v1.1 (2024)
+  as_gazetted: null
+  source_citation: OECD CARF (2022); CARF XML Schema User Guide v1.1
+rules:
+- id: carf.message.spec
+  when:
+    message_part: MessageSpec
+  then:
+    table:
+    - sending_company_in
+    - transmitting_country
+    - receiving_country
+    - message_type:CARF
+    - message_ref_id(unique)
+    - reporting_period
+    - timestamp
+    narrate: MessageSpec mandatory fields; MessageRefID unique per sender per period.
+- id: carf.message.type-indic
+  when:
+    field: CarfMessageTypeIndic
+  then:
+    table:
+    - CARF401:new_data
+    - CARF402:correction
+    - CARF403:void
+    - CARF404:correction_of_delivery
+    narrate: 'Correction loop: CARF402 corrects records, CARF403 voids, CARF404 fixes delivery-level errors (references DocRefId/CorrDocRefId).'
+- id: carf.body.jurisdiction
+  when:
+    message_part: ReportableJurisdiction
+  then:
+    decision: required
+    narrate: At least one ReportableJurisdiction per CARF body; grouped per reportable jurisdiction.
+- id: carf.body.rcasp
+  when:
+    message_part: ReportingCryptoAssetServiceProvider
+  then:
+    table:
+    - name
+    - address
+    - tin
+    - iei_or_giin(where available)
+    - nexus(jurisdiction_of_residence_or_registration)
+    narrate: RCASP identification block mandatory.
+- id: carf.body.reportable-user
+  when:
+    message_part: ReportableUser
+  then:
+    table:
+    - name
+    - address
+    - tin(per jurisdiction)
+    - date_place_of_birth(individuals)
+    - controlling_persons(entities, look-through)
+    - account_number_or_equivalent
+    narrate: Reportable user due-diligence block; entities require controlling-person look-through.
+- id: carf.txn.types
+  when:
+    message_part: CryptoAssetTransaction
+  then:
+    table:
+    - crypto_to_fiat_exchange
+    - crypto_to_crypto_exchange
+    - transfer_in
+    - transfer_out
+    - retail_payment_transaction(>USD50k)
+    - reportable_retail_payment
+    narrate: Transactions reported gross by type per relevant crypto-asset, with fiat-equivalent FMV at transaction time.
+- id: carf.txn.fmv
+  when:
+    field: fiat_value
+  then:
+    decision: required
+    narrate: Fair market value in fiat at time of transaction (FMV snapshot cache, T10 cost-basis engine).
+- id: carf.gate.transmit
+  when:
+    transmit: true
+  then:
+    decision: gated
+    gates:
+    - carf.transmit_enabled
+    - carf.gate.changed
+    narrate: Transmission only when reg-watch gate carf.transmit_enabled is armed (F3 cross-zone flow).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: bab870426cdbe632946fc585b063806f1f25bcb56d46ff6a55c571d96007988be611758d2d02ecf5cbfddc3b7e388c92e5acc0bc4093b06374daece2149fcb09
