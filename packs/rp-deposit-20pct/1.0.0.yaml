@@ -1,0 +1,60 @@
+# rp-deposit-20pct v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# 20% deposit rule for disputed assessments
+id: rp-deposit-20pct
+version: 1.0.0
+title: 20% deposit rule for disputed assessments
+description: Before an objection/appeal against a disputed assessment proceeds, the taxpayer deposits 20% of the disputed
+  amount into the designated escrow/ledger account (T13 deposit tracker, TigerBeetle ledger 500).
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Administration Act 2025 — dispute resolution deposit provision; TAT practice directions
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 (deposit on appeal provision)
+rules:
+- id: deposit.amount
+  when:
+    appeal: filed
+    disputed_amount_kobo:
+      gt: 0
+  then:
+    formula: deposit_kobo = 0.20 * disputed_amount_kobo
+    rate_bps: 2000
+    narrate: Deposit = 20% of the disputed tax, paid into the designated interest-yielding escrow before the appeal is heard.
+- id: deposit.ledger
+  when:
+    deposit: initiated
+  then:
+    decision: ledger_500_hold
+    narrate: Deposit tracked as hold in TigerBeetle ledger 500 (dispute_deposits); released on resolution per outcome.
+- id: deposit.waiver
+  when:
+    hardship: demonstrated
+    application: to_tat
+  then:
+    decision: may_waiver_or_reduce
+    narrate: TAT/court may reduce or waive deposit on demonstrated hardship; decision recorded.
+- id: deposit.refund.win
+  when:
+    appeal_outcome: taxpayer_wins
+  then:
+    decision: refund_with_interest
+    narrate: Deposit refunded with accrued interest where the taxpayer succeeds.
+- id: deposit.forfeit.lose
+  when:
+    appeal_outcome: authority_wins
+  then:
+    decision: apply_against_liability
+    narrate: Deposit applied against the confirmed liability; balance per assessment.
+- id: deposit.timeline
+  when:
+    appeal: filed
+  then:
+    deposit_within_days: 30
+    narrate: Deposit payable within 30 days of filing the appeal; default strikes the appeal (restorable on payment).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 16944aadb19c6d8f73891244805fec70033f30dd184bcab5cd678e77002d4b227f34feee21a528f142497fd57413571c27e486f9e05bf56635b5a6bdbeea0b0c
