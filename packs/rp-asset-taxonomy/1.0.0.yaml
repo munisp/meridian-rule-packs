@@ -1,0 +1,80 @@
+# rp-asset-taxonomy v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Digital/crypto asset taxonomy and tax-treatment mapping
+id: rp-asset-taxonomy
+version: 1.0.0
+title: Digital/crypto asset taxonomy and tax-treatment mapping
+description: 'Canonical asset taxonomy used by VASP/CARF engine and analytics: asset classes, sub-types, and default tax treatment
+  mapping to NTA rules.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Meridian taxonomy synthesised from OECD CARF definitions (2022), SEC Rules on Digital Assets (2022) and NTA 2025
+    chargeable-asset provisions
+  as_gazetted: null
+  source_citation: OECD CARF (2022); SEC Digital Asset Rules (2022); Nigeria Tax Act 2025
+rules:
+- id: tax.class.payment-token
+  when:
+    asset_class: payment_token
+    examples:
+    - BTC
+    - LTC
+  then:
+    tax_treatment: chargeable_asset
+    carf_reportable: true
+    narrate: 'Payment/exchange tokens: chargeable assets; CARF reportable.'
+- id: tax.class.stablecoin
+  when:
+    asset_class: stablecoin
+    pegged: fiat
+  then:
+    tax_treatment: chargeable_asset
+    carf_reportable: true
+    narrate: 'Stablecoins: chargeable assets; FX-type gains generally de minimis but reportable.'
+- id: tax.class.utility-token
+  when:
+    asset_class: utility_token
+  then:
+    tax_treatment: chargeable_asset
+    carf_reportable: true
+    narrate: 'Utility tokens: chargeable assets when held for investment; consumption use treated as disposal spend.'
+- id: tax.class.security-token
+  when:
+    asset_class: security_token
+  then:
+    tax_treatment: securities_rules_apply
+    carf_reportable: false
+    narrate: 'Security tokens: treated as securities (CGT/dividend/interest rules; SEC regime), outside CARF scope where CRS-type
+      reporting applies.'
+- id: tax.class.nft
+  when:
+    asset_class: nft
+  then:
+    tax_treatment: chargeable_asset
+    carf_reportable: conditional
+    narrate: 'NFTs: chargeable assets; CARF reportable only if usable for payment/investment (CARF definition).'
+- id: tax.class.cbdc
+  when:
+    asset_class: cbdc
+    examples:
+    - eNaira
+  then:
+    tax_treatment: fiat_equivalent
+    carf_reportable: false
+    narrate: 'CBDCs (eNaira) treated as fiat: not chargeable assets, not CARF reportable.'
+- id: tax.class.wrapped-staked
+  when:
+    asset_class:
+      in:
+      - wrapped_token
+      - staked_position
+      - lp_token
+  then:
+    tax_treatment: look_through
+    narrate: 'Wrapped/staked/LP positions: look-through to underlying; staking/yield rewards taxed as income at FMV on receipt.'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: d19508bc9f510482c0766ea36f45db83642897a66bb4cc8f4d21139e5cd549c3e56b912db890727fe45743619da3290054ecd422ebd21ec97916b80ff14cb707

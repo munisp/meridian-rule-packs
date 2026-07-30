@@ -1,0 +1,49 @@
+# rp-attribution-formula v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NTAA VAT attribution formula — place-of-consumption with 30% derivation factor
+id: rp-attribution-formula
+version: 1.0.0
+title: NTAA VAT attribution formula — place-of-consumption with 30% derivation factor
+description: 'Attribution feed formula for JRB (T11): VAT on consumption attributed to states using place-of-consumption data;
+  NTAA distribution applies derivation including the 30% consumption factor; signed output feeds.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Administration Act 2025 — VAT distribution by derivation (place-of-consumption attribution); Joint
+    Revenue Board attribution framework
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 (VAT sharing/attribution provisions)
+rules:
+- id: attr.formula.state-share
+  when:
+    feed: attribution
+    tax: VAT
+  then:
+    formula: state_amount_kobo = vat_pool_states_kobo * (0.30 * state_consumption_index + 0.50 * state_derivation_share +
+      0.20 * equality_share)
+    narrate: 'States'' 55% pool distributed: 30% place-of-consumption index, 50% derivation, 20% equality (NTAA 2025 formula;
+      coefficients subject to gazette).'
+- id: attr.consumption.index
+  when:
+    data: pos_b2c_feeds
+  then:
+    formula: state_consumption_index = state_attributed_consumption_kobo / total_consumption_kobo
+    narrate: Consumption index built from T6 POS attribution + B2C reports + import landing data (T15).
+- id: attr.output.signed
+  when:
+    feed: attribution
+  then:
+    decision: sign_output
+    narrate: Attribution feed (F7) signed by JRB service key; WORM receipt per cross-zone rules.
+- id: attr.reconciliation
+  when:
+    feed: attribution
+    period: monthly
+  then:
+    decision: publish_with_variance
+    narrate: Monthly attribution published with variance vs treasury receipts; breaks feed recon workflow.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: a4527c73ec4bd57d9d469e5acdcad1e7f319d5b97d52c3e0ec15125295f6aa07f2711c422a1139b2f55c4a1d60404865477fd822d90e823e2f7e23d4c24e1b00
