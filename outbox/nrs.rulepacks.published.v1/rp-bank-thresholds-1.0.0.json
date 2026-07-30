@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW0NS2CQ4900R3ZYCTZ2",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "46c321035003c624bc3098052da9fca2",
+  "rule_pack_version": "rp-bank-thresholds@1.0.0",
+  "data": {
+    "pack_id": "rp-bank-thresholds",
+    "version": "1.0.0",
+    "title": "Banking data-reporting and cash thresholds (NRS/CBN interfaces)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 6,
+    "sha256": "eeacd32281bfca962f8cd60edd973badf2adb277676b9f36bd8f15fa23254cd4",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 (third-party reporting); CBN cash withdrawal policy (Dec 2022, revised 2023); Money Laundering (Prevention & Prohibition) Act 2022",
+      "as_gazetted": null,
+      "source_citation": "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+    }
+  }
+}

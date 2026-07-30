@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHVZ5HD09M7126JVWHBWA",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "99e14fa8dcc4e455640c45aed2c91373",
+  "rule_pack_version": "rp-asset-taxonomy@1.0.0",
+  "data": {
+    "pack_id": "rp-asset-taxonomy",
+    "version": "1.0.0",
+    "title": "Digital/crypto asset taxonomy and tax-treatment mapping",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "7fca854fb9a8352758cb29d3180b663bbe1c3ba3b88f63264b7f07577088b390",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Meridian taxonomy synthesised from OECD CARF definitions (2022), SEC Rules on Digital Assets (2022) and NTA 2025 chargeable-asset provisions",
+      "as_gazetted": null,
+      "source_citation": "OECD CARF (2022); SEC Digital Asset Rules (2022); Nigeria Tax Act 2025"
+    }
+  }
+}

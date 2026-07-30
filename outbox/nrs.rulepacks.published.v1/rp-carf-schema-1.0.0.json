@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW1MGNJ11RHQC5B4KD52",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "e175274d5e5538783931ea45a8f5b239",
+  "rule_pack_version": "rp-carf-schema@1.0.0",
+  "data": {
+    "pack_id": "rp-carf-schema",
+    "version": "1.0.0",
+    "title": "OECD Crypto-Asset Reporting Framework (CARF) message structure rules",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "f9755b7ab6af947e578ed3e0c1f40366cca03c659c521b62814e4cb6fdd9f549",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "OECD, Crypto-Asset Reporting Framework and Amendments to the Common Reporting Standard (2022), incl. CARF XML Schema v1.1 (2024)",
+      "as_gazetted": null,
+      "source_citation": "OECD CARF (2022); CARF XML Schema User Guide v1.1"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW2DVM07C4502AG56H0G",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "fbafe301fe39662cd4031ccf8fcb4099",
+  "rule_pack_version": "rp-deposit-20pct@1.0.0",
+  "data": {
+    "pack_id": "rp-deposit-20pct",
+    "version": "1.0.0",
+    "title": "20% deposit rule for disputed assessments",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 6,
+    "sha256": "fb2acdc685b0acfdea30bb569451479ba69a5aed59af3b906f08512a679c7211",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 — dispute resolution deposit provision; TAT practice directions",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Administration Act 2025 (deposit on appeal provision)"
+    }
+  }
+}
