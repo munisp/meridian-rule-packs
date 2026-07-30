@@ -1,0 +1,41 @@
+name: validate
+on:
+  push:
+    branches: [main, "hardening/**"]
+  pull_request:
+
+jobs:
+  packs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: |
+          pip install pyyaml jsonschema cryptography pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Validate pack schema
+        run: python tools/validate.py
+      - name: Verify ed25519 signatures
+        run: |
+          set -e
+          if [ -f tools/verify_signatures.py ]; then python tools/verify_signatures.py;
+          else python - <<'EOF'
+          import glob, yaml, sys, binascii
+          bad = []
+          for f in glob.glob("packs/*/*.yaml"):
+              p = yaml.safe_load(open(f))
+              s = p.get("signed") or {}
+              if p.get("status") == "published":
+                  try:
+                      assert s.get("algorithm") == "ed25519"
+                      assert len(binascii.unhexlify(s.get("signature", ""))) == 64
+                  except Exception:
+                      bad.append(f)
+          sys.exit("missing/invalid signatures: %s" % bad if bad else 0)
+          EOF
+          fi
+      - name: Unit tests
+        run: python -m pytest -q
