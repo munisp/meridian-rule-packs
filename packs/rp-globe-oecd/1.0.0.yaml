@@ -1,0 +1,109 @@
+# rp-globe-oecd v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# OECD GloBE model rule mechanics: ETR, substance carve-out, IIR ordering, UTPR
+id: rp-globe-oecd
+version: 1.0.0
+title: 'OECD GloBE model rule mechanics: ETR, substance carve-out, IIR ordering, UTPR'
+description: 'Pillar Two computation rules: 15% jurisdictional ETR, substance-based income exclusion (payroll + tangible asset
+  carve-outs with transitional rates), IIR top-down ordering, UTPR backstop, safe harbours.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: OECD/G20 Inclusive Framework, Global Anti-Base Erosion (GloBE) Model Rules (Pillar Two), 20 Dec 2021, with Administrative
+    Guidance 2023-2025
+  as_gazetted: null
+  source_citation: OECD Pillar Two GloBE Model Rules Arts. 2, 5, 9
+rules:
+- id: globe.etr.jurisdictional
+  when:
+    jurisdiction:
+      present: true
+  then:
+    formula: etr_bps = adjusted_covered_taxes * 10000 / net_globe_income
+    rate_bps: 1500
+    narrate: Jurisdictional ETR = adjusted covered taxes / net GloBE income; minimum 15%.
+  citation: GloBE Model Rules Art. 5.1-5.2
+- id: globe.topup.per-entity
+  when:
+    jurisdiction_etr_bps:
+      lt: 1500
+  then:
+    formula: jurisdictional_topup = (1500 - etr_bps)/10000 * excess_profit; excess_profit = net_globe_income - substance_carveout
+    narrate: Top-up % applied to excess profit after substance carve-out; allocated to constituent entities pro rata GloBE
+      income.
+- id: globe.substance.carveout-transition
+  when:
+    fiscal_year:
+      in:
+      - 2023
+      - 2024
+      - 2025
+  then:
+    table:
+    - year: 2023
+      payroll_carveout_bps: 1000
+      tangible_asset_carveout_bps: 800
+    - year: 2024
+      payroll_carveout_bps: 980
+      tangible_asset_carveout_bps: 780
+    - year: 2025
+      payroll_carveout_bps: 960
+      tangible_asset_carveout_bps: 760
+    narrate: 'Transition: payroll carve-out starts 10.0% declining 0.2pp/yr; tangible asset carve-out starts 8.0% declining
+      0.2pp/yr toward 5%/5%.'
+  citation: GloBE Model Rules Art. 9.2
+- id: globe.substance.carveout-steady-state
+  when:
+    fiscal_year:
+      gte: 2033
+  then:
+    table:
+    - year: 2033+
+      payroll_carveout_bps: 500
+      tangible_asset_carveout_bps: 500
+    narrate: 'Steady state: 5% of eligible payroll costs + 5% of eligible tangible asset carrying value.'
+- id: globe.iir.ordering
+  when:
+    mechanism: IIR
+  then:
+    decision: top_down
+    narrate: 'IIR applies top-down: UPE first; if UPE jurisdiction has no qualified IIR, next intermediate parent in the chain
+      applies. Partially-owned parent sub-ordering applies.'
+    ordering:
+    - ultimate_parent_entity
+    - intermediate_parent_entity
+    - partially_owned_parent_entity
+  citation: GloBE Model Rules Art. 2.1
+- id: globe.utpr.backstop
+  when:
+    mechanism: UTPR
+    iir_residual_topup:
+      gt: 0
+  then:
+    formula: utpr_allocation = residual_topup * (entity_employees_factor*0.5 + entity_tangible_assets_factor*0.5)
+    narrate: UTPR allocates residual top-up to UTPR jurisdictions 50/50 on employees and tangible assets.
+  citation: GloBE Model Rules Art. 2.4-2.6
+- id: globe.safeharbour.qdmtt
+  when:
+    jurisdiction_qdmtt: qualified
+  then:
+    decision: safe_harbour
+    flag: qdmtt_upgrade
+    narrate: 'Qualified domestic minimum top-up tax safe harbour: top-up deemed zero where QDMTT applies (flag qdmtt_upgrade
+      controls engine path).'
+- id: globe.safeharbour.transitional-cbcr
+  when:
+    fiscal_year:
+      lte: 2026
+  then:
+    decision: safe_harbour
+    tests:
+    - de_minimis
+    - simplified_etr
+    - routine_profits
+    narrate: Transitional CbCR safe harbour for years beginning on or before 31 Dec 2026.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: c6868529bc6bf1473a3291d88fcc9a52eaf0c0e8d3bb3b35c45787d58044b3625f38e569ca47e472f744bf5be919b5818b5817974a081ad1912d0e16a965df04

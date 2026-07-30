@@ -1,0 +1,92 @@
+# rp-identity-match-thresholds v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Entity resolution / identity match thresholds (tin-graph)
+id: rp-identity-match-thresholds
+version: 1.0.0
+title: Entity resolution / identity match thresholds (tin-graph)
+description: 'Match thresholds for TIN/NIN/CAC entity resolution: auto-merge, review and reject cutoffs per evidence combination;
+  pseudonymisation note.'
+effective_from: '2025-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Meridian identity-graph matching policy implementing NRS identity fusion (NIN=TIN, CAC-RC=TIN) under NTAA 2025
+    and NDPA 2023
+  as_gazetted: null
+  source_citation: NTAA 2025 (TIN provisions); NDPA 2023; NRS identity fusion policy
+rules:
+- id: id.match.tin-exact
+  when:
+    evidence:
+      tin_match: true
+  then:
+    score: 1.0
+    decision: auto_merge
+    narrate: 'Exact TIN match: auto-merge.'
+- id: id.match.nin-exact
+  when:
+    evidence:
+      nin_match: true
+  then:
+    score: 1.0
+    decision: auto_merge
+    narrate: 'Exact NIN match: auto-merge (NIN=TIN fusion).'
+- id: id.match.cac-exact
+  when:
+    evidence:
+      cac_rc_match: true
+  then:
+    score: 1.0
+    decision: auto_merge
+    narrate: 'Exact CAC RC number match: auto-merge.'
+- id: id.match.name-dob
+  when:
+    evidence:
+      name_fuzzy_gte: 0.9
+      dob_match: true
+  then:
+    threshold:
+      auto_merge_gte: 0.95
+      review_gte: 0.85
+    decision: thresholded
+    narrate: 'Name(fuzzy)+DoB: >=0.95 auto-merge, 0.85-0.95 human review, <0.85 no link.'
+- id: id.match.name-address
+  when:
+    evidence:
+      name_fuzzy_gte: 0.85
+      address_fuzzy_gte: 0.8
+  then:
+    threshold:
+      auto_merge_gte: 0.95
+      review_gte: 0.75
+    decision: thresholded
+    narrate: 'Name+address composite: >=0.95 auto-merge, 0.75-0.95 review.'
+- id: id.match.phone-email
+  when:
+    evidence:
+      phone_match: true
+      email_match: true
+  then:
+    score: 0.9
+    decision: review
+    narrate: 'Phone+email pair: review queue (never sole basis for merge).'
+- id: id.match.reject
+  when:
+    composite_score:
+      lt: 0.6
+  then:
+    decision: no_link
+    narrate: 'Below 0.60 composite: do not link; log candidate for analytics.'
+- id: id.privacy.pseudonymise
+  when:
+    plane:
+      in:
+      - derived
+      - analytics
+  then:
+    decision: tin_hash_only
+    narrate: Analytics planes store HMAC-SHA256(tin, TIN_HMAC_KEY) only (SPEC 1.3).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 6ff933b295fb410307b3a22639a684094806e70052ed96290adc907910b49cc34d72048b585fc9f2b9bc67d9ad717b8da3b93aa3e452f6a83bd0cec0b010fa0d
