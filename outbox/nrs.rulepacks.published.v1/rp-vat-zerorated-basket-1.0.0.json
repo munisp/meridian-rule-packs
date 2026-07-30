@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWVKF5N7C7E84A03PYTX",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "8bb0b833515820ac298ab91ac529a617",
+  "rule_pack_version": "rp-vat-zerorated-basket@1.0.0",
+  "data": {
+    "pack_id": "rp-vat-zerorated-basket",
+    "version": "1.0.0",
+    "title": "VAT zero-rated basket (goods and services)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "ccdc42b7dbb5d956c829e14724b49f030eab08fecb1f7acebe2dc4540478c827",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Finance Act 2019/2020 zero-rating of basic food; Nigeria Tax Act 2025 zero-rated schedule (basic food, medical, education, exports)",
+      "as_gazetted": null,
+      "source_citation": "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWNE1KNQF3A76EJDSEQ1",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "d28069a9a2999f0ad4e6f3ec7426cfad",
+  "rule_pack_version": "rp-sec-vasp-rules@1.0.0",
+  "data": {
+    "pack_id": "rp-sec-vasp-rules",
+    "version": "1.0.0",
+    "title": "SEC Nigeria Rules on Digital Assets (VASP regulation, 2022/2024)",
+    "effective_from": "2022-05-11",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "18f77b41eb7d3ad2c5bb00670a113d12441920b2b1861e0aa9fa6b4795d5c143",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "SEC Nigeria, Rules on Digital Assets (11 May 2022); Accelerated Regulatory Incubation Programme (ARIP) amendments (2024); Investments and Securities Act 2025",
+      "as_gazetted": null,
+      "source_citation": "SEC Rules on Digital Assets 2022; ISA 2025"
+    }
+  }
+}

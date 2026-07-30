@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWSH1MKE1T94GH4QEZSF",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "c1de34c8264a9a35dcb85ea5bce9d314",
+  "rule_pack_version": "rp-vat-attribution-mode@1.0.0",
+  "data": {
+    "pack_id": "rp-vat-attribution-mode",
+    "version": "1.0.0",
+    "title": "VAT attribution mode switch (federal/state) and revenue sharing",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "f903ed4f80229b08e3ab4ce6dcacc2a8b5a46f7152bf356098555c483118d914",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 — VAT revenue attribution & sharing (derivation-based); pre-2025 VAT Act s.40 sharing formula",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Administration Act 2025 (s.22/Part on distribution); VAT Act s.40 (legacy)"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWTKRX37NSJHW11R6R8E",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "2a95eef8d5a8e6c62dbc6afa808e02aa",
+  "rule_pack_version": "rp-vat-exempt-basket@1.0.0",
+  "data": {
+    "pack_id": "rp-vat-exempt-basket",
+    "version": "1.0.0",
+    "title": "VAT exempt basket (goods and services)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "e12e3e2235f21eb18120eff22f81c89597b85ae8d7bf13823e7e0a2ad471a98e",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "VAT Act First Schedule (as amended by Finance Acts 2019-2021); Nigeria Tax Act 2025 exemption schedule",
+      "as_gazetted": null,
+      "source_citation": "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
+    }
+  }
+}

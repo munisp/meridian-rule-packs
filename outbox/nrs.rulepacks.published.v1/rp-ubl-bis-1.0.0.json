@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWRQ5FEF1HYCFXRY4M7B",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "e88dedc596abd90d70a5552c76325e52",
+  "rule_pack_version": "rp-ubl-bis@1.0.0",
+  "data": {
+    "pack_id": "rp-ubl-bis",
+    "version": "1.0.0",
+    "title": "UBL 2.1 / Peppol BIS 3.0 invoice mandatory-field and syntax rules",
+    "effective_from": "2025-08-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 11,
+    "sha256": "41af109370692749d8770587ea0bb4086b2a65f38879a00d15c2e96dbb04cbac",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "OASIS UBL 2.1 (ISO/IEC 19845:2015); Peppol BIS Billing 3.0; FIRS/MBS e-invoicing technical specifications (Merchant-Buyer Solution, 2024-2025 pilot)",
+      "as_gazetted": null,
+      "source_citation": "UBL 2.1; Peppol BIS Billing 3.0; NRS MBS e-invoicing spec (Nigeria profile)"
+    }
+  }
+}

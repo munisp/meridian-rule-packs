@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWQJ0KB59N27XF13EMG7",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "64c5079c988bc4f3bb9ec30413ef6c5c",
+  "rule_pack_version": "rp-turnover-bands@1.0.0",
+  "data": {
+    "pack_id": "rp-turnover-bands",
+    "version": "1.0.0",
+    "title": "Canonical annual turnover band table for presumptive taxation",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "ff5a384b534d05f33134605909972962d2d1cb11cc87d3ba4c09c08002ab1308",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — presumptive taxation of the informal sector; NRS informal-sector regulations (awaiting gazette)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+    }
+  }
+}

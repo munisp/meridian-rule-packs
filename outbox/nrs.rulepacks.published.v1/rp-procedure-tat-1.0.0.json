@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWMRQ1BVFMTZ99CK9KFB",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "eac07ade9509074e9e3b1a97daef626f",
+  "rule_pack_version": "rp-procedure-tat@1.0.0",
+  "data": {
+    "pack_id": "rp-procedure-tat",
+    "version": "1.0.0",
+    "title": "Tax Appeal Tribunal (TAT) procedure rules",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "15eb144c8438ba8c506b46c4aae749f71d228987e022dca29e592ac78441744c",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 — Tax Appeal Tribunal provisions (continuing FIRS Establishment Act 2007, Fifth Schedule model)",
+      "as_gazetted": null,
+      "source_citation": "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
+    }
+  }
+}

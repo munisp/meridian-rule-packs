@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWPP3RPTVQ3SC6A4Z5PZ",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "0a8eaa47d5640a8230cc141f2e4743ce",
+  "rule_pack_version": "rp-tp-2018@1.0.0",
+  "data": {
+    "pack_id": "rp-tp-2018",
+    "version": "1.0.0",
+    "title": "Income Tax (Transfer Pricing) Regulations 2018 rule set",
+    "effective_from": "2018-03-12",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 10,
+    "sha256": "a43880199de930789dfc0976abab75ff7912a21b6fb94188d33e9453f4f129dd",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Income Tax (Transfer Pricing) Regulations 2018 (FIRS, effective 12 March 2018), based on OECD TP Guidelines and UN TP Manual",
+      "as_gazetted": "Federal Republic of Nigeria Official Gazette, TP Regulations 2018 (awaiting CTC)",
+      "source_citation": "Income Tax (Transfer Pricing) Regulations 2018"
+    }
+  }
+}
