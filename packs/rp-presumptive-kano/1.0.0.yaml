@@ -1,0 +1,54 @@
+# rp-presumptive-kano v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Kano State presumptive tax band amounts (KIRS)
+id: rp-presumptive-kano
+version: 1.0.0
+title: Kano State presumptive tax band amounts (KIRS)
+description: Kano variant of the presumptive band table (lower amounts), administered with Kano IRS.
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Kano State presumptive tax schedule aligned to NTA 2025 (KIRS circular awaited)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025; Kano IRS Presumptive Tax Schedule (draft)
+rules:
+- id: presumptive.table.kano
+  when:
+    jurisdiction: kano
+    operator: informal
+  then:
+    table:
+    - band: micro
+      annual_tax_kobo: 150000
+    - band: small
+      annual_tax_kobo: 500000
+    - band: lower_medium
+      annual_tax_kobo: 1000000
+    - band: medium
+      annual_tax_kobo: 2000000
+    - band: upper_medium
+      annual_tax_kobo: 4500000
+    - band: large_informal
+      annual_tax_kobo: 9000000
+    narrate: Kano presumptive annual amounts per turnover band
+- id: presumptive.exempt.micro
+  when:
+    band: micro
+    annual_turnover_kobo:
+      lte: 80000000
+  then:
+    rate_bps: 0
+    narrate: N800,000 PIT-exempt line honoured in Kano.
+- id: presumptive.kano.agro-exempt
+  when:
+    jurisdiction: kano
+    trade_sector: primary_agriculture
+  then:
+    rate_bps: 0
+    narrate: Primary agricultural producers in Kano are exempt from presumptive amounts in the micro and small bands (state
+      food-security relief).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 1a54e4ee0e95a49345576b1dba3f82720a310c97ba8a2272d7939d6a25e78cb9aeabbbaac860f34e635d22c0b9631a23ba5fadd727b4ca114aacd25414585a03

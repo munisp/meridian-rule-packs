@@ -1,0 +1,53 @@
+# rp-presumptive-lagos v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Lagos State presumptive tax band amounts (LIRS)
+id: rp-presumptive-lagos
+version: 1.0.0
+title: Lagos State presumptive tax band amounts (LIRS)
+description: Lagos variant of the presumptive band table (higher urban amounts), administered with LIRS via JRB attribution.
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Lagos State presumptive tax schedule aligned to NTA 2025 (LIRS circular awaited)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025; LIRS Presumptive Tax Schedule (draft)
+rules:
+- id: presumptive.table.lagos
+  when:
+    jurisdiction: lagos
+    operator: informal
+  then:
+    table:
+    - band: micro
+      annual_tax_kobo: 300000
+    - band: small
+      annual_tax_kobo: 1000000
+    - band: lower_medium
+      annual_tax_kobo: 2000000
+    - band: medium
+      annual_tax_kobo: 4000000
+    - band: upper_medium
+      annual_tax_kobo: 8000000
+    - band: large_informal
+      annual_tax_kobo: 15000000
+    narrate: Lagos presumptive annual amounts per turnover band
+- id: presumptive.lagos.market-levy-offset
+  when:
+    jurisdiction: lagos
+    market_levy_paid: true
+  then:
+    formula: max(0, band_amount - market_levy_paid_kobo)
+    narrate: Documented LGA market levies offset the presumptive amount (no double taxation).
+- id: presumptive.exempt.micro
+  when:
+    band: micro
+    annual_turnover_kobo:
+      lte: 80000000
+  then:
+    rate_bps: 0
+    narrate: N800,000 PIT-exempt line honoured in Lagos.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: a1c5092dbdba9f1441d1c99f33455f65ed66b032c9556c6e82051a0c55cd623dfbec2664ff4fe69773efd0427e8b2b843f01093a71bad3a69c393e246dd85a0a
