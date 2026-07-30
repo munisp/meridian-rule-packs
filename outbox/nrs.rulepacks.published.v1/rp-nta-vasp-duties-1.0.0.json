@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWF2B70JBZVFPS6DD2MV",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "ce595120e26181877614dcee3c139b43",
+  "rule_pack_version": "rp-nta-vasp-duties@1.0.0",
+  "data": {
+    "pack_id": "rp-nta-vasp-duties",
+    "version": "1.0.0",
+    "title": "NTA duties of virtual/digital asset service providers",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "cc548d981b90dfdc3baf0d2bb915528464da1d1d43403da5842199d170cba99b",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — obligations of virtual asset service providers; NRS VASP reporting guidance (awaiting gazette)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025 (VASP obligations); NRS guidance (pending)"
+    }
+  }
+}

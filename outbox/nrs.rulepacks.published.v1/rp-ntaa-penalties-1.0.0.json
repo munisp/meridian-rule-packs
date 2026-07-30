@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWG2V9MEMEDEY6724J73",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "aa35f6c9f04fd9e60bb9cf4fc1948b49",
+  "rule_pack_version": "rp-ntaa-penalties@1.0.0",
+  "data": {
+    "pack_id": "rp-ntaa-penalties",
+    "version": "1.0.0",
+    "title": "NTAA 2025 administrative penalty table",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "9b96a07e1ff6e35d4ea2c2e30d330bac9996f9ad36df5e5c004509de60bcc8ee",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 — offences and penalties provisions",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Administration Act 2025 (penalty provisions)"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWJY2SC3TJFMPB7QVD4X",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "75db6b047f78c4d5b38803a89e1c921d",
+  "rule_pack_version": "rp-presumptive-lagos@1.0.0",
+  "data": {
+    "pack_id": "rp-presumptive-lagos",
+    "version": "1.0.0",
+    "title": "Lagos State presumptive tax band amounts (LIRS)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 3,
+    "sha256": "266af7c973521a3dd1f35e187b772661175739be6fc598ca3b2b76335bd7254f",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Lagos State presumptive tax schedule aligned to NTA 2025 (LIRS circular awaited)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025; LIRS Presumptive Tax Schedule (draft)"
+    }
+  }
+}

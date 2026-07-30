@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWGTB5BHA8YHZNZA44K4",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "30b719bf3f2f5ccf3be98c3412c66626",
+  "rule_pack_version": "rp-platform-collectors@1.0.0",
+  "data": {
+    "pack_id": "rp-platform-collectors",
+    "version": "1.0.0",
+    "title": "Platform / marketplace VAT collection rules",
+    "effective_from": "2022-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "06bdebcb67d264aee4cebc47e844d909258b143fe4a57234dbc7cd3f8e610990",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "FIRS Guidelines on Simplified Compliance Regime for VAT for Non-Resident Suppliers (2022); Finance Act 2019 s.10; Nigeria Tax Act 2025 (agent-of-collection powers)",
+      "as_gazetted": null,
+      "source_citation": "FIRS NRS VAT Guidelines (2022); Nigeria Tax Act 2025"
+    }
+  }
+}

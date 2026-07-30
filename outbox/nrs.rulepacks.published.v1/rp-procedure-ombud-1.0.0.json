@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWKWE5RD755S25MKZ6GB",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "6b205ba7deda8a115bc655458a2cba1c",
+  "rule_pack_version": "rp-procedure-ombud@1.0.0",
+  "data": {
+    "pack_id": "rp-procedure-ombud",
+    "version": "1.0.0",
+    "title": "Office of the Tax Ombud — case procedure rules",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "24e3c16e44856de281fd646f80e357b4df9c8210a7695200b81051f2a646dc23",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 — Part establishing the Office of the Tax Ombud",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
+    }
+  }
+}

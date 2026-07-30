@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWHKSPH6483DMK6DZXDV",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "58a3dfc2a1eff498ec0d2bd7af43d0e7",
+  "rule_pack_version": "rp-presumptive-federal@1.0.0",
+  "data": {
+    "pack_id": "rp-presumptive-federal",
+    "version": "1.0.0",
+    "title": "Federal presumptive tax band amounts (NRS / FCT default)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "49ada5fb6e700570a6d793f1a7b5e8b16629af9eb621d49b77e1991c81c92217",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "NRS informal-sector presumptive taxation framework under NTA 2025 (regulations awaited)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
+    }
+  }
+}

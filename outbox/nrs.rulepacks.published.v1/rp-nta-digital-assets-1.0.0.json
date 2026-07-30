@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWECFHWC7Y0MN7788TF4",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "d78a3c1ce48c50d1ecfa2178a1b3bc35",
+  "rule_pack_version": "rp-nta-digital-assets@1.0.0",
+  "data": {
+    "pack_id": "rp-nta-digital-assets",
+    "version": "1.0.0",
+    "title": "NTA taxation of digital assets (chargeable gains)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 6,
+    "sha256": "ae1c63cbaa470491ac59f5a2a1c6aeba02988b9861a48156775a4acc9ac0d03e",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — chargeable assets definition extended to digital/virtual assets",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+    }
+  }
+}

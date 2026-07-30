@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWJ91HJ7QZXC8T73QB1Q",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:07Z",
+  "tenant_id": "",
+  "trace_id": "7e0426fee3eac998389d43d7812a904f",
+  "rule_pack_version": "rp-presumptive-kano@1.0.0",
+  "data": {
+    "pack_id": "rp-presumptive-kano",
+    "version": "1.0.0",
+    "title": "Kano State presumptive tax band amounts (KIRS)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 3,
+    "sha256": "e9b49129e81868028cb1cc2ebe70ca63be969d234bcfcc4bc11dba104f7899f2",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Kano State presumptive tax schedule aligned to NTA 2025 (KIRS circular awaited)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025; Kano IRS Presumptive Tax Schedule (draft)"
+    }
+  }
+}
