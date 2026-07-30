@@ -1,0 +1,67 @@
+# rp-nta-digital-assets v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NTA taxation of digital assets (chargeable gains)
+id: rp-nta-digital-assets
+version: 1.0.0
+title: NTA taxation of digital assets (chargeable gains)
+description: 'Digital assets are chargeable assets: gains on disposal taxable (CGT for companies/individuals under NTA unified
+  gains treatment); losses ring-fenced against digital-asset gains only.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — chargeable assets definition extended to digital/virtual assets
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
+rules:
+- id: da.chargeable-asset
+  when:
+    asset_class: digital_asset
+  then:
+    decision: chargeable
+    narrate: Digital assets (crypto, tokens, NFTs where held as investment) are chargeable assets; disposal gains are taxable.
+- id: da.gain.formula
+  when:
+    event: disposal
+  then:
+    formula: gain_kobo = disposal_proceeds_kobo - allowable_cost_kobo - incidental_costs_kobo
+    narrate: Chargeable gain = proceeds less cost basis (FIFO or WAC per taxpayer election, consistently applied) and incidental
+      costs.
+- id: da.loss.ringfence
+  when:
+    event: loss
+    asset_class: digital_asset
+  then:
+    decision: ring_fenced
+    narrate: Losses on digital assets deductible ONLY against gains on other digital assets in the same or future years (ring-fence).
+- id: da.individual.rate
+  when:
+    taxpayer: individual
+  then:
+    decision: pit_bands_apply
+    narrate: 'Individuals: digital-asset gains taxed under PIT bands (rp-education-ng) as income from other sources.'
+- id: da.company.rate
+  when:
+    taxpayer: company
+    size:
+      in:
+      - medium
+      - large
+  then:
+    rate_bps: 3000
+    narrate: 'Companies: gains taxed at CIT 30%; small companies exempt (rp-exemption-nta).'
+- id: da.events.taxable
+  when:
+    event:
+      in:
+      - sale_for_fiat
+      - crypto_to_crypto_swap
+      - spend_on_goods_services
+      - gift_disposal
+  then:
+    decision: disposal
+    narrate: Taxable disposal events; transfers between own wallets are NOT disposals.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: a5ece4abec4832399bd9710da60b35ce5611a2d3b9180d4d08e8689e138ba2642e84e3962cdc0ab79bed8926ee512c8f327ddd844a4feca053289b3981a8ce0f

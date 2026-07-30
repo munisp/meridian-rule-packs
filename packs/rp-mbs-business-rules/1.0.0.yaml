@@ -1,0 +1,86 @@
+# rp-mbs-business-rules v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NRS MBS e-invoicing business validation rules (T1/T2)
+id: rp-mbs-business-rules
+version: 1.0.0
+title: NRS MBS e-invoicing business validation rules (T1/T2)
+description: 'Business-rule layer over UBL syntax: pre-clearance validity, totals consistency, VAT arithmetic, TIN liveness,
+  duplicate detection, B2C real-time reporting window, cryptographic stamp binding.'
+effective_from: '2025-08-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: NRS (formerly FIRS) Merchant-Buyer Solution e-invoicing programme business rules, 2024-2025 circulars and pilot
+    specifications
+  as_gazetted: null
+  source_citation: NRS MBS e-invoicing business rules & integration circulars (2025)
+rules:
+- id: mbs.preclearance.mandatory
+  when:
+    invoice_class:
+      in:
+      - b2b
+      - b2g
+      - large_taxpayer_b2c
+  then:
+    decision: submit_before_issue
+    narrate: 'Pre-clearance: invoice must be submitted to MBS and bear IRN + cryptographic stamp before issuance to the buyer.'
+- id: mbs.tin.live
+  when:
+    party: supplier
+  then:
+    decision: verify_via_tin_graph
+    narrate: Supplier TIN must verify live against tin-graph; invalid TIN rejects pre-clearance.
+- id: mbs.totals.consistency
+  when:
+    document: invoice
+  then:
+    formula: sum(lines.LineExtensionAmount) == LegalMonetaryTotal.LineExtensionAmount; TaxExclusive == LineExtension - Allowances
+      + Charges; Payable == TaxInclusive - Prepaid
+    narrate: Totals arithmetic must reconcile to the kobo; tolerance zero.
+- id: mbs.vat.arithmetic
+  when:
+    document: invoice
+  then:
+    formula: 'for each TaxSubtotal: TaxAmount == round(TaxableAmount * category_rate_bps / 10000) per rp-vat-rates'
+    narrate: VAT per subtotal recomputed against rp-vat-rates categories; mismatch rejects.
+- id: mbs.duplicate.irn
+  when:
+    invoice:
+      supplier_tin: present
+      invoice_id: present
+  then:
+    decision: reject_duplicate
+    narrate: Duplicate (supplier_tin, invoice_id, issue_date) within rolling 24 months rejected idempotently (replay queue
+      returns original IRN).
+- id: mbs.b2c.realtime
+  when:
+    invoice_class: b2c
+    taxpayer_class: large
+  then:
+    deadline_hours: 24
+    narrate: 'B2C real-time reporting: aggregated receipts within 24 hours of sale (POS spool-drain path T6).'
+- id: mbs.stamp.binding
+  when:
+    artifact: cryptographic_stamp
+  then:
+    decision: bind(irn, invoice_hash, csid_signature)
+    narrate: Crypto stamp binds IRN + invoice sha256 + CSID ed25519 signature; verifiable offline.
+- id: mbs.date.window
+  when:
+    field: issue_date
+  then:
+    decision: not_future
+    max_backdate_days: 7
+    narrate: Issue date not in future; backdating > 7 days requires adjustment note workflow.
+- id: mbs.currency.fx
+  when:
+    currency:
+      ne: NGN
+  then:
+    decision: require_fx_source
+    narrate: Non-NGN invoices must carry FX rate source and NGN tax amount (CBN rate of transaction date).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 74f0376b9ee2f7d17f2c951732917f1c453466072c1ae36aac3e848932094b5fbbda400ce0e87319d24a2c057ed4283b335d806e6e1d93117cd6f40ed728560e
