@@ -1,0 +1,71 @@
+# rp-etr-nta v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NTA minimum effective tax rate (domestic top-up, 15%)
+id: rp-etr-nta
+version: 1.0.0
+title: NTA minimum effective tax rate (domestic top-up, 15%)
+description: 'Nigeria''s domestic ETR rule: 15% minimum effective tax rate for large companies and MNE constituent entities;
+  top-up tax payable with CIT where ETR falls below 15%.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — minimum effective tax rate provisions (Ch. 2, Part on companies
+    income tax)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025 (s.57 minimum ETR); OECD Pillar Two adopted per NTAA s.6
+rules:
+- id: etr.nta.minimum-rate
+  when:
+    entity: company
+    in_scope: true
+  then:
+    rate_bps: 1500
+    narrate: Minimum effective tax rate of 15% of net income (NTA basis).
+  citation: NTA 2025, s.57
+- id: etr.nta.scope.mne
+  when:
+    group: mne
+    consolidated_revenue_eur:
+      gte: 750000000
+  then:
+    decision: in_scope
+    narrate: MNE groups with aggregate global turnover >= EUR 750m in scope.
+- id: etr.nta.scope.large-domestic
+  when:
+    group: domestic
+    aggregate_turnover_kobo:
+      gte: 5000000000000
+  then:
+    decision: in_scope
+    narrate: Large domestic companies with aggregate turnover of N50 billion and above in scope of the 15% ETR.
+- id: etr.nta.topup
+  when:
+    in_scope: true
+    etr_bps:
+      lt: 1500
+  then:
+    formula: topup_tax_kobo = net_income_kobo * (1500 - etr_bps) / 10000
+    narrate: Top-up tax brings ETR to 15%; payable in addition to CIT, with the CIT for the year.
+- id: etr.nta.etr-formula
+  when:
+    in_scope: true
+  then:
+    formula: etr_bps = covered_taxes_kobo * 10000 / net_income_kobo
+    narrate: ETR = covered taxes / net income (dual-basis adjustments per rp-globe-oecd for OECD view).
+- id: etr.nta.small-company.out-of-scope
+  when:
+    size: small
+  then:
+    decision: out_of_scope
+    narrate: Small companies (rp-exemption-nta) out of scope of minimum ETR.
+- id: etr.nta.trace
+  when:
+    in_scope: true
+  then:
+    decision: emit_calc_trace
+    narrate: Every ETR computation emits an audit-defensible step trace (T9 wf-etr-compute).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 222236468a9d92c9cff7a420ef53ab61e4a95fdca43a513f43050bf19c7011a6639cc1dd0b9c64f7a2506b2435c25b06d6007526242d2505846981753e783f02
