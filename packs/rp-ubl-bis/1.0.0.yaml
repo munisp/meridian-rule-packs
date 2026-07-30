@@ -1,0 +1,113 @@
+# rp-ubl-bis v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# UBL 2.1 / Peppol BIS 3.0 invoice mandatory-field and syntax rules
+id: rp-ubl-bis
+version: 1.0.0
+title: UBL 2.1 / Peppol BIS 3.0 invoice mandatory-field and syntax rules
+description: 'Schema-level rules for the canonical invoice -> UBL 2.1 / Peppol BIS 3.0 mapper (T1/T2): mandatory elements,
+  party identification, tax totals, currency and Nigerian profile constraints (MBS FIRS e-invoicing profile).'
+effective_from: '2025-08-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: OASIS UBL 2.1 (ISO/IEC 19845:2015); Peppol BIS Billing 3.0; FIRS/MBS e-invoicing technical specifications (Merchant-Buyer
+    Solution, 2024-2025 pilot)
+  as_gazetted: null
+  source_citation: UBL 2.1; Peppol BIS Billing 3.0; NRS MBS e-invoicing spec (Nigeria profile)
+rules:
+- id: ubl.doc.invoice-id
+  when:
+    field: cbc:ID
+  then:
+    decision: mandatory
+    narrate: Invoice number mandatory (IRN assigned at pre-clearance is separate — cbc:UUID carries IRN).
+- id: ubl.doc.uuid-irn
+  when:
+    field: cbc:UUID
+  then:
+    decision: mandatory_post_preclearance
+    narrate: Carries the MBS Invoice Reference Number (IRN) after pre-clearance.
+- id: ubl.doc.issue-date
+  when:
+    field: cbc:IssueDate
+  then:
+    decision: mandatory
+    format: YYYY-MM-DD
+- id: ubl.doc.currency
+  when:
+    field: cbc:DocumentCurrencyCode
+  then:
+    decision: mandatory
+    allowed:
+    - NGN
+    - USD
+    - EUR
+    - GBP
+    narrate: NGN default; tax currency always NGN (cbc:TaxCurrencyCode).
+- id: ubl.party.supplier
+  when:
+    field: cac:AccountingSupplierParty
+  then:
+    table:
+    - party_name
+    - tin(cbc:CompanyID schemeID=NG-NRS)
+    - address(country mandatory)
+    - contact_email
+    narrate: 'Supplier party: name, TIN (CompanyID), address, contact mandatory.'
+- id: ubl.party.customer
+  when:
+    field: cac:AccountingCustomerParty
+  then:
+    table:
+    - party_name
+    - tin_b2b(cbc:CompanyID)
+    - address(country mandatory)
+    narrate: 'Customer party: name mandatory; TIN mandatory for B2B.'
+- id: ubl.totals.legal-monetary
+  when:
+    field: cac:LegalMonetaryTotal
+  then:
+    table:
+    - LineExtensionAmount
+    - TaxExclusiveAmount
+    - TaxInclusiveAmount
+    - PayableAmount
+    narrate: Legal monetary totals mandatory; PayableAmount = TaxInclusive - prepaid + rounding.
+- id: ubl.tax.total
+  when:
+    field: cac:TaxTotal
+  then:
+    table:
+    - cbc:TaxAmount
+    - cac:TaxSubtotal(per rate/category)
+    - cbc:TaxableAmount
+    - cac:TaxCategory(ID S|Z|E)
+    narrate: 'TaxTotal with subtotal per VAT category: S=7.5%, Z=zero, E=exempt (categories per rp-vat-rates).'
+- id: ubl.line.mandatory
+  when:
+    field: cac:InvoiceLine
+  then:
+    table:
+    - cbc:ID
+    - cbc:InvoicedQuantity
+    - cbc:LineExtensionAmount
+    - cac:Item/cbc:Name
+    - cac:Price
+    narrate: 'Each line: id, quantity, line amount, item name, price; classified tax category per line.'
+- id: ubl.money.kobo-integrity
+  when:
+    amount_fields: all
+  then:
+    decision: decimal_2dp_ngn
+    narrate: UBL amounts decimal(2dp NGN); canonical store keeps integer kobo; mapper converts exactly (no floats).
+- id: ubl.payment.means
+  when:
+    field: cac:PaymentMeans
+  then:
+    decision: conditional_mandatory
+    condition: credit_invoice
+    narrate: Payment means + due date mandatory for credit invoices.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: cddc7baf692d3f6162202a200d1e650bc69b3fbac9905a79b1c22cd36e15e75eec2491f426054be19045612698a0acb04f4de3394d49ad637f654824eb589706

@@ -1,0 +1,82 @@
+# rp-turnover-bands v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Canonical annual turnover band table for presumptive taxation
+id: rp-turnover-bands
+version: 1.0.0
+title: Canonical annual turnover band table for presumptive taxation
+description: Shared band definitions consumed by rp-presumptive-* band engines. Bands in integer kobo of annual turnover.
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — presumptive taxation of the informal sector; NRS informal-sector
+    regulations (awaiting gazette)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
+rules:
+- id: band.def.micro
+  when:
+    band: micro
+  then:
+    threshold:
+      min_kobo: 0
+      max_kobo: 100000000
+    band_order: 1
+    narrate: 'Band 1 (micro): turnover up to N1,000,000'
+- id: band.def.small
+  when:
+    band: small
+  then:
+    threshold:
+      min_kobo: 100000000
+      max_kobo: 300000000
+    band_order: 2
+    narrate: 'Band 2 (small): N1m - N3m'
+- id: band.def.lower-medium
+  when:
+    band: lower_medium
+  then:
+    threshold:
+      min_kobo: 300000000
+      max_kobo: 500000000
+    band_order: 3
+    narrate: 'Band 3: N3m - N5m'
+- id: band.def.medium
+  when:
+    band: medium
+  then:
+    threshold:
+      min_kobo: 500000000
+      max_kobo: 1000000000
+    band_order: 4
+    narrate: 'Band 4: N5m - N10m'
+- id: band.def.upper-medium
+  when:
+    band: upper_medium
+  then:
+    threshold:
+      min_kobo: 1000000000
+      max_kobo: 2500000000
+    band_order: 5
+    narrate: 'Band 5: N10m - N25m'
+- id: band.def.large-informal
+  when:
+    band: large_informal
+  then:
+    threshold:
+      min_kobo: 2500000000
+      max_kobo: 10000000000
+    band_order: 6
+    narrate: 'Band 6: N25m - N100m (ceiling for presumptive regime; above this, register and file normally)'
+- id: band.exit.register
+  when:
+    annual_turnover_kobo:
+      gt: 10000000000
+  then:
+    decision: graduate_to_standard_regime
+    narrate: Above N100m turnover the operator must register for TIN-based filing (small-company rules in rp-exemption-nta
+      may still apply).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 4c40fb1aeb44a77d42643a3da8c3641014f3b8667d949d393e1a7c23c7d00026ff30beb512022bea8e737963ee934041a9aa46c4488222f1fba7d945eb7e6a01
