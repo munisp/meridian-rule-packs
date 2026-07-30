@@ -5,7 +5,7 @@
   "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-platform-collectors/1.0.0/06bdebcb67d264ae.yaml",
   "archived_at": "2026-07-30T04:12:07Z",
   "key_id": "governance-board-2026",
-  "signature": "17909d2b465d11de1bbfe482c0c447128bfb2d6417de15dc84bd790eaf2a03785dcd87502159e9587635d9ca1392ce791ebdb778503dd7fcd58931835007fb0",
+  "signature": "17909d2b465d11de1bbfe482c0c447128bfb2d6417de15dc84bd790eaf2a03785dcd87502159e9587635d9ca1392ce791ebdb778503dd7fcd58931835007fb0e",
   "publish_event_id": "01KYRKHWGTB5BHA8YHZNZA44K4",
   "immutable": true
 }
