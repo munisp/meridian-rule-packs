@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWAABVFJV07BKRJ3Z9QZ",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "71ff385128723dcbc9d8c0029d5bf2a2",
+  "rule_pack_version": "rp-gir-schema@1.0.0",
+  "data": {
+    "pack_id": "rp-gir-schema",
+    "version": "1.0.0",
+    "title": "GloBE Information Return (GIR) datapoint schema rules",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "70bd5cf9125fd48b2850c1f22b39aeb3b03e6fdeb597cf675c0ea7e2860ea6f4",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "OECD/G20 Inclusive Framework, GloBE Information Return (GIR) XML Schema and User Guide, July 2023 (updated Jan 2025)",
+      "as_gazetted": null,
+      "source_citation": "OECD GIR XML Schema v1.0 (2023); OECD Pillar Two Administrative Guidance"
+    }
+  }
+}

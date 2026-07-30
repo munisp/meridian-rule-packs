@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWCG1TVZVEAGW4M2R72E",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "4c54c0cd96fa5443c087708b1a748f17",
+  "rule_pack_version": "rp-identity-match-thresholds@1.0.0",
+  "data": {
+    "pack_id": "rp-identity-match-thresholds",
+    "version": "1.0.0",
+    "title": "Entity resolution / identity match thresholds (tin-graph)",
+    "effective_from": "2025-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "d5b23169f1fc5d04c7e8b08c20236ab039fbe38e4e0c45242959d780034b6796",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Meridian identity-graph matching policy implementing NRS identity fusion (NIN=TIN, CAC-RC=TIN) under NTAA 2025 and NDPA 2023",
+      "as_gazetted": null,
+      "source_citation": "NTAA 2025 (TIN provisions); NDPA 2023; NRS identity fusion policy"
+    }
+  }
+}

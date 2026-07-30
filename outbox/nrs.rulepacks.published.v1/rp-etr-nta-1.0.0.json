@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW6AQ674RTEPTY0Z5X1X",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "fd3108af7c78adc2927b06b52de57d5d",
+  "rule_pack_version": "rp-etr-nta@1.0.0",
+  "data": {
+    "pack_id": "rp-etr-nta",
+    "version": "1.0.0",
+    "title": "NTA minimum effective tax rate (domestic top-up, 15%)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "1f4e47992981c6f761c9d34ef9122fe379b5c8282cf1879f98971065a3a72146",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — minimum effective tax rate provisions (Ch. 2, Part on companies income tax)",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025 (s.57 minimum ETR); OECD Pillar Two adopted per NTAA s.6"
+    }
+  }
+}

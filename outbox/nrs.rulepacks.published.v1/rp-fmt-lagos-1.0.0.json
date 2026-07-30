@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW9D0BC4MSY2494VST89",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "7c5ce90aec5d0a9315bc7dcc93c224ac",
+  "rule_pack_version": "rp-fmt-lagos@1.0.0",
+  "data": {
+    "pack_id": "rp-fmt-lagos",
+    "version": "1.0.0",
+    "title": "Filing & management template — Lagos (LIRS administered taxes)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 5,
+    "sha256": "5834f3218f07306aea5d4dc2966241de824b0b4c44c69c32b28153ae6215839e",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Lagos State tax administration framework under Personal Income Tax Act (as amended), NTA 2025, Lagos Consumption Tax law, Land Use Charge Law 2018",
+      "as_gazetted": null,
+      "source_citation": "PITA; NTA 2025; Lagos State revenue laws (LIRS)"
+    }
+  }
+}

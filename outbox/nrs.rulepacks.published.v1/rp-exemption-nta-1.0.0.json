@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW827E7RTF0QG0CWCDHN",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "7f6d6a2e50784b6235c74c8dcc0f81b3",
+  "rule_pack_version": "rp-exemption-nta@1.0.0",
+  "data": {
+    "pack_id": "rp-exemption-nta",
+    "version": "1.0.0",
+    "title": "Exemptions under the Nigeria Tax Act 2025",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 6,
+    "sha256": "a06faf51d4ca7ca4a0492423b0bc56061ee0c82de656776a5897483d008b73c3",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — exemption provisions and Schedules",
+      "as_gazetted": null,
+      "source_citation": "Nigeria Tax Act 2025"
+    }
+  }
+}

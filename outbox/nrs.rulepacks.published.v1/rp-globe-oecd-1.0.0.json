@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHWBHG5WY4J9AVYS1RNE4",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "17bb611bbccceffb71ab2604f0c019fb",
+  "rule_pack_version": "rp-globe-oecd@1.0.0",
+  "data": {
+    "pack_id": "rp-globe-oecd",
+    "version": "1.0.0",
+    "title": "OECD GloBE model rule mechanics: ETR, substance carve-out, IIR ordering, UTPR",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "eeaf5355269026e09216daa87bd8728c89d07b273885a831c8c97d652a643d35",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "OECD/G20 Inclusive Framework, Global Anti-Base Erosion (GloBE) Model Rules (Pillar Two), 20 Dec 2021, with Administrative Guidance 2023-2025",
+      "as_gazetted": null,
+      "source_citation": "OECD Pillar Two GloBE Model Rules Arts. 2, 5, 9"
+    }
+  }
+}

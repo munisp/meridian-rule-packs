@@ -1,0 +1,26 @@
+{
+  "id": "01KYRKHW8PZNKYP7PA4HYPV86W",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-30T04:12:06Z",
+  "tenant_id": "",
+  "trace_id": "0cf6f0a93646740291ddb658f6cce5ce",
+  "rule_pack_version": "rp-fmt-fct@1.0.0",
+  "data": {
+    "pack_id": "rp-fmt-fct",
+    "version": "1.0.0",
+    "title": "Filing & management template — FCT (FCT-IRS administered taxes)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 4,
+    "sha256": "c32e5d3f842335eadcb7907e43b0edf45b34290486870bea55b5d686057d5cbf",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "FCT Internal Revenue Service Act 2015; PITA; NTA/NTAA 2025",
+      "as_gazetted": null,
+      "source_citation": "FCT-IRS Act 2015; PITA; Nigeria Tax Act 2025"
+    }
+  }
+}
