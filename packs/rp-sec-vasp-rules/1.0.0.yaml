@@ -1,0 +1,60 @@
+# rp-sec-vasp-rules v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# SEC Nigeria Rules on Digital Assets (VASP regulation, 2022/2024)
+id: rp-sec-vasp-rules
+version: 1.0.0
+title: SEC Nigeria Rules on Digital Assets (VASP regulation, 2022/2024)
+description: 'SEC Rules on Issuance, Offering Platforms and Custody of Digital Assets (May 2022) and ARIP amendments (2024):
+  VASP registration, capital/custody requirements, offering rules — referenced for tax duty alignment.'
+effective_from: '2022-05-11'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: SEC Nigeria, Rules on Digital Assets (11 May 2022); Accelerated Regulatory Incubation Programme (ARIP) amendments
+    (2024); Investments and Securities Act 2025
+  as_gazetted: null
+  source_citation: SEC Rules on Digital Assets 2022; ISA 2025
+rules:
+- id: sec.vasp.registration
+  when:
+    entity: vasp
+    activity:
+      in:
+      - exchange
+      - custody
+      - offering_platform
+      - broker
+  then:
+    decision: sec_registration_required
+    narrate: Digital-asset exchanges, custodians, offering platforms and brokers require SEC registration (ARIP pathway pending
+      full rules).
+- id: sec.vasp.capital
+  when:
+    entity: vasp
+    class: exchange
+  then:
+    threshold:
+      minimum_paid_up_capital_kobo: 50000000000
+    narrate: Minimum paid-up capital N500m for digital-asset exchanges (subject to ARIP transitional terms).
+- id: sec.vasp.custody
+  when:
+    activity: custody
+  then:
+    decision: qualified_custodian
+    narrate: Client assets held with qualified custodian; segregation of client assets mandatory.
+- id: sec.vasp.isa2025
+  when:
+    asset_class: digital_asset
+  then:
+    decision: securities_law_applies
+    narrate: ISA 2025 recognises virtual/digital assets as securities; investment contracts fall under SEC jurisdiction.
+- id: sec.vasp.tax-alignment
+  when:
+    entity: vasp
+  then:
+    decision: nrs_sec_dual_obligation
+    narrate: SEC-registered VASPs additionally carry NTA duties (rp-nta-vasp-duties); registries reconciled via identity graph.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 61fb61aeca423f08d5a13ba3a8c26508cb4c35567c47f9076ae0ddcb8c555626c4735717216ff6f7e1b8ab119a6dad0a8a47625cb0a6c3f527ae3d234b6dfe04

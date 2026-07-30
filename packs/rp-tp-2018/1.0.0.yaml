@@ -1,0 +1,104 @@
+# rp-tp-2018 v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Income Tax (Transfer Pricing) Regulations 2018 rule set
+id: rp-tp-2018
+version: 1.0.0
+title: Income Tax (Transfer Pricing) Regulations 2018 rule set
+description: TP thresholds, documentation obligations (master/local file, CbCR, declarations), connected-party deductibility
+  cap (interest 30% EBITDA), safe harbour, advance pricing agreements.
+effective_from: '2018-03-12'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Income Tax (Transfer Pricing) Regulations 2018 (FIRS, effective 12 March 2018), based on OECD TP Guidelines and
+    UN TP Manual
+  as_gazetted: Federal Republic of Nigeria Official Gazette, TP Regulations 2018 (awaiting CTC)
+  source_citation: Income Tax (Transfer Pricing) Regulations 2018
+rules:
+- id: tp.doc.threshold
+  when:
+    person: connected_taxable_person
+    total_controlled_transactions_kobo:
+      gte: 30000000000
+  then:
+    decision: full_documentation
+    narrate: 'Controlled transactions >= N300m: contemporaneous master + local file mandatory.'
+  citation: TP Regs 2018, reg. 15
+- id: tp.doc.below-threshold
+  when:
+    total_controlled_transactions_kobo:
+      lt: 30000000000
+  then:
+    decision: simplified
+    condition: may_elect_full
+    narrate: 'Below N300m: documentation may be kept in simplified form, but must be submitted within 21 days of notice.'
+- id: tp.declaration.annual
+  when:
+    person: connected_taxable_person
+  then:
+    decision: file_declaration_and_disclosure
+    deadline: within 6 months of financial year end (with CIT return)
+    narrate: Annual TP declaration + disclosure forms filed with CIT return; penalty N10m + N10,000/day default.
+- id: tp.cbcr.threshold
+  when:
+    group: mne
+    consolidated_revenue_kobo:
+      gte: 16000000000000
+  then:
+    decision: cbcr_required
+    deadline_months_after_fye: 12
+    narrate: CbCR where group revenue >= N160bn (EUR 750m equivalent); notification + report within 12 months of FYE.
+- id: tp.interest.deductibility-cap
+  when:
+    payment_type: interest
+    beneficiary: connected_person
+    excess: true
+  then:
+    formula: deductible_interest <= 0.30 * EBITDA; excess carried forward up to 5 years
+    narrate: Connected-party interest deductible up to 30% of EBITDA; excess carried forward max 5 years.
+  citation: TP Regs 2018, reg. 16A; Finance Act 2019
+- id: tp.methods.accepted
+  when:
+    analysis: comparability
+  then:
+    table:
+    - CUP
+    - resale_price
+    - cost_plus
+    - TNMM
+    - profit_split
+    narrate: Accepted methods (most appropriate method rule); other methods allowed if justified.
+- id: tp.safe-harbour
+  when:
+    arrangement: approved_safe_harbour
+  then:
+    decision: administrative_safe_harbour
+    narrate: FIRS/NRS-published safe harbours (e.g., low-value intra-group services 5% markup) relieve full analysis burden.
+- id: tp.apa.available
+  when:
+    person: connected_taxable_person
+  then:
+    decision: may_request_apa
+    narrate: Unilateral/bilateral advance pricing agreements available; rollback up to 3 years.
+- id: tp.penalty.table
+  when:
+    default: tp
+  then:
+    table:
+    - offence: failure_to_file_declaration
+      penalty_kobo: 1000000000
+    - offence: failure_to_keep_documentation
+      penalty_kobo: higher of N10m or 1% of controlled transactions
+    - offence: incorrect_disclosure
+      penalty_kobo: higher of N10m or 1% of amount misstated
+    narrate: TP-specific penalties (in addition to general NTA penalties rp-ntaa-penalties).
+- id: tp.capital-rich-low-function
+  when:
+    entity: capital_rich_low_function_nigerian_affiliate
+  then:
+    decision: no_risk_free_return
+    narrate: Capital-rich low-function Nigerian affiliates not limited to risk-free return (2018 Regs anti-erosion rule).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: df5b3a6dc4fe530647a12d31198eee34c093bb55ca2f91883a7e206c9e989dbeed6b4401c8f6f32600d7fa67bd22ffce9e9b9c7eece41484effc80d427843b00
