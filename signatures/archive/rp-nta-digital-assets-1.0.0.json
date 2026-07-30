@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-nta-digital-assets",
+  "version": "1.0.0",
+  "sha256": "ae1c63cbaa470491ac59f5a2a1c6aeba02988b9861a48156775a4acc9ac0d03e",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-nta-digital-assets/1.0.0/ae1c63cbaa470491.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "a5ece4abec4832399bd9710da60b35ce5611a2d3b9180d4d08e8689e138ba2642e84e3962cdc0ab79bed8926ee512c8f327ddd844a4feca053289b3981a8ce0f",
+  "publish_event_id": "01KYRKHWECFHWC7Y0MN7788TF4",
+  "immutable": true
+}

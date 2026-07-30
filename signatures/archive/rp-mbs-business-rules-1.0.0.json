@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-mbs-business-rules",
+  "version": "1.0.0",
+  "sha256": "daa0e41ceda5537325df8d91dae231811659f06e1bb447833e39e967618df979",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-mbs-business-rules/1.0.0/daa0e41ceda55373.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "74f0376b9ee2f7d17f2c951732917f1c453466072c1ae36aac3e848932094b5fbbda400ce0e87319d24a2c057ed4283b335d806e6e1d93117cd6f40ed728560e",
+  "publish_event_id": "01KYRKHWDJZ8TSE8W8DFKTVYKE",
+  "immutable": true
+}

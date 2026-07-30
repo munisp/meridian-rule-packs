@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-gir-schema",
+  "version": "1.0.0",
+  "sha256": "70bd5cf9125fd48b2850c1f22b39aeb3b03e6fdeb597cf675c0ea7e2860ea6f4",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-gir-schema/1.0.0/70bd5cf9125fd48b.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "62f3b5be8792d06b9f91a9c4a4d6c5d5a7b506354356d3ce34c59a4ab0e61b1a52721d5d3ef91b284bda213319fe3e12c66c4658392d7e411f33c39cb5a15b01",
+  "publish_event_id": "01KYRKHWAABVFJV07BKRJ3Z9QZ",
+  "immutable": true
+}

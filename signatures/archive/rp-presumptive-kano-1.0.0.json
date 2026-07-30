@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-presumptive-kano",
+  "version": "1.0.0",
+  "sha256": "e9b49129e81868028cb1cc2ebe70ca63be969d234bcfcc4bc11dba104f7899f2",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-kano/1.0.0/e9b49129e8186802.yaml",
+  "archived_at": "2026-07-30T04:12:07Z",
+  "key_id": "governance-board-2026",
+  "signature": "1a54e4ee0e95a49345576b1dba3f82720a310c97ba8a2272d7939d6a25e78cb9aeabbbaac860f34e635d22c0b9631a23ba5fadd727b4ca114aacd25414585a03",
+  "publish_event_id": "01KYRKHWJ91HJ7QZXC8T73QB1Q",
+  "immutable": true
+}

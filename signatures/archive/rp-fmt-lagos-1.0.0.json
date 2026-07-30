@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-fmt-lagos",
+  "version": "1.0.0",
+  "sha256": "5834f3218f07306aea5d4dc2966241de824b0b4c44c69c32b28153ae6215839e",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-fmt-lagos/1.0.0/5834f3218f07306a.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "c47f881c29d60393d23ca69eb6cb31f95e0da0bb86848b274c1f87cb24bd43ca874bb4f775c1cc64222e44d482f2eb745a602b9901a304b1eed51736b757e500",
+  "publish_event_id": "01KYRKHW9D0BC4MSY2494VST89",
+  "immutable": true
+}

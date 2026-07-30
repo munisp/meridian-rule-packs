@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-globe-oecd",
+  "version": "1.0.0",
+  "sha256": "eeaf5355269026e09216daa87bd8728c89d07b273885a831c8c97d652a643d35",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-globe-oecd/1.0.0/eeaf5355269026e0.yaml",
+  "archived_at": "2026-07-30T04:12:06Z",
+  "key_id": "governance-board-2026",
+  "signature": "c6868529bc6bf1473a3291d88fcc9a52eaf0c0e8d3bb3b35c45787d58044b3625f38e569ca47e472f744bf5be919b5818b5817974a081ad1912d0e16a965df04",
+  "publish_event_id": "01KYRKHWBHG5WY4J9AVYS1RNE4",
+  "immutable": true
+}
