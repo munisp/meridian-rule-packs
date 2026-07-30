@@ -1,0 +1,62 @@
+# rp-fmt-lagos v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Filing & management template — Lagos (LIRS administered taxes)
+id: rp-fmt-lagos
+version: 1.0.0
+title: Filing & management template — Lagos (LIRS administered taxes)
+description: 'Lagos State filing matrix: tax types administered by LIRS, filing frequencies and deadlines, aligned to NTA/NTAA
+  2025.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Lagos State tax administration framework under Personal Income Tax Act (as amended), NTA 2025, Lagos Consumption
+    Tax law, Land Use Charge Law 2018
+  as_gazetted: null
+  source_citation: PITA; NTA 2025; Lagos State revenue laws (LIRS)
+rules:
+- id: fmt.lagos.paye
+  when:
+    tax: PIT_PAYE
+    employer_state: lagos
+  then:
+    frequency: monthly
+    deadline_day_of_month: 10
+    narrate: PAYE remitted to LIRS by 10th of following month; annual employer returns by 31 January.
+- id: fmt.lagos.wht-individuals
+  when:
+    tax: WHT
+    beneficiary: individual
+    state: lagos
+  then:
+    frequency: monthly
+    deadline_day_of_month: 30
+    narrate: WHT on individuals remitted to LIRS by 30th of following month (rp-wht-2024).
+- id: fmt.lagos.direct-assessment
+  when:
+    tax: PIT_direct_assessment
+  then:
+    deadline: within 90 days of year end (31 March)
+    narrate: Self-assessment filings to LIRS by 31 March.
+- id: fmt.lagos.consumption-tax
+  when:
+    tax: lagos_consumption_tax
+    sector:
+      in:
+      - hotels
+      - restaurants
+      - event_centres
+  then:
+    rate_bps: 500
+    deadline_day_of_month: 20
+    narrate: Lagos hotel/restaurant/event consumption tax 5% (relationship with VAT per state law; subject_to_regazette).
+- id: fmt.lagos.luc
+  when:
+    tax: land_use_charge
+  then:
+    frequency: annual
+    narrate: Land Use Charge annual assessment (LUC Law 2018); not part of NRS collection rail.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: c47f881c29d60393d23ca69eb6cb31f95e0da0bb86848b274c1f87cb24bd43ca874bb4f775c1cc64222e44d482f2eb745a602b9901a304b1eed51736b757e500

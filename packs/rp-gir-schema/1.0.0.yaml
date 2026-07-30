@@ -1,0 +1,75 @@
+# rp-gir-schema v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# GloBE Information Return (GIR) datapoint schema rules
+id: rp-gir-schema
+version: 1.0.0
+title: GloBE Information Return (GIR) datapoint schema rules
+description: 'Datapoint and structural rules for the GIR filing pack (T9): general section, jurisdictional safe harbours,
+  ETR computation, top-up allocation; filing deadlines and exchange mechanics.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: OECD/G20 Inclusive Framework, GloBE Information Return (GIR) XML Schema and User Guide, July 2023 (updated Jan
+    2025)
+  as_gazetted: null
+  source_citation: OECD GIR XML Schema v1.0 (2023); OECD Pillar Two Administrative Guidance
+rules:
+- id: gir.deadline.standard
+  when:
+    filing: GIR
+  then:
+    deadline_months_after_fye: 15
+    narrate: GIR due 15 months after the last day of the reporting fiscal year.
+- id: gir.deadline.transition
+  when:
+    filing: GIR
+    first_year_in_scope: true
+  then:
+    deadline_months_after_fye: 18
+    narrate: 'Transition: 18 months for the first reporting year in scope.'
+- id: gir.section.general
+  when:
+    gir_section: general
+  then:
+    table:
+    - mne_group_name
+    - reporting_fiscal_year
+    - upe_name_tin_jurisdiction
+    - filing_constituent_entity
+    - list_of_constituent_entities(name,tin,jurisdiction,ownership_pct,entity_status)
+    - corporate_structure_changes
+    - qdmt_safe_harbour_elections
+    narrate: 'GIR Section 1: MNE group identification and constituent entity register.'
+- id: gir.section.jurisdictional
+  when:
+    gir_section: jurisdictional
+  then:
+    table:
+    - safe_harbours_and_exclusions
+    - etr_computation(net_globe_income, adjusted_covered_taxes, etr_bps)
+    - topup_tax_computation(topup_pct, excess_profit, substance_carveout, additional_topup)
+    - entity_level_allocation(constituent_entity, globe_income, topup_allocated)
+    narrate: 'GIR Section 2: per-jurisdiction safe harbour, ETR and top-up computations.'
+- id: gir.datapoint.filing-ce
+  when:
+    role: filing_constituent_entity
+  then:
+    decision: required
+    narrate: One filing constituent entity (default UPE) per MNE group; local filing obligation only where no qualifying exchange.
+- id: gir.exchange.mechanism
+  when:
+    exchange: true
+  then:
+    decision: qcaa_exchange
+    narrate: GIR exchanged under qualifying competent authority agreements; notification where local filing dispensed.
+- id: gir.validation.tin-format
+  when:
+    field: tin
+  then:
+    decision: validate
+    narrate: 'All TINs in GIR validated against jurisdiction-specific TIN structure rules (Nigeria: 10-14 digit NRS TIN).'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 62f3b5be8792d06b9f91a9c4a4d6c5d5a7b506354356d3ce34c59a4ab0e61b1a52721d5d3ef91b284bda213319fe3e12c66c4658392d7e411f33c39cb5a15b01
