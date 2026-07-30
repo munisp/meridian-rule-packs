@@ -1,0 +1,80 @@
+# rp-vat-exempt-basket v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# VAT exempt basket (goods and services)
+id: rp-vat-exempt-basket
+version: 1.0.0
+title: VAT exempt basket (goods and services)
+description: 'Exempt supplies: medical and educational services, exported services (pre-NTA), humanitarian/religious non-commercial,
+  shared passenger transport, plays/performances, real property (land/building), money/securities transactions.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: VAT Act First Schedule (as amended by Finance Acts 2019-2021); Nigeria Tax Act 2025 exemption schedule
+  as_gazetted: null
+  source_citation: VAT Act (as amended) First Schedule; Nigeria Tax Act 2025
+rules:
+- id: vat.exempt.medical-services
+  when:
+    item_class: medical_services
+  then:
+    decision: exempt
+    narrate: Medical and healthcare services exempt.
+- id: vat.exempt.education-services
+  when:
+    item_class: educational_services
+  then:
+    decision: exempt
+    narrate: Educational services (tuition) exempt; note overlap with zero-rated educational materials (rp-vat-zerorated-basket).
+- id: vat.exempt.shared-transport
+  when:
+    item_class: shared_passenger_road_transport
+  then:
+    decision: exempt
+    narrate: Shared passenger road transport exempt.
+- id: vat.exempt.plays-performance
+  when:
+    item_class: plays_performances_conducted_by_educational
+  then:
+    decision: exempt
+    narrate: Plays and performances conducted by educational institutions as part of learning.
+- id: vat.exempt.real-property
+  when:
+    item_class:
+      in:
+      - land
+      - building
+      - lease_or_rental_of_real_property
+  then:
+    decision: exempt
+    narrate: Land, buildings and their lease/rental exempt.
+- id: vat.exempt.money-securities
+  when:
+    item_class:
+      in:
+      - money
+      - securities
+      - financial_instruments
+  then:
+    decision: exempt
+    narrate: Money and securities transactions exempt (fees/commissions for financial services remain taxable).
+- id: vat.exempt.humanitarian
+  when:
+    item_class: non_commercial_humanitarian_religious
+  then:
+    decision: exempt
+    narrate: Non-commercial supplies by humanitarian/religious bodies.
+- id: vat.exempt.exported-services-legacy
+  when:
+    item_class: exported_services
+    date:
+      lt: '2026-01-01'
+  then:
+    decision: exempt
+    narrate: Exported services were EXEMPT before 2026; under NTA they move to ZERO-RATED (rp-vat-zerorated-basket) with input
+      recovery.
+  effective_to: '2025-12-31'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 6f69f54cd140a84ab882faa35cc7523d24a0873dfdc3336f7033de6c1706e69643322bd8ff0dd3b58c459ac76d068407b271fd9f7eff339024f110403cc9e40c

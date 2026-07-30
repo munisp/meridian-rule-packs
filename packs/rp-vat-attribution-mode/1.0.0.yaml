@@ -1,0 +1,71 @@
+# rp-vat-attribution-mode v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# VAT attribution mode switch (federal/state) and revenue sharing
+id: rp-vat-attribution-mode
+version: 1.0.0
+title: VAT attribution mode switch (federal/state) and revenue sharing
+description: 'Controls how POS/B2C VAT is attributed: state-of-consumption attribution with derivation-based sharing under
+  NTAA 2025; legacy federal/state switch retained for dual_shadow mode.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Administration Act 2025 — VAT revenue attribution & sharing (derivation-based); pre-2025 VAT Act
+    s.40 sharing formula
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 (s.22/Part on distribution); VAT Act s.40 (legacy)
+rules:
+- id: vat.attr.mode
+  when:
+    engine: pos-vat
+  then:
+    decision: state_of_consumption
+    switch: federal|state
+    narrate: 'Attribution mode: state of consumption (goods -> state where consumed; services -> state where service consumed/performed).
+      Switch flag selects federal vs state attribution path; dual_shadow runs both.'
+- id: vat.attr.goods
+  when:
+    supply: goods
+    delivery_state:
+      present: true
+  then:
+    formula: attribute(state_of_delivery_or_consumption)
+    narrate: Goods attributed to state of final delivery/consumption.
+- id: vat.attr.services
+  when:
+    supply: services
+    consumption_state:
+      present: true
+  then:
+    formula: attribute(state_where_service_consumed)
+    narrate: Services attributed to state where consumed; where indeterminate, bill-to state with reconciliation.
+- id: vat.attr.sharing.ntaa
+  when:
+    regime: NTAA_2025
+  then:
+    table:
+    - level: federal
+      share_bps: 1000
+    - level: states
+      share_bps: 5500
+    - level: lgas
+      share_bps: 3500
+    narrate: 'NTAA 2025 sharing: FG 10%, States 55%, LGAs 35%; states'' share distributed substantially by derivation (place
+      of consumption, rp-attribution-formula 30% factor).'
+- id: vat.attr.sharing.legacy
+  when:
+    regime: legacy
+  then:
+    table:
+    - level: federal
+      share_bps: 1500
+    - level: states
+      share_bps: 5000
+    - level: lgas
+      share_bps: 3500
+    narrate: 'Legacy sharing (pre-2026): FG 15%, States 50%, LGAs 35%.'
+  effective_to: '2025-12-31'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: e7f976c6f146a22a4d9b0710bcaf244970c0be97ee2d171080ed04cc71737a205d501050314dca5a4a80edfab8aa9bcaf16f643e1d0ecc1b313b18acf331fd0b
