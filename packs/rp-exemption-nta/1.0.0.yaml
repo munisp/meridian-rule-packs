@@ -1,0 +1,81 @@
+# rp-exemption-nta v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Exemptions under the Nigeria Tax Act 2025
+id: rp-exemption-nta
+version: 1.0.0
+title: Exemptions under the Nigeria Tax Act 2025
+description: 'NTA exemption rules: small companies (CIT/CGT/Development Levy), minimum-wage PIT exemption, exempt persons
+  and bodies, compensation/CGT reliefs.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — exemption provisions and Schedules
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025
+rules:
+- id: exempt.small-company
+  when:
+    entity: company
+    gross_turnover_kobo:
+      lte: 10000000000
+    total_fixed_assets_kobo:
+      lte: 25000000000
+  then:
+    decision: exempt
+    taxes_exempt:
+    - CIT
+    - CGT
+    - DevelopmentLevy
+    narrate: 'Small company (turnover <= N100m and fixed assets <= N250m): 0% CIT, exempt from CGT and Development Levy. Professional-services
+      companies excluded from small-company status.'
+  citation: NTA 2025, s.56 & Eleventh Schedule
+- id: exempt.pit.minimum-wage
+  when:
+    annual_income_kobo:
+      lte: 80000000
+  then:
+    decision: exempt
+    narrate: National minimum wage earners exempt from PIT (0% band to N800,000).
+- id: exempt.bodies
+  when:
+    entity_type:
+      in:
+      - government
+      - ecclesiastical
+      - charitable
+      - educational_public
+      - cooperative_registered
+  then:
+    decision: exempt
+    condition: non_commercial_income_only
+    narrate: Exempt bodies retain exemption for non-commercial income; commercial profits are taxable.
+- id: exempt.cgt.compensation
+  when:
+    payment_type: compensation_for_loss_of_office
+    amount_kobo:
+      lte: 5000000000
+  then:
+    decision: exempt
+    narrate: Compensation for loss of office/employment up to N50m exempt from CGT.
+- id: exempt.dividend.small-payer
+  when:
+    payment_type: dividend
+    payer_size: small
+  then:
+    decision: exempt
+    narrate: Dividends paid by small companies exempt from WHT and further tax in shareholders' hands.
+- id: exempt.agriculture.holiday
+  when:
+    sector:
+      in:
+      - agriculture_primary
+      - agro_processing
+  then:
+    decision: tax_holiday
+    duration_years: 5
+    narrate: Priority-sector reliefs per NTA schedules; details subject to gazette.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: d67fb5547f2a68c1d599cd66517bc38107ce55dc952ab7578d8e1059c460f7b0e17431c7fb75238b0d3abf2979e62216b35f43dd6a62345052949568757c7204
