@@ -1,0 +1,59 @@
+# rp-nta-vasp-duties v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NTA duties of virtual/digital asset service providers
+id: rp-nta-vasp-duties
+version: 1.0.0
+title: NTA duties of virtual/digital asset service providers
+description: 'VASP duties under the Nigeria Tax Act 2025: registration with NRS, transaction reporting, record keeping, returns,
+  and customer identification.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — obligations of virtual asset service providers; NRS VASP reporting
+    guidance (awaiting gazette)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025 (VASP obligations); NRS guidance (pending)
+rules:
+- id: vasp.register.nrs
+  when:
+    entity: vasp
+    operating_in_nigeria: true
+  then:
+    decision: register
+    deadline_days: 30
+    narrate: VASPs operating in Nigeria must register with NRS within 30 days of commencement.
+- id: vasp.report.transactions
+  when:
+    entity: vasp
+  then:
+    decision: report_monthly
+    narrate: Monthly return of customer digital-asset transactions (aggregate per customer, gains computation data) to NRS.
+- id: vasp.records.keep
+  when:
+    entity: vasp
+  then:
+    retention_years: 6
+    narrate: Keep customer identity and transaction records for at least 6 years.
+- id: vasp.kyc.identify
+  when:
+    entity: vasp
+    customer:
+      present: true
+  then:
+    decision: identify
+    fields:
+    - tin_or_nin
+    - name
+    - address
+    narrate: Identify customers (TIN or NIN) before executing transactions; unverified customers reportable with flag.
+- id: vasp.carf.align
+  when:
+    entity: vasp
+  then:
+    decision: dual_report
+    narrate: VASP reports feed both NTA returns and CARF message build (rp-carf-schema) once gates arm.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 140a3e0c41f7349bed8959e84e24f5a4398730e0695beec82387f427ede4fa9207de46a865832790f7418dc4d6ca697d8c098390c3cea295e78da48978ad4202

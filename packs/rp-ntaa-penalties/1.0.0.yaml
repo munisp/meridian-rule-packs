@@ -1,0 +1,84 @@
+# rp-ntaa-penalties v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# NTAA 2025 administrative penalty table
+id: rp-ntaa-penalties
+version: 1.0.0
+title: NTAA 2025 administrative penalty table
+description: 'Penalty schedule under the Nigeria Tax Administration Act 2025: failure to register/file, late filing, failure
+  to deduct/remit, non-compliance with e-invoicing, VASP default; interest on unpaid tax.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Administration Act 2025 — offences and penalties provisions
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 (penalty provisions)
+rules:
+- id: pen.late-filing.cit
+  when:
+    tax: CIT
+    default: late_filing
+  then:
+    table:
+    - period: first_month
+      penalty_kobo: 10000000
+    - period: each_subsequent_month
+      penalty_kobo: 5000000
+    narrate: 'Late CIT filing: N100,000 first month + N50,000 each subsequent month.'
+- id: pen.late-filing.vat
+  when:
+    tax: VAT
+    default: late_filing
+  then:
+    table:
+    - period: first_month
+      penalty_kobo: 10000000
+    - period: each_subsequent_month
+      penalty_kobo: 5000000
+    narrate: 'Late VAT returns: N100,000 first month + N50,000 subsequent months.'
+- id: pen.register.failure
+  when:
+    default: failure_to_register
+  then:
+    penalty_kobo: 5000000
+    narrate: 'Failure to register for tax: N50,000 (first month) with continuing default sanctions.'
+- id: pen.wht.failure-deduct
+  when:
+    default: failure_to_deduct_or_remit_wht
+  then:
+    formula: penalty = 0.40 * amount_not_deducted + interest_at_cbn_mpr
+    narrate: 'Failure to deduct/remit WHT: penalty 40% of the amount not deducted plus interest at CBN MPR (one-off).'
+- id: pen.interest.unpaid
+  when:
+    default: unpaid_tax
+  then:
+    formula: interest = principal * (cbn_mpr_bps + spread_bps)/10000 * days/365
+    narrate: Interest on unpaid tax at CBN monetary policy rate plus spread per NTAA.
+- id: pen.einvoicing.noncompliance
+  when:
+    default: e_invoicing_non_compliance
+    taxpayer_class: large
+  then:
+    penalty_kobo: 100000000
+    plus: per_day_continuing
+    narrate: 'Failure to use e-invoicing where mandated (MBS): N1,000,000 plus daily continuing default.'
+- id: pen.vasp.default
+  when:
+    default: vasp_reporting_failure
+  then:
+    table:
+    - period: first_day
+      penalty_kobo: 1000000000
+    - period: each_subsequent_day
+      penalty_kobo: 100000000
+    narrate: 'VASP failure to furnish returns: N10m first day + N1m each subsequent day; licence suspension risk.'
+- id: pen.relief.reasonable-excuse
+  when:
+    taxpayer_reasonable_excuse: true
+  then:
+    decision: waive_or_reduce
+    narrate: Penalties may be waived/reduced for reasonable excuse; decision logged to audit trail.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 8493bdc5cacbe7e8b0ed53f1d1693fb06b1725bebf7f8b43fe1ae7628b583c9c81b1e8c3a71e8b57fa7b6afd6e647f86ab185a7edd6f107c8777831bcb1f860c
