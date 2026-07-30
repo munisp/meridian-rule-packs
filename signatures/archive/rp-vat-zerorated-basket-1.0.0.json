@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-vat-zerorated-basket",
+  "version": "1.0.0",
+  "sha256": "ccdc42b7dbb5d956c829e14724b49f030eab08fecb1f7acebe2dc4540478c827",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-zerorated-basket/1.0.0/ccdc42b7dbb5d956.yaml",
+  "archived_at": "2026-07-30T04:12:07Z",
+  "key_id": "governance-board-2026",
+  "signature": "86ce4a90729c6c5aabcf7178d1296423c5d12163e31a7ac4dbfe0d21705732dfca884e6e62d043e8c2c389301733ab255b5ba980e106e50f06a3e6554f592100",
+  "publish_event_id": "01KYRKHWVKF5N7C7E84A03PYTX",
+  "immutable": true
+}

@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-procedure-ombud",
+  "version": "1.0.0",
+  "sha256": "24e3c16e44856de281fd646f80e357b4df9c8210a7695200b81051f2a646dc23",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-procedure-ombud/1.0.0/24e3c16e44856de2.yaml",
+  "archived_at": "2026-07-30T04:12:07Z",
+  "key_id": "governance-board-2026",
+  "signature": "19da8923e244750c9ecb2bb57daaf1d98c895df1f7ad6af3abe06bfd02fb54e847bbb03465f7eb3f915d7a98b0b5e0d25ab338718714677ded768a20094f260b",
+  "publish_event_id": "01KYRKHWKWE5RD755S25MKZ6GB",
+  "immutable": true
+}

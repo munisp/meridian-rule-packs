@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-sec-vasp-rules",
+  "version": "1.0.0",
+  "sha256": "18f77b41eb7d3ad2c5bb00670a113d12441920b2b1861e0aa9fa6b4795d5c143",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-sec-vasp-rules/1.0.0/18f77b41eb7d3ad2.yaml",
+  "archived_at": "2026-07-30T04:12:07Z",
+  "key_id": "governance-board-2026",
+  "signature": "61fb61aeca423f08d5a13ba3a8c26508cb4c35567c47f9076ae0ddcb8c555626c4735717216ff6f7e1b8ab119a6dad0a8a47625cb0a6c3f527ae3d234b6dfe04",
+  "publish_event_id": "01KYRKHWNE1KNQF3A76EJDSEQ1",
+  "immutable": true
+}

@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-tp-2018",
+  "version": "1.0.0",
+  "sha256": "a43880199de930789dfc0976abab75ff7912a21b6fb94188d33e9453f4f129dd",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-tp-2018/1.0.0/a43880199de93078.yaml",
+  "archived_at": "2026-07-30T04:12:07Z",
+  "key_id": "governance-board-2026",
+  "signature": "df5b3a6dc4fe530647a12d31198eee34c093bb55ca2f91883a7e206c9e989dbeed6b4401c8f6f32600d7fa67bd22ffce9e9b9c7eece41484effc80d427843b00",
+  "publish_event_id": "01KYRKHWPP3RPTVQ3SC6A4Z5PZ",
+  "immutable": true
+}
