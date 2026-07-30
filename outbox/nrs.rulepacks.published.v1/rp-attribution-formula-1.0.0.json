@@ -9,7 +9,7 @@
   "data": {
     "pack_id": "rp-attribution-formula",
     "version": "1.0.0",
-    "title": "NTAA VAT attribution formula — place-of-consumption with 30% derivation factor",
+    "title": "NTAA VAT attribution formula \u2014 place-of-consumption with 30% derivation factor",
     "effective_from": "2026-01-01",
     "effective_to": null,
     "subject_to_regazette": true,
@@ -18,7 +18,7 @@
     "sha256": "17791515bf72c684ce49088d3d183b85aa90f5e4a68d01da847f7facec9869b9",
     "key_id": "governance-board-2026",
     "provenance": {
-      "as_passed": "Nigeria Tax Administration Act 2025 — VAT distribution by derivation (place-of-consumption attribution); Joint Revenue Board attribution framework",
+      "as_passed": "Nigeria Tax Administration Act 2025 \u2014 VAT distribution by derivation (place-of-consumption attribution); Joint Revenue Board attribution framework",
       "as_gazetted": null,
       "source_citation": "Nigeria Tax Administration Act 2025 (VAT sharing/attribution provisions)"
     }
