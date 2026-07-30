@@ -1,0 +1,55 @@
+# rp-etr-cfc v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Controlled foreign company (CFC) rules
+id: rp-etr-cfc
+version: 1.0.0
+title: Controlled foreign company (CFC) rules
+description: 'NTA CFC regime: undistributed profits of a controlled foreign company deemed distributed to the Nigerian parent
+  where the CFC could have distributed without prejudice to its existence; interaction with GloBE CFC-blended pools.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — controlled foreign company provisions; OECD GloBE Art. 4.3.2(c)
+    push-down of CFC taxes
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025 (CFC provisions); OECD GloBE Model Rules Art. 4.3
+rules:
+- id: cfc.control-test
+  when:
+    ownership_pct:
+      gte: 50
+    direct_or_indirect: true
+  then:
+    decision: cfc
+    narrate: A foreign company is a CFC where a Nigerian resident company directly or indirectly controls >= 50% (alone or
+      with associates).
+- id: cfc.deemed-distribution
+  when:
+    cfc: true
+    dividend_distributed: false
+    distribution_possible: true
+  then:
+    decision: deem_profit_distributed
+    deadline_months: 12
+    narrate: Undistributed CFC profits deemed distributed (as dividend) to the Nigerian parent where distribution would not
+      prejudice the CFC's existence; taxed in the year of the CFC's financial year end.
+- id: cfc.credit.wht-paid
+  when:
+    cfc: true
+    wht_paid_on_actual_distribution: true
+  then:
+    decision: credit_available
+    narrate: Credit for foreign tax on actual distributions against tax charged on deemed distributions (avoid double tax).
+- id: cfc.globe.blended-pool
+  when:
+    mechanism: GloBE
+    cfc: true
+  then:
+    formula: cfc_taxes_push_down_to_ce(etr_bps_cfc_jurisdiction < 1500)
+    narrate: For GloBE purposes CFC taxes are pushed down to the CFC jurisdiction (blended CFC pool for transition years)
+      per Art. 4.3.2(c).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 602a2f508722ea0b94dac7f17a9eb21031bd8f5efdeeaba5322661c574bfa36ac22c40a3d0625d492ee72899508586086ce478261fbcaaef3adb9d2ea892f906

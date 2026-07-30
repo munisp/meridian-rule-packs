@@ -1,0 +1,158 @@
+# rp-education-ng v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Nigeria tax education effective-dated tables (PIT, CIT, VAT, rent relief)
+id: rp-education-ng
+version: 1.0.0
+title: Nigeria tax education effective-dated tables (PIT, CIT, VAT, rent relief)
+description: 'Effective-dated headline tables used by T14 calculators: PIT bands (0% up to N800,000 ... top 25% above N50m),
+  rent relief 20% capped N500,000, CIT 30%, small-company 0% at N100m turnover / N250m fixed assets, VAT 7.5%.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Act 2025 (NTA), signed 26 June 2025 — First/Second Schedules (PIT), Part on CIT & VAT
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025
+rules:
+- id: pit.band.1
+  when:
+    annual_taxable_income_kobo:
+      lte: 80000000
+  then:
+    rate_bps: 0
+    band_order: 1
+    narrate: First N800,000 of taxable income taxed at 0%
+    effective_from: '2026-01-01'
+  citation: NTA 2025, First Schedule
+- id: pit.band.2
+  when:
+    annual_taxable_income_kobo:
+      gt: 80000000
+      lte: 300000000
+  then:
+    rate_bps: 1500
+    band_order: 2
+    narrate: Next N2,200,000 at 15%
+- id: pit.band.3
+  when:
+    annual_taxable_income_kobo:
+      gt: 300000000
+      lte: 1200000000
+  then:
+    rate_bps: 1800
+    band_order: 3
+    narrate: Next N9,000,000 at 18%
+- id: pit.band.4
+  when:
+    annual_taxable_income_kobo:
+      gt: 1200000000
+      lte: 2500000000
+  then:
+    rate_bps: 2100
+    band_order: 4
+    narrate: Next N13,000,000 at 21%
+- id: pit.band.5
+  when:
+    annual_taxable_income_kobo:
+      gt: 2500000000
+      lte: 5000000000
+  then:
+    rate_bps: 2300
+    band_order: 5
+    narrate: Next N25,000,000 at 23%
+- id: pit.band.6
+  when:
+    annual_taxable_income_kobo:
+      gt: 5000000000
+  then:
+    rate_bps: 2500
+    band_order: 6
+    narrate: Above N50,000,000 at 25% (top marginal rate)
+- id: pit.rent-relief
+  when:
+    rent_paid: true
+  then:
+    formula: min(rent_paid_kobo * 0.20, 50000000)
+    cap_kobo: 50000000
+    rate_bps: 2000
+    narrate: Rent relief = 20% of annual rent paid, capped at N500,000 (replaces consolidated relief allowance for rent component)
+  citation: NTA 2025, s.30
+- id: pit.minimum-wage-exempt
+  when:
+    annual_income_kobo:
+      lte: 80000000
+  then:
+    decision: exempt
+    narrate: Persons earning the national minimum wage or less are exempt from PIT.
+- id: cit.standard-rate
+  when:
+    entity: company
+    size:
+      in:
+      - medium
+      - large
+  then:
+    rate_bps: 3000
+    narrate: CIT standard rate 30%
+- id: cit.small-company.zero
+  when:
+    entity: company
+    gross_turnover_kobo:
+      lte: 10000000000
+    total_fixed_assets_kobo:
+      lte: 25000000000
+  then:
+    rate_bps: 0
+    narrate: 'Small company (turnover <= N100m AND fixed assets <= N250m): 0% CIT, exempt from CGT and Development Levy'
+  citation: NTA 2025, s.56
+- id: cit.development-levy
+  when:
+    entity: company
+    size:
+      in:
+      - medium
+      - large
+  then:
+    rate_bps: 400
+    narrate: Development Levy 4% of assessable profit (consolidates TET, NASENI, NITDA, Police Fund levies) for non-small
+      companies
+- id: vat.standard-rate
+  when:
+    supply_class: standard
+  then:
+    rate_bps: 750
+    narrate: VAT standard rate 7.5% (unchanged by NTA)
+  effective_from: '2020-02-01'
+- id: vat.registration-threshold
+  when:
+    entity:
+      in:
+      - company
+      - individual
+      - platform
+  then:
+    threshold:
+      annual_taxable_supplies_kobo: 10000000000
+    narrate: VAT registration threshold aligned to N100m taxable supplies under NTA
+- id: wht.quick-rates
+  when:
+    calculator: wht_quick
+  then:
+    table:
+    - payment_type: dividend_interest_rent
+      company_bps: 1000
+      individual_bps: 1000
+    - payment_type: royalty
+      company_bps: 1000
+      individual_bps: 500
+    - payment_type: services_commission
+      company_bps: 500
+      individual_bps: 500
+    - payment_type: goods_construction
+      company_bps: 200
+      individual_bps: 200
+    narrate: Quick-calc WHT summary mirroring rp-wht-2024
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 9cd922ab698d558dc337e27c039effbf5efa0b16fab1028b679475484251f985a8f2a1458f4dfb6fdc10b1b104a86265fd73aafc4660f9db89e9e46f810d190e
