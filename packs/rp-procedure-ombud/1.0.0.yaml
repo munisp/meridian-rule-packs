@@ -1,0 +1,83 @@
+# rp-procedure-ombud v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Office of the Tax Ombud — case procedure rules
+id: rp-procedure-ombud
+version: 1.0.0
+title: Office of the Tax Ombud — case procedure rules
+description: 'Tax Ombud (NTAA 2025): complaint intake, eligibility, deadlines, powers and case lifecycle for the Ombud registry
+  service (T13i); activation gated in reg-watch.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Nigeria Tax Administration Act 2025 — Part establishing the Office of the Tax Ombud
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 (Tax Ombud provisions)
+rules:
+- id: ombud.jurisdiction
+  when:
+    complaint:
+      against:
+        in:
+        - NRS
+        - SIRS
+        - JRB
+      type:
+        in:
+        - service_failure
+        - delay
+        - administrative_unfairness
+        - rights_violation
+  then:
+    decision: admissible
+    narrate: Ombud reviews complaints about tax authority service/administrative failures; NOT assessment merits (those go
+      to TAT).
+- id: ombud.intake.deadline
+  when:
+    event: complaint_received
+  then:
+    acknowledge_within_days: 7
+    decision: acknowledge
+    narrate: Acknowledge complaints within 7 days; assign case serial.
+- id: ombud.resolution.target
+  when:
+    case_state: open
+  then:
+    resolve_within_days: 30
+    narrate: Target resolution within 30 days; extension max 30 days with recorded reasons.
+- id: ombud.prior-channel
+  when:
+    complainant_exhausted_internal_review: false
+  then:
+    decision: refer_back
+    condition: unless_urgent_or_futility
+    narrate: Complainant should first use the authority's internal review unless urgent or futile.
+- id: ombud.powers
+  when:
+    case_state: investigating
+  then:
+    table:
+    - request_documents
+    - require_officer_response(14 days)
+    - recommend_remedy
+    - publish_systemic_findings
+    narrate: Investigative powers; recommendations binding unless overturned by TAT/court.
+- id: ombud.gate.activation
+  when:
+    service: ombud
+  then:
+    decision: gated
+    gates:
+    - ombud.activation
+    narrate: Ombud rules active only when reg-watch activation gate armed (rules gazetted).
+- id: ombud.deposit.link
+  when:
+    appeal: tat
+    ombud_complaint_pending: true
+  then:
+    decision: independent_tracks
+    narrate: Ombud complaint does not stay a TAT appeal or the 20% deposit rule (rp-deposit-20pct).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 19da8923e244750c9ecb2bb57daaf1d98c895df1f7ad6af3abe06bfd02fb54e847bbb03465f7eb3f915d7a98b0b5e0d25ab338718714677ded768a20094f260b
