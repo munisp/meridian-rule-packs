@@ -1,0 +1,66 @@
+# rp-platform-collectors v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Platform / marketplace VAT collection rules
+id: rp-platform-collectors
+version: 1.0.0
+title: Platform / marketplace VAT collection rules
+description: Non-resident digital platforms and appointed marketplaces collect VAT on supplies to Nigerian consumers; registration
+  via simplified portal; reverse charge fallback.
+effective_from: '2022-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: FIRS Guidelines on Simplified Compliance Regime for VAT for Non-Resident Suppliers (2022); Finance Act 2019 s.10;
+    Nigeria Tax Act 2025 (agent-of-collection powers)
+  as_gazetted: null
+  source_citation: FIRS NRS VAT Guidelines (2022); Nigeria Tax Act 2025
+rules:
+- id: vat.nrs-platform.collect
+  when:
+    supplier: non_resident_digital_platform
+    customer: nigerian_consumer
+  then:
+    decision: platform_collects_vat
+    rate_bps: 750
+    narrate: Non-resident digital platforms register via simplified regime and charge/collect 7.5% VAT on digital supplies
+      to Nigerian consumers (B2C).
+- id: vat.nrs-platform.threshold
+  when:
+    supplier: non_resident_digital_platform
+  then:
+    threshold:
+      annual_nigeria_supplies_usd: 25000
+      annual_nigeria_supplies_kobo: 2500000000
+    narrate: Registration obligation at USD 25,000 (or naira equivalent ~N25m) annual Nigerian supplies.
+- id: vat.nrs-platform.b2b-reverse-charge
+  when:
+    supplier: non_resident_digital_platform
+    customer: nigerian_business_vat_registered
+  then:
+    decision: self_account_reverse_charge
+    narrate: 'B2B: Nigerian VAT-registered customer self-accounts for VAT (reverse charge) where platform not appointed.'
+- id: vat.appointed-collector
+  when:
+    person:
+      in:
+      - marketplace_operator
+      - payment_processor
+      - betting_gaming_platform
+  then:
+    decision: appointed_agent_of_collection
+    narrate: NRS may appoint any person (incl. marketplaces) as VAT collection agent; appointed agents remit by the 21st of
+      the following month.
+- id: vat.platform.invoice-rule
+  when:
+    collector: true
+  then:
+    decision: issue_tax_invoice
+    fields:
+    - vat_amount
+    - platform_vat_id
+    - customer_tin_b2b
+    narrate: Platform-issued invoices must show VAT separately (UBL fields per rp-ubl-bis).
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 17909d2b465d11de1bbfe482c0c447128bfb2d6417de15dc84bd790eaf2a03785dcd87502159e9587635d9ca1392ce791ebdb778503dd7fcd58931835007fb0e

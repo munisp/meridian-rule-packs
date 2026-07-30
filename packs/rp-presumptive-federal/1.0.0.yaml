@@ -1,0 +1,66 @@
+# rp-presumptive-federal v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Federal presumptive tax band amounts (NRS / FCT default)
+id: rp-presumptive-federal
+version: 1.0.0
+title: Federal presumptive tax band amounts (NRS / FCT default)
+description: 'Federal default presumptive band table: fixed annual tax per turnover band for informal-sector operators. Payment
+  via PSM rail (T12); certificate issued on payment.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: NRS informal-sector presumptive taxation framework under NTA 2025 (regulations awaited)
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)
+rules:
+- id: presumptive.table.federal
+  when:
+    jurisdiction: federal
+    operator: informal
+  then:
+    table:
+    - band: micro
+      annual_tax_kobo: 250000
+    - band: small
+      annual_tax_kobo: 750000
+    - band: lower_medium
+      annual_tax_kobo: 1500000
+    - band: medium
+      annual_tax_kobo: 3000000
+    - band: upper_medium
+      annual_tax_kobo: 6000000
+    - band: large_informal
+      annual_tax_kobo: 12000000
+    narrate: Federal presumptive annual amounts per turnover band
+- id: presumptive.eligibility
+  when:
+    operator: informal
+    tin_registered: false
+  then:
+    decision: eligible
+    narrate: Unregistered informal operators in turnover bands 1-6 pay presumptive amounts in lieu of PIT.
+- id: presumptive.exempt.micro
+  when:
+    band: micro
+    annual_turnover_kobo:
+      lte: 80000000
+  then:
+    rate_bps: 0
+    narrate: Operators at or below the N800,000 PIT-exempt line pay nothing (but may register voluntarily).
+- id: presumptive.payment.certificate
+  when:
+    payment_status: captured
+  then:
+    decision: issue_certificate
+    narrate: On captured payment, issue presumptive tax certificate with verifiable serial (T12).
+- id: presumptive.split.levy
+  when:
+    payment_status: captured
+  then:
+    formula: levy_split(attribution_state)
+    narrate: Amount split per attribution feed (rp-attribution-formula) between state and federal share where applicable.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 17c2de0da220db1ff5770d988c6a1d460ac488d159bd9b6228461dcb8a5e0a5846530a830008def333ae8109dac0bc4262ef29f40f8f04104a61e162ef231b08
