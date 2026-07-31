@@ -9,20 +9,20 @@ ceremony with real ed25519 signatures.
 ## Layout
 
 ```
-packs/<pack-id>/<version>.yaml   # 35 packs, v1.0.0 each, signed & published
+packs/<pack-id>/<version>.yaml   # 39 packs, v1.0.0 each, signed & published
 schemas/rulepack.schema.json     # JSON Schema (draft 2020-12) for the §1.4 grammar
 tools/validate.py                # schema + ed25519 signature + WORM archive validation
 tools/ceremony.py                # §9.1 ceremony: draft→review→simulate→sign→publish→archive
 tools/rpcommon.py                # canonicalisation, keys, ULID, §1.1 event envelope
 tools/keys/                      # DEV ed25519 keypair (governance-board-2026) — not prod
-tests/                           # pytest suite (validator + ceremony, 154 tests)
+tests/                           # pytest suite (validator + ceremony + boundaries)
 signatures/archive/              # WORM archive records (sha256 + worm_uri per pack)
 outbox/nrs.rulepacks.published.v1/  # publish events (SPEC §1.1 envelope)
 GOVERNANCE.md                    # ceremony definition and change management
-.github/workflows/validate.yml   # CI: validate + test on every change
+ci/workflows/validate.yml        # CI: validate + test on every change
 ```
 
-## Packs (35)
+## Packs (39)
 
 | Pack | Domain |
 |---|---|
@@ -38,19 +38,33 @@ GOVERNANCE.md                    # ceremony definition and change management
 | rp-procedure-ombud / rp-procedure-tat / rp-ntaa-penalties / rp-deposit-20pct | Tax Ombud procedure, TAT appeals, NTAA penalty table, 20% appeal deposit rule |
 | rp-ubl-bis / rp-mbs-business-rules | UBL 2.1/Peppol BIS mandatory fields, MBS e-invoicing business validation (totals consistency, VAT arithmetic, IRN/stamp binding) |
 | rp-disclosure-control / rp-bank-thresholds | k-anonymity k=5 disclosure control, bank reporting/cash thresholds |
+| rp-stamp-duty | Stamp duties: EMTL ₦50 on transfers ≥₦10k, ad valorem (agreements 0.1%, share capital/securities 0.75%, mortgages 0.375%, conveyance 1.5%), 30-day stamping deadline, adjudication |
+| rp-cgt | Capital gains: legacy 10% flat (to 2025-12-31), NTA alignment from 2026 (30% medium/large companies, 0% small companies, PIT marginal for individuals), residence/compensation ₦50m/gov-securities reliefs |
+| rp-paye-pitra-legacy | Pre-2026 PAYE/PIT: PITA bands 7/11/15/19/21/24%, CRA (higher of ₦200k or 1% + 20% of gross), exempt deductions (pension/NHF/NHIS/life), 1% minimum tax, PAYE remit 10th |
+| rp-fmt-federal | Federal filing calendar: VAT 21st, WHT 21st (companies)/30th (individuals), PAYE 10th, CIT 6 months after year-end, DevLevy with CIT, stamp duty 30 days, e-invoice clearance before issuance |
+
 
 ## Money convention
 
 All monetary amounts are **integer kobo** (SPEC §1.3; fields suffixed `_kobo`).
 EUR scope thresholds use `_eur`. Rates are basis points (`*_bps`: 1000 bps = 10%).
 
+## Boundary convention (I13)
+
+Packs defining adjacent turnover/income bands declare
+`boundary_semantics: min_inclusive_max_exclusive`: every band is `[min, max)` —
+a value exactly on a shared boundary belongs to the **higher** band. The
+presumptive ceiling (`rp-turnover-bands` band.exit.register, `gte` ₦100m) is
+aligned with the VAT registration threshold (`rp-vat-rates`, `gte` ₦100m from
+2026-01-01; legacy ₦25m before).
+
 ## Quickstart
 
 ```bash
 python3 -m venv venv && . venv/bin/activate   # or system python 3.12
 pip install -r requirements.txt
-python tools/validate.py     # 35/35 packs valid (schema + signature + archive)
-pytest -q                    # 154 passed
+python tools/validate.py     # 39/39 packs valid (schema + signature + archive)
+pytest -q                    # 176 passed
 python tools/ceremony.py --all   # idempotent re-run of the §9.1 ceremony
 ```
 
