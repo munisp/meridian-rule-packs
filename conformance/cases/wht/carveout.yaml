@@ -1,0 +1,53 @@
+# Small-company carve-out (reg. 5) — the four T5 cases plus the
+# no-TIN-never-zero regression, each asserting kobo arithmetic, not just rates.
+# NOTE: SPEC-LCE §2.2's example showed wht_kobo 600000 for amount_kobo
+# 150000000 at 400bps; the correct floor arithmetic is 150000000*400//10000
+# = 6000000 (N60,000 = 4% of N1.5m). These cases assert the correct value.
+case_set:
+  id: wht.carveout
+  area: wht
+  pack: rp-wht-2024
+  statute_sections: [wht-regs-2024:reg-5.small-company-carveout]
+  default_facts:
+    payment_type: services
+    beneficiary: company
+    payer_size: small
+    payer_annual_turnover_kobo: 2000000000      # N20m p.a. (<= N25m small)
+    transaction_month_value_kobo: 150000000     # N1.5m in the month (<= N2m)
+    amount_kobo: 150000000
+    date: '2025-03-01'
+
+cases:
+  - id: wht.carveout.granted-with-tin
+    facts: {supplier_tin: SUP-TIN-000001}
+    expect:
+      rate_bps: 0
+      wht_kobo: 0
+      rule_id: wht.small-co.carveout
+      outcome: small_company_carveout            # engine-mode only
+
+  - id: wht.carveout.denied-without-supplier-tin
+    facts: {supplier_tin: null}
+    expect:
+      rate_bps: 400                              # 2% other-services x 2 (no-TIN double, active income)
+      wht_kobo: 6000000                          # N60,000 = N1.5m x 4%
+      outcome: deduct_no_tin_double              # engine-mode only
+
+  - id: wht.carveout.denied-payer-not-small
+    facts: {supplier_tin: SUP-TIN-000001, payer_size: large}
+    expect:
+      rate_bps: 200
+      wht_kobo: 3000000
+
+  - id: wht.carveout.denied-over-2m-month
+    facts: {supplier_tin: SUP-TIN-000001, transaction_month_value_kobo: 200000001}
+    expect:
+      rate_bps: 200
+      wht_kobo: 3000000
+
+  - id: wht.carveout.no-tin-never-zero
+    facts: {supplier_tin: null}
+    expect:
+      rate_bps: 400                              # carve-out must never fire without a supplier TIN
+      wht_kobo: 6000000
+      outcome: deduct_no_tin_double              # engine-mode only
