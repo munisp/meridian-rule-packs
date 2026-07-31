@@ -61,6 +61,7 @@ rules:
     rate_bps: 1100
     band_order: 2
     narrate: Next N300,000 at 11%.
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.band.3
   when:
     annual_taxable_income_kobo:
@@ -70,6 +71,7 @@ rules:
     rate_bps: 1500
     band_order: 3
     narrate: Next N500,000 at 15%.
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.band.4
   when:
     annual_taxable_income_kobo:
@@ -79,6 +81,7 @@ rules:
     rate_bps: 1900
     band_order: 4
     narrate: Next N500,000 at 19%.
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.band.5
   when:
     annual_taxable_income_kobo:
@@ -88,6 +91,7 @@ rules:
     rate_bps: 2100
     band_order: 5
     narrate: Next N1,600,000 at 21%.
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.band.6
   when:
     annual_taxable_income_kobo:
@@ -96,6 +100,7 @@ rules:
     rate_bps: 2400
     band_order: 6
     narrate: Above N3,200,000 at 24% (top marginal rate under PITA).
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.minimum-tax
   when:
     taxable_income_after_reliefs_kobo:
@@ -114,6 +119,7 @@ rules:
     narrate: 'Persons earning the national minimum wage or less exempt from PIT. NOTE (legacy window): the N30,000/month (N360,000/yr)
       minimum wage applied 2019-2024; the N70,000/month (N840,000/yr) wage applies from July 2024 — implementations must apply
       the wage floor in force on the payroll date.'
+  citation: "PITA (as amended by PITAM 2011)"
 - id: paye.remit.deadline
   when:
     tax: PIT_PAYE
@@ -125,4 +131,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 7cc0044b2fafb967ab8b75972a25328944189ba02c1234cd6e107e0ea1e6a231b7352c38a3bf3f6b04b9f5da21a748adfc0e12295dccde9839a2092e7f4cc90e
+  signature: 0199d3fadc98ca36255a497617f6cfdaa161918307446fb49d773d631fbdb64e07c8847ea750f05a81ef81f59add4876c95b16a6bb4ae6a095322c2d6480f20e

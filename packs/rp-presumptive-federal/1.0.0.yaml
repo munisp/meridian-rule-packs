@@ -33,6 +33,7 @@ rules:
     - band: large_informal
       annual_tax_kobo: 12000000
     narrate: Federal presumptive annual amounts per turnover band
+  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
 - id: presumptive.eligibility
   when:
     operator: informal
@@ -40,6 +41,7 @@ rules:
   then:
     decision: eligible
     narrate: Unregistered informal operators in turnover bands 1-6 pay presumptive amounts in lieu of PIT.
+  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
 - id: presumptive.exempt.micro
   when:
     band: micro
@@ -48,19 +50,22 @@ rules:
   then:
     rate_bps: 0
     narrate: Operators at or below the N800,000 PIT-exempt line pay nothing (but may register voluntarily).
+  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
 - id: presumptive.payment.certificate
   when:
     payment_status: captured
   then:
     decision: issue_certificate
     narrate: On captured payment, issue presumptive tax certificate with verifiable serial (T12).
+  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
 - id: presumptive.split.levy
   when:
     payment_status: captured
   then:
     formula: levy_split(attribution_state)
     narrate: Amount split per attribution feed (rp-attribution-formula) between state and federal share where applicable.
+  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations, post-regulation gate armed)"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 17c2de0da220db1ff5770d988c6a1d460ac488d159bd9b6228461dcb8a5e0a5846530a830008def333ae8109dac0bc4262ef29f40f8f04104a61e162ef231b08
+  signature: ee7753a0154bce589c42448bafaef81c24ec1b824980d4c42e3a02946ac739570f86dea776dc0670bc3b9242b31f646c92fdad65e0f30dc642df321f81a32e05
