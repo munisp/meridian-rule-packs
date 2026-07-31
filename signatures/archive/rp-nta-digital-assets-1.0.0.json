@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-nta-digital-assets",
   "version": "1.0.0",
-  "sha256": "ae1c63cbaa470491ac59f5a2a1c6aeba02988b9861a48156775a4acc9ac0d03e",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-nta-digital-assets/1.0.0/ae1c63cbaa470491.yaml",
-  "archived_at": "2026-07-30T04:12:06Z",
+  "sha256": "b8b8f15b350a2083e0f07c9ca7e7641bdbb41c1536c97198b89104bd0fbf6fca",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-nta-digital-assets/1.0.0/b8b8f15b350a2083.yaml",
+  "archived_at": "2026-07-31T16:12:18Z",
   "key_id": "governance-board-2026",
-  "signature": "a5ece4abec4832399bd9710da60b35ce5611a2d3b9180d4d08e8689e138ba2642e84e3962cdc0ab79bed8926ee512c8f327ddd844a4feca053289b3981a8ce0f",
+  "signature": "9452ea44e5aa556beef8ac0c0adbc510a2760e9281de12e28d72bf0f2487c966f8ac3221846dadb8e831f595c6c18474740ac7495b454aa15573ab3c95cb2e0f",
   "publish_event_id": "01KYRKHWECFHWC7Y0MN7788TF4",
   "immutable": true
 }
