@@ -3,8 +3,9 @@
 id: rp-vat-exempt-basket
 version: 1.0.0
 title: VAT exempt basket (goods and services)
-description: 'Exempt supplies: medical and educational services, exported services (pre-NTA), humanitarian/religious non-commercial,
-  shared passenger transport, plays/performances, real property (land/building), money/securities transactions.'
+description: 'Exempt supplies: humanitarian/religious non-commercial, shared passenger transport, plays/performances, real
+  property (land/building), money/securities transactions. LEGACY (pre-2026) exemptions retained for medical/educational services
+  and exported services, which NTA 2025 s.187 moves to the zero-rated basket from 2026-01-01.'
 effective_from: '2026-01-01'
 effective_to: null
 status: published
@@ -14,18 +15,28 @@ provenance:
   as_gazetted: null
   source_citation: VAT Act (as amended) First Schedule; Nigeria Tax Act 2025
 rules:
-- id: vat.exempt.medical-services
+- id: vat.exempt.medical-services-legacy
   when:
     item_class: medical_services
+    date:
+      lt: '2026-01-01'
   then:
     decision: exempt
-    narrate: Medical and healthcare services exempt.
-- id: vat.exempt.education-services
+    narrate: 'LEGACY (pre-NTA): medical and healthcare services were EXEMPT before 2026. Under NTA 2025 s.187 they move to
+      ZERO-RATED (rp-vat-zerorated-basket vat.zero.medical-services) with input VAT recovery.'
+  citation: VAT Act (as amended) First Schedule; NTA 2025 s.187
+  effective_to: '2025-12-31'
+- id: vat.exempt.education-services-legacy
   when:
     item_class: educational_services
+    date:
+      lt: '2026-01-01'
   then:
     decision: exempt
-    narrate: Educational services (tuition) exempt; note overlap with zero-rated educational materials (rp-vat-zerorated-basket).
+    narrate: 'LEGACY (pre-NTA): educational services (tuition) were EXEMPT before 2026. Under NTA 2025 s.187 tuition at nursery/primary/secondary/tertiary
+      levels moves to ZERO-RATED (rp-vat-zerorated-basket vat.zero.education-tuition).'
+  citation: VAT Act (as amended) First Schedule; NTA 2025 s.187
+  effective_to: '2025-12-31'
 - id: vat.exempt.shared-transport
   when:
     item_class: shared_passenger_road_transport
@@ -77,4 +88,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 6f69f54cd140a84ab882faa35cc7523d24a0873dfdc3336f7033de6c1706e69643322bd8ff0dd3b58c459ac76d068407b271fd9f7eff339024f110403cc9e40c
+  signature: 0d91f493d43c05b3cbfb1f52e9484c5f80e41e4d6ada55a12265e5f86d1e6d845140ca85b71e8b673d7510fb0cd5adfb6c810e80c58b4d3a86dfe89631298b00
