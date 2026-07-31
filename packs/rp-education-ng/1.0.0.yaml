@@ -33,6 +33,7 @@ rules:
     rate_bps: 1500
     band_order: 2
     narrate: Next N2,200,000 at 15%
+  citation: "Nigeria Tax Act 2025"
 - id: pit.band.3
   when:
     annual_taxable_income_kobo:
@@ -42,6 +43,7 @@ rules:
     rate_bps: 1800
     band_order: 3
     narrate: Next N9,000,000 at 18%
+  citation: "Nigeria Tax Act 2025"
 - id: pit.band.4
   when:
     annual_taxable_income_kobo:
@@ -51,6 +53,7 @@ rules:
     rate_bps: 2100
     band_order: 4
     narrate: Next N13,000,000 at 21%
+  citation: "Nigeria Tax Act 2025"
 - id: pit.band.5
   when:
     annual_taxable_income_kobo:
@@ -60,6 +63,7 @@ rules:
     rate_bps: 2300
     band_order: 5
     narrate: Next N25,000,000 at 23%
+  citation: "Nigeria Tax Act 2025"
 - id: pit.band.6
   when:
     annual_taxable_income_kobo:
@@ -68,6 +72,7 @@ rules:
     rate_bps: 2500
     band_order: 6
     narrate: Above N50,000,000 at 25% (top marginal rate)
+  citation: "Nigeria Tax Act 2025"
 - id: pit.rent-relief
   when:
     rent_paid: true
@@ -85,6 +90,7 @@ rules:
     decision: exempt
     narrate: Persons earning the national minimum wage or less are exempt from PIT (N70,000/month = N840,000/yr from July
       2024).
+  citation: "Nigeria Tax Act 2025"
 - id: cit.standard-rate
   when:
     tax: CIT
@@ -96,6 +102,7 @@ rules:
   then:
     rate_bps: 3000
     narrate: CIT standard rate 30%
+  citation: "Nigeria Tax Act 2025"
 - id: cit.small-company.zero
   when:
     tax: CIT
@@ -120,6 +127,7 @@ rules:
     rate_bps: 400
     narrate: Development Levy 4% of assessable profit (consolidates TET, NASENI, NITDA, Police Fund levies) for non-small
       companies
+  citation: "Nigeria Tax Act 2025"
 - id: vat.standard-rate
   when:
     supply_class: standard
@@ -127,6 +135,7 @@ rules:
     rate_bps: 750
     narrate: VAT standard rate 7.5% (unchanged by NTA)
   effective_from: '2020-02-01'
+  citation: "Nigeria Tax Act 2025"
 - id: vat.registration-threshold
   when:
     entity:
@@ -138,6 +147,7 @@ rules:
     threshold:
       annual_taxable_supplies_kobo: 10000000000
     narrate: VAT registration threshold aligned to N100m taxable supplies under NTA
+  citation: "Nigeria Tax Act 2025"
 - id: wht.quick-rates
   when:
     calculator: wht_quick
@@ -156,7 +166,8 @@ rules:
       company_bps: 200
       individual_bps: 200
     narrate: Quick-calc WHT summary mirroring rp-wht-2024
+  citation: "Nigeria Tax Act 2025"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 1220d76fa24a655ba4bd1a5d4c7303a4d6662cfcd0d54dec40b490711f02790fa8b3f2bdf857e0ea6df2b041f8e50ec35815d5a6dcf55abbc198a1104447ca0c
+  signature: cf6a0e65ebc7abd92bd86cadfe3639310c09e33a4735704d06b9eb0a11072b1fe5caf82e53d822be30188520abba23a9665a002cf93aef74a65cf2f415e3a90a
