@@ -1,0 +1,42 @@
+# LCE compliance gate (SPEC-LCE §3.3) — additive to ci/workflows/validate.yml.
+# NOTE: this repo keeps CI workflows in ci/workflows/ (NOT .github/workflows/).
+# Sibling checkout assumption: the in-proc WHT adapter expects
+# meridian-compliance-suite at ../meridian-compliance-suite relative to this
+# checkout; override with LCE_COMPLIANCE_SUITE_PATH in dev.
+name: compliance-gate
+on:
+  push:
+    branches: [main, "feature/**", "hardening/**"]
+  pull_request:
+
+env:
+  LCE_COMPLIANCE_SUITE_PATH: ${{ github.workspace }}/meridian-compliance-suite
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: meridian-rule-packs
+      - uses: actions/checkout@v4          # sibling checkout for the in-proc adapter
+        with:
+          repository: munisp/meridian-compliance-suite
+          path: meridian-compliance-suite
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt httpx pyjwt
+        working-directory: meridian-rule-packs
+      - run: pip install -r services/wht/requirements.txt
+        working-directory: meridian-compliance-suite
+      - name: Attestation gate
+        working-directory: meridian-rule-packs
+        # First-day state: exits 1 naming known engine-drift failures (see
+        # KNOWN_DRIFT in tools/attest.py) — that is the correct state; the job
+        # turns green when the engine reaches pack parity.
+        run: python tools/attest.py --engine inproc --out out/attestation
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: attestation
+          path: meridian-rule-packs/out/attestation.*

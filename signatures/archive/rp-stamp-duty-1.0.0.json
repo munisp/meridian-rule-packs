@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-stamp-duty",
   "version": "1.0.0",
-  "sha256": "fb1f4004efde593676d864f842d3ceaa481ed017c5d67b2d511a234ec074c9a6",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-stamp-duty/1.0.0/fb1f4004efde5936.yaml",
-  "archived_at": "2026-07-31T01:46:13Z",
+  "sha256": "467d55eee797d4fa6ac955e1787734cc024e08c72839032de763d8f10c0e0a0f",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-stamp-duty/1.0.0/467d55eee797d4fa.yaml",
+  "archived_at": "2026-07-31T16:12:19Z",
   "key_id": "governance-board-2026",
-  "signature": "31ac3e1451b238d177bd714afa442a05efa0b1641261ee559b5bb32459937c81501f346cc2be8fab6bd8d6db4c576416a4251e7331dfff1641d7c213e210aa0f",
+  "signature": "553998e6a13a5aa5b905a22dfdbe5f807bc447822e37ca903f7b84f69ab5f1d86f81d200f569f6e3781b7b79624fde221cc6d658fb41aed7606e9bf06d961802",
   "publish_event_id": "01KYTXKF7ZXZ3Z4XB0GQPQ172Z",
   "immutable": true
 }

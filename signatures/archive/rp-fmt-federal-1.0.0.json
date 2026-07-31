@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-fmt-federal",
   "version": "1.0.0",
-  "sha256": "b04356e1a8eb4644603c4e7482b769bf58a084308772d25dd6315180aca1305c",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-fmt-federal/1.0.0/b04356e1a8eb4644.yaml",
-  "archived_at": "2026-07-31T04:42:03Z",
+  "sha256": "4b25b0739bb6a6612dc504123135832ffacc7b663e751821d2a24cdd4b55c9a0",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-fmt-federal/1.0.0/4b25b0739bb6a661.yaml",
+  "archived_at": "2026-07-31T16:12:18Z",
   "key_id": "governance-board-2026",
-  "signature": "7640891474774e72a1380b6dd01424e0e542e9366af71b8750e65c85eb41965345cdbbd6aec6fbce1c4729ff1de3510fa78d0a3609a40da0dcf3b5f65f155709",
+  "signature": "40365c21a552c8fa840913f77145a7098d1e726ff818533e6396afa2f50a8ed8c8b04b92a483da86a42a584fd144d40848113fa8cea029a2def7368e6de4ad0d",
   "publish_event_id": "01KYTXKFP3E6DV7ZQN6DCVHF5F",
   "immutable": true,
   "rearchive_note": "re-archived: pack file edited post-ceremony in PR #2 without re-archiving; sha256/worm_uri refreshed to actual pack bytes. Pack signature (governance-board-2026 dev [seed] key) unchanged and still verifies over pack canonical bytes."

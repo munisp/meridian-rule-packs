@@ -1,0 +1,17 @@
+# NTAA s.147 registration threshold — exactly N100m stays exempt ("N100m or
+# less"); above N100m registers. Asserted through rp-turnover-bands
+# band.exit.register (gt N100m), consistent with rp-vat-rates
+# vat.registration.threshold and rp-exemption-nta exempt.small-company (T8).
+case_set:
+  id: ntaa.registration-threshold
+  area: ntaa
+  pack: rp-turnover-bands
+  statute_sections: [ntaa-2025:s.147.vat-registration-threshold]
+
+cases:
+  - id: ntaa.registration-threshold.exactly-100m-exempt
+    facts: {annual_turnover_kobo: 10000000000}   # exactly N100m
+    expect: {decision: null}                     # no exit/registration trigger
+  - id: ntaa.registration-threshold.above-100m-registers
+    facts: {annual_turnover_kobo: 10000000100}   # N100m + N1
+    expect: {decision: graduate_to_standard_regime, rule_id: band.exit.register}

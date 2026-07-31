@@ -1,0 +1,31 @@
+# Legacy CIT — T4 turnover rows and the mandatory 2025-12-31/2026-01-01
+# dispatch boundary pair (legacy pack must return no rule for 2026 dates).
+case_set:
+  id: cit.legacy-boundaries
+  area: cit
+  pack: rp-cit-legacy
+  statute_sections: [cita-legacy:cit-rates.0-20-30]
+  default_facts:
+    tax: CIT
+    entity: company
+
+cases:
+  - id: cit.legacy-boundaries.small-20m-zero
+    facts: {gross_turnover_kobo: 2000000000, date: '2025-06-30'}    # N20m
+    expect: {rate_bps: 0}
+  - id: cit.legacy-boundaries.medium-50m-20pct
+    facts: {gross_turnover_kobo: 5000000000, date: '2025-06-30'}    # N50m
+    expect: {rate_bps: 2000}
+  - id: cit.legacy-boundaries.large-150m-30pct
+    facts: {gross_turnover_kobo: 15000000000, date: '2025-06-30'}   # N150m
+    expect: {rate_bps: 3000}
+  - id: cit.legacy-boundaries.last-day-2025-12-31
+    facts: {gross_turnover_kobo: 15000000000, date: '2025-12-31'}
+    expect: {rate_bps: 3000}
+  - id: cit.legacy-boundaries.dispatch-2026-01-01-silent
+    facts: {gross_turnover_kobo: 15000000000, date: '2026-01-01'}
+    expect: {rate_bps: null}                     # legacy rules silent from 2026
+  - id: cit.legacy-boundaries.nta-standard-30-from-2026
+    pack: rp-education-ng
+    facts: {size: large, date: '2026-06-30'}
+    expect: {rate_bps: 3000}                     # NTA pack takes over

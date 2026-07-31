@@ -1,0 +1,109 @@
+# WHT rate matrix — all 29 rows of the T10 WHT_MATRIX table (28 + the
+# reality-show NR winnings row) from tests/test_taxlaw_parity.py, verbatim,
+# plus the mandatory 2024-09-30/2024-10-01 winnings commencement boundary pair.
+case_set:
+  id: wht.rates-matrix
+  area: wht
+  pack: rp-wht-2024
+  statute_sections: [wht-regs-2024:first-schedule]
+  default_facts:
+    supplier_tin: TIN-1
+    date: '2025-06-01'
+
+cases:
+  - id: wht.rates-matrix.dividend-company
+    facts: {payment_type: dividend, beneficiary: company}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.dividend-individual
+    facts: {payment_type: dividend, beneficiary: individual}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.dividend-company-nr
+    facts: {payment_type: dividend, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.interest-company
+    facts: {payment_type: interest, beneficiary: company}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.interest-company-nr
+    facts: {payment_type: interest, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.rent-individual
+    facts: {payment_type: rent, beneficiary: individual}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.rent-company-nr
+    facts: {payment_type: rent, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.royalty-company
+    facts: {payment_type: royalty, beneficiary: company}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.royalty-individual
+    facts: {payment_type: royalty, beneficiary: individual}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.royalty-company-nr
+    facts: {payment_type: royalty, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.royalty-individual-nr
+    facts: {payment_type: royalty, beneficiary: individual, beneficiary_residence: non_resident}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.goods-company
+    facts: {payment_type: supply_of_goods_materials, beneficiary: company}
+    expect: {rate_bps: 200}
+  - id: wht.rates-matrix.construction-roads-company
+    facts: {payment_type: construction, beneficiary: company, construction_type: roads}
+    expect: {rate_bps: 200}
+  - id: wht.rates-matrix.construction-other-company
+    facts: {payment_type: construction, beneficiary: company, construction_type: other}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.construction-buildings-company-nr
+    facts: {payment_type: construction, beneficiary: company, beneficiary_residence: non_resident, construction_type: buildings}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.construction-other-company-nr
+    facts: {payment_type: construction, beneficiary: company, beneficiary_residence: non_resident, construction_type: other}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.consultancy-company
+    facts: {payment_type: consultancy, beneficiary: company}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.professional-individual
+    facts: {payment_type: professional, beneficiary: individual}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.technical-company-nr
+    facts: {payment_type: technical, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.management-company-nr
+    facts: {payment_type: management, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.commission-individual
+    facts: {payment_type: commission, beneficiary: individual}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.commission-company-nr
+    facts: {payment_type: commission, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 1000}
+  - id: wht.rates-matrix.services-company
+    facts: {payment_type: services, beneficiary: company}
+    expect: {rate_bps: 200}
+  - id: wht.rates-matrix.services-individual
+    facts: {payment_type: services, beneficiary: individual}
+    expect: {rate_bps: 200}
+  - id: wht.rates-matrix.services-company-nr
+    facts: {payment_type: services, beneficiary: company, beneficiary_residence: non_resident}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.directors-fees-individual
+    facts: {payment_type: directors_fees, beneficiary: individual}
+    expect: {rate_bps: 1500}
+  - id: wht.rates-matrix.directors-fees-individual-nr
+    facts: {payment_type: directors_fees, beneficiary: individual, beneficiary_residence: non_resident}
+    expect: {rate_bps: 2000}
+  - id: wht.rates-matrix.winnings-lottery-individual
+    facts: {payment_type: winnings, beneficiary: individual, source: lottery}
+    expect: {rate_bps: 500}
+  - id: wht.rates-matrix.winnings-reality-show-individual-nr
+    facts: {payment_type: winnings, beneficiary: individual, beneficiary_residence: non_resident, source: reality_show}
+    expect: {rate_bps: 1500}
+
+  # Boundary-date pair (mandatory, SPEC-LCE §2.2): winnings rules commence
+  # 2024-10-01 — unrated the day before, 5% from commencement.
+  - id: wht.rates-matrix.winnings-pre-commencement-unrated
+    facts: {payment_type: winnings, beneficiary: individual, source: lottery, date: '2024-09-30'}
+    expect: {rate_bps: null}
+  - id: wht.rates-matrix.winnings-commencement-2024-10-01
+    facts: {payment_type: winnings, beneficiary: individual, source: lottery, date: '2024-10-01'}
+    expect: {rate_bps: 500}

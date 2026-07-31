@@ -22,6 +22,7 @@ rules:
     appeal_within_days: 30
     decision: time_barred_after
     narrate: Notice of appeal within 30 days of the assessment, demand notice or refusal to amend.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.deposit.prereq
   when:
     appeal: filed
@@ -33,6 +34,7 @@ rules:
   then:
     decision: see_rp_deposit_20pct
     narrate: Appeal admissibility may require the 20% deposit (rp-deposit-20pct) per NTAA.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.fixture
   when:
     appeal: admitted
@@ -40,6 +42,7 @@ rules:
     decision: fix_hearing
     within_days: 60
     narrate: TAT fixes hearing; parties notified >= 14 days before sitting.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.representation
   when:
     party:
@@ -49,12 +52,14 @@ rules:
   then:
     decision: self_or_counsel
     narrate: Parties may appear personally, by legal practitioner or by chartered tax practitioner/accountant.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.decision.timeline
   when:
     hearing: concluded
   then:
     decision_within_days: 60
     narrate: Decision after conclusion of hearing; written reasons served on parties.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.escalation
   when:
     decision: tat
@@ -63,13 +68,15 @@ rules:
     within_days: 30
     'on': questions_of_law
     narrate: Further appeal to FHC within 30 days, on points of law.
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 - id: tat.trail.metadata
   when:
     service: case-mgmt
   then:
     decision: emit_tat_metadata
     narrate: Technical-audit-trail records who saw what, when, under which rule_pack_version (audit-evidence svc).
+  citation: "NTAA 2025 (TAT); FIRS(Establishment) Act 2007 Fifth Schedule (legacy)"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: d18a93a696d4a38f50598d3a02d0f1fe67a63d9604b37c3b7a05067e8af725a7df63d65dfb258bcfde8b9bb16ab3258f08b5b7cc375485a84ec82d564dde2a0e
+  signature: d694036ae9f6ee175bb333df9780e5d2cbee8d1b554b7a1eb3d76f74f13294b759a1092e66882d715b2badbed8f57872e5068b9eb9a27a9db0f55defa828510e

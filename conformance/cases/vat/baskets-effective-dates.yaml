@@ -1,0 +1,35 @@
+# VAT baskets — T6: medical services & tuition exempt pre-2026, zero-rated
+# from 2026-01-01 (NTA s.187), with mandatory boundary-date pairs.
+case_set:
+  id: vat.baskets
+  area: vat
+  pack: rp-vat-exempt-basket
+  statute_sections:
+    - nta-2025:s.187.zero-rated-medical
+    - nta-2025:s.187.zero-rated-tuition
+    - vat-act-legacy:exempt-basket.legacy
+
+cases:
+  - id: vat.baskets.medical-exempt-2025
+    facts: {item_class: medical_services, date: '2025-06-01'}
+    expect: {decision: exempt}
+  - id: vat.baskets.medical-exempt-boundary-2025-12-31
+    facts: {item_class: medical_services, date: '2025-12-31'}
+    expect: {decision: exempt}
+  - id: vat.baskets.medical-zero-rated-2026-01-01
+    pack: rp-vat-zerorated-basket
+    facts: {item_class: medical_services, date: '2026-01-01'}
+    expect: {rate_bps: 0, rule_id: vat.zero.medical-services}
+  - id: vat.baskets.medical-exempt-pack-silent-2026
+    facts: {item_class: medical_services, date: '2026-06-01'}
+    expect: {decision: null}                     # legacy exempt rules expire 2025-12-31
+  - id: vat.baskets.tuition-exempt-2025
+    facts: {item_class: educational_services, date: '2025-06-01'}
+    expect: {decision: exempt}
+  - id: vat.baskets.tuition-exempt-boundary-2025-12-31
+    facts: {item_class: educational_services, date: '2025-12-31'}
+    expect: {decision: exempt}
+  - id: vat.baskets.tuition-zero-rated-2026-01-01
+    pack: rp-vat-zerorated-basket
+    facts: {item_class: educational_services, date: '2026-01-01'}
+    expect: {rate_bps: 0, rule_id: vat.zero.education-tuition}

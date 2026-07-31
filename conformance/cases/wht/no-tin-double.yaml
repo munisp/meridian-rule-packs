@@ -1,0 +1,29 @@
+# No-TIN double rate (reg. 8) — T7 active/passive split: active income doubles;
+# passive income (dividend, interest, royalty, rent) does not.
+case_set:
+  id: wht.no-tin-double
+  area: wht
+  pack: rp-wht-2024
+  statute_sections: [wht-regs-2024:reg-8.no-tin-double-rate]
+  default_facts:
+    beneficiary: company
+    date: '2025-03-01'
+    supplier_tin: null
+    supplier_nin: null
+
+cases:
+  - id: wht.no-tin-double.services-doubles
+    facts: {payment_type: services}
+    expect: {rate_bps: 400}                      # 2% x 2 — active income
+  - id: wht.no-tin-double.dividend-not-doubled
+    facts: {payment_type: dividend}
+    expect: {rate_bps: 1000}
+  - id: wht.no-tin-double.interest-not-doubled
+    facts: {payment_type: interest}
+    expect: {rate_bps: 1000}
+  - id: wht.no-tin-double.royalty-not-doubled
+    facts: {payment_type: royalty}
+    expect: {rate_bps: 1000}
+  - id: wht.no-tin-double.rent-not-doubled
+    facts: {payment_type: rent}
+    expect: {rate_bps: 1000}

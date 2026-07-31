@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-turnover-bands",
   "version": "1.0.0",
-  "sha256": "cc093242d55deb41aa4bc529824c984d6de20efe7b23227552aaf1bc8f12b4ac",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-turnover-bands/1.0.0/cc093242d55deb41.yaml",
-  "archived_at": "2026-07-31T15:20:23Z",
+  "sha256": "b460a65b9577505d56d3e45022279850506d7b3836bbdd32e059b42ac0570108",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-turnover-bands/1.0.0/b460a65b9577505d.yaml",
+  "archived_at": "2026-07-31T16:12:19Z",
   "key_id": "governance-board-2026",
-  "signature": "914fb1c8802d66feb29725375f1e61fd63a3fc6f443c973fc417abb8abd5650d6cc452a51a72a1175d5d55376013fe4c39a4e278b7facadc4245bde04e413104",
+  "signature": "8681ebdb4c47cb689b1339913af1955d69878ba4744f9bdb08d66be342bbbdf378ebcfa36bb7951a7529fbdfd7657dae1ed72dfa222a08f7b58d6ce666aaf504",
   "publish_event_id": "01KYWC68444Y2HK83R8551Q262",
   "immutable": true
 }

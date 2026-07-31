@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-exemption-nta",
   "version": "1.0.0",
-  "sha256": "5eb8ed1e7cabb1ec308dd4d2bf25e515d167cc22ab16f5457c59dccca4635ec7",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-exemption-nta/1.0.0/5eb8ed1e7cabb1ec.yaml",
-  "archived_at": "2026-07-31T01:46:28Z",
+  "sha256": "0aa74bc85531cff766722006878167e6f259c2e99854c7f65038d9acb49a2a40",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-exemption-nta/1.0.0/0aa74bc85531cff7.yaml",
+  "archived_at": "2026-07-31T16:12:18Z",
   "key_id": "governance-board-2026",
-  "signature": "52987c55dda98c17388a5f462e8c8657aa10f5d002a8e2aeae3ead4a652c99787cafde1bcd30d691cc4f1929a73176143273f6144ba2abf1b3eb4aa39772490c",
+  "signature": "ed2f437b8dbfa36c80a1a9f15289e405b7a856e733420580f696c5c00128e84edcd187abf677477b01918957ce2748cadb8a3760c2c17add65208665ffc10502",
   "publish_event_id": "01KYTXKXKWRTMHGD6HNC9CSWXY",
   "immutable": true
 }

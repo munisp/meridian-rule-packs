@@ -15,7 +15,7 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 8,
-    "sha256": "d5b23169f1fc5d04c7e8b08c20236ab039fbe38e4e0c45242959d780034b6796",
+    "sha256": "72b1a4755373868be8511e6143be059bc64e3de9dbdd02a411922594dec8ae90",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Meridian identity-graph matching policy implementing NRS identity fusion (NIN=TIN, CAC-RC=TIN) under NTAA 2025 and NDPA 2023",
