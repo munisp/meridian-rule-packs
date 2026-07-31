@@ -80,6 +80,24 @@ def collect_case_ids() -> set[str]:
     return ids
 
 
+def validate_ctc(sec: dict, loc: str) -> tuple[list[str], list[str]]:
+    """CTC registry rules for one section. Returns (violations, warnings)."""
+    violations: list[str] = []
+    warnings: list[str] = []
+    ctc = sec.get("ctc")
+    if not ctc:
+        return violations, warnings
+    if ctc.get("status") == "verified":
+        for fld in ("verifier", "verified_at", "source_doc"):
+            if not ctc.get(fld):
+                violations.append(f"{loc}: ctc.status verified but {fld} is missing/empty "
+                                  "(record via tools/ctc.py record-verification)")
+        if not ctc.get("doc_sha256"):
+            warnings.append(f"{loc}: ctc verified but doc_sha256 missing — "
+                            "re-record with tools/ctc.py to pin the sighted document hash")
+    return violations, warnings
+
+
 def validate_file(path: Path, schema_validator, pack_index, pytest_ids,
                   case_ids) -> tuple[list[str], list[str], dict]:
     violations: list[str] = []
@@ -132,6 +150,11 @@ def validate_file(path: Path, schema_validator, pack_index, pytest_ids,
         if not sec["implementing_rules"] and sec["status"] not in ACK_STATUSES:
             violations.append(f"{loc}: empty implementing_rules but status is {sec['status']} "
                               f"(must be UNIMPLEMENTED/UNSOURCED or add rules)")
+
+        # FAIL 7 / WARN — CTC verification registry
+        cv, cw = validate_ctc(sec, loc)
+        violations += cv
+        warnings += cw
 
         # WARN
         if sec["status"] == "IMPLEMENTED" and not sec["conformance_tests"]:

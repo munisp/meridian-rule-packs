@@ -61,7 +61,8 @@ HONESTY_BANNER = ("dev ed25519 keypair (prod uses HSM custody) · dev worm:// UR
 
 
 def sh(cmd: list[str], cwd: Path = REPO) -> tuple[int, str]:
-    res = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    env = {**os.environ, "LCE_ATTEST_RUNNING": "1"}  # guards against pytest->attest recursion
+    res = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, env=env)
     return res.returncode, (res.stdout + res.stderr)
 
 
@@ -123,6 +124,27 @@ def stage_conformance_reference() -> dict:
         return {"stage": "conformance-reference", "ok": False, "error": out[-500:]}
     return {"stage": "conformance-reference", "ok": code == 0,
             "cases": data["cases"], "passed": data["passed"], "results": data["results"]}
+
+
+def stage_ctc(threshold: float) -> dict:
+    """CTC verification coverage (tools/ctc.py --report).
+
+    Honest ratchet: threshold 0.0 (default) is REPORT-ONLY — the section is
+    recorded in the attestation but never fails the gate. Set --ctc-threshold
+    (e.g. 0.5) to require at least that fraction of sections CTC-verified;
+    only then does the stage affect the exit code. Ratchet up as CTCs land.
+    """
+    code, out = sh([sys.executable, "tools/ctc.py", "--report", "--format", "json"])
+    try:
+        data = json.loads(out[out.index("{"):])
+    except Exception:  # noqa: BLE001
+        return {"stage": "ctc-coverage", "ok": False, "error": out[-500:]}
+    frac = data["verified_fraction"]
+    gated = threshold > 0.0
+    ok = (frac >= threshold) if gated else True
+    return {"stage": "ctc-coverage", "ok": ok, "threshold": threshold,
+            "report_only": not gated, "verified_fraction": frac,
+            "totals": data["totals"], "statutes": data["statutes"]}
 
 
 def stage_pytest() -> dict:
@@ -210,6 +232,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default="out/attestation", help="output path prefix (.md/.json)")
     ap.add_argument("--engine", help="engine spec for drift stage (e.g. inproc)")
     ap.add_argument("--skip-engine", action="store_true", help="reference-only attestation")
+    ap.add_argument("--ctc-threshold", type=float, default=0.0,
+                    help="fraction of sections that must be CTC-verified; 0.0 (default) = report-only")
     args = ap.parse_args(argv)
 
     engine = None if args.skip_engine else (args.engine or os.environ.get("LCE_WHT_ENGINE"))
@@ -220,6 +244,8 @@ def main(argv=None) -> int:
     coverage = stage_coverage(); stages.append({k: v for k, v in coverage.items() if k in ("stage", "ok")})
     reference = stage_conformance_reference(); stages.append({"stage": "conformance-reference", "ok": reference["ok"]})
     pytest_stage = stage_pytest(); stages.append(pytest_stage)
+    ctc = stage_ctc(args.ctc_threshold)
+    stages.append({"stage": "ctc-coverage", "ok": ctc["ok"]})
     drift = None
     if engine:
         try:
@@ -259,6 +285,9 @@ def main(argv=None) -> int:
         "coverage": {"violations": coverage.get("violations", []),
                      "warnings": len(coverage.get("warnings", []))},
         "conformance_reference": {"cases": reference.get("cases"), "passed": reference.get("passed")},
+        "ctc": {"threshold": ctc["threshold"], "report_only": ctc["report_only"],
+                "verified_fraction": ctc.get("verified_fraction"),
+                "totals": ctc.get("totals"), "ok": ctc["ok"]},
         "sections": rows,
         "engine_drift": ({"engine": drift["engine"], "cases": drift["cases"],
                           "mismatches": drift["mismatches"]} if drift else None),
@@ -301,6 +330,13 @@ def render_md(report: dict) -> str:
     for r in report["sections"]:
         L.append(f"| {r['section']} | {r['status']} | {len(r.get('rules', []))} | "
                  f"{len(r['cases'])} | {r['result']} |")
+    ctc = report.get("ctc")
+    if ctc:
+        t = ctc["totals"]
+        mode = "report-only (gate off — ratchet not yet armed)" if ctc["report_only"] else f"threshold {ctc['threshold']:.0%}"
+        L.append(f"\n## CTC verification (G1 registry) — {mode}\n")
+        L.append(f"verified {t['verified']} / unverified {t['unverified']} / waived {t['waived']} "
+                 f"({ctc['verified_fraction']:.0%} verified) — result: {'PASS' if ctc['ok'] else 'FAIL'}")
     ed = report.get("engine_drift")
     if ed:
         L.append(f"\n## Engine drift ({ed['engine']}) — {len(ed['mismatches'])}/{ed['cases']} mismatches\n")
