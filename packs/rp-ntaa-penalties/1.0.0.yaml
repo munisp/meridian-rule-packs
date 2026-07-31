@@ -54,14 +54,27 @@ rules:
   then:
     formula: interest = principal * (cbn_mpr_bps + spread_bps)/10000 * days/365
     narrate: Interest on unpaid tax at CBN monetary policy rate plus spread per NTAA.
-- id: pen.einvoicing.noncompliance
+- id: pen.fiscalisation.nonuse
   when:
-    default: e_invoicing_non_compliance
-    taxpayer_class: large
+    default: fiscalisation_system_nonuse
   then:
-    penalty_kobo: 100000000
-    plus: per_day_continuing
-    narrate: 'Failure to use e-invoicing where mandated (MBS): N1,000,000 plus daily continuing default.'
+    penalty_kobo: 20000000
+    formula: penalty = 20000000 + 1.00 * tax_due + interest_at_cbn_mpr
+    narrate: 'Failure to use the fiscalisation/e-invoicing system where mandated: N200,000 administrative penalty PLUS 100%
+      of the tax due PLUS interest at CBN MPR.'
+  citation: NTAA 2025, s.100 et seq. (gazette; taxinfo.ng penalty table; Forvis Mazars)
+- id: pen.technology.access-refusal
+  when:
+    default: refusal_of_access_to_deploy_technology
+  then:
+    table:
+    - period: first_day
+      penalty_kobo: 100000000
+    - period: each_subsequent_day
+      penalty_kobo: 1000000
+    narrate: 'Refusing the tax authority access to deploy its technology: N1,000,000 on the first day and N10,000 for each
+      subsequent day of continuing default — a DISTINCT offence from failure to use the fiscalisation system.'
+  citation: NTAA 2025, s.100 et seq. (gazette; taxinfo.ng penalty table)
 - id: pen.vasp.default
   when:
     default: vasp_reporting_failure
@@ -81,4 +94,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 8493bdc5cacbe7e8b0ed53f1d1693fb06b1725bebf7f8b43fe1ae7628b583c9c81b1e8c3a71e8b57fa7b6afd6e647f86ab185a7edd6f107c8777831bcb1f860c
+  signature: 44da837ef8bc3d81ffc3323cd13fef3219c31164c77a825c9bab996bdc5d594216cb57276172e042eb90aefd8cedd1ebbfb12ae158099bd6b3e391884db37000

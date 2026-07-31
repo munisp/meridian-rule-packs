@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWG2V9MEMEDEY6724J73",
+  "id": "01KYWC67ZCCMCMBWZJYJRAQSYH",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-07-31T15:20:23Z",
   "tenant_id": "",
-  "trace_id": "aa35f6c9f04fd9e60bb9cf4fc1948b49",
+  "trace_id": "65afdbc4c15b00bd6a7ad69248a7e86f",
   "rule_pack_version": "rp-ntaa-penalties@1.0.0",
   "data": {
     "pack_id": "rp-ntaa-penalties",
@@ -14,8 +14,8 @@
     "effective_to": null,
     "subject_to_regazette": true,
     "status": "published",
-    "rule_count": 8,
-    "sha256": "9b96a07e1ff6e35d4ea2c2e30d330bac9996f9ad36df5e5c004509de60bcc8ee",
+    "rule_count": 9,
+    "sha256": "3e726ce1f834ad77c3cb3dcee9513e50eb875d518712f5b196f270d239d09246",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025 \u2014 offences and penalties provisions",
