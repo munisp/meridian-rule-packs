@@ -62,5 +62,40 @@
       "minItems": 1,
       "items": { "$ref": "#/$defs/rule" }
     }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "when", "then"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z0-9_-]+)+$"
+        },
+        "description": { "type": "string" },
+        "effective_from": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "effective_to": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "when": {
+          "type": "object",
+          "description": "Condition map: fact name -> expected value / operator map",
+          "additionalProperties": true
+        },
+        "then": {
+          "type": "object",
+          "description": "Decision payload. Kinds: rate_bps, threshold, band table, formula (expression string), decision table.",
+          "additionalProperties": true,
+          "properties": {
+            "narrate": { "type": "string" },
+            "rate_bps": { "type": "integer" },
+            "threshold": { "type": "object" },
+            "table": { "type": "array" },
+            "formula": { "type": "string" },
+            "decision": { "type": ["string", "boolean", "number"] }
+          }
+        },
+        "citation": { "type": "string" }
+      }
+    }
   }
 }
