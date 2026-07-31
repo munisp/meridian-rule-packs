@@ -62,12 +62,15 @@ def test_shared_boundary_belongs_to_higher_band():
 
 
 def test_presumptive_exit_aligns_with_vat_registration():
+    """NTAA 2025 s.147: "N100,000,000 or less" is small/exempt — registration and
+    presumptive exit trigger only ABOVE N100m (gt), never at exactly N100m."""
     bands = load("rp-turnover-bands")
     vat = load("rp-vat-rates")
     exit_when = rule(bands, "band.exit.register")["when"]["annual_turnover_kobo"]
     vat_thr = rule(vat, "vat.registration.threshold")["then"]["threshold"]["annual_taxable_supplies_kobo"]
-    assert exit_when.get("gte") == 10_000_000_000, "presumptive exit must be gte N100m"
-    assert vat_thr.get("gte") == 10_000_000_000, "VAT registration must be gte N100m"
+    assert exit_when.get("gt") == 10_000_000_000, "presumptive exit must be gt N100m"
+    assert vat_thr.get("gt") == 10_000_000_000, "VAT registration must be gt N100m"
+    assert "gte" not in vat_thr, "gte at exactly N100m contradicts NTAA s.147"
 
 
 def test_vat_threshold_date_split():
