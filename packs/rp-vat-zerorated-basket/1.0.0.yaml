@@ -46,6 +46,28 @@ rules:
   then:
     rate_bps: 0
     narrate: Exports of goods zero-rated (oil and non-oil).
+- id: vat.zero.medical-services
+  when:
+    item_class: medical_services
+    date:
+      gte: '2026-01-01'
+  then:
+    rate_bps: 0
+    narrate: From 1 Jan 2026 medical services (excluding cosmetology and wellness services) are ZERO-RATED under NTA 2025
+      s.187 — suppliers recover input VAT (previously exempt, see rp-vat-exempt-basket legacy rule).
+  citation: NTA 2025, s.187 (BDO; PwC Nigeria Other Taxes — zero-rated "medical products and services")
+  effective_from: '2026-01-01'
+- id: vat.zero.education-tuition
+  when:
+    item_class: educational_services
+    date:
+      gte: '2026-01-01'
+  then:
+    rate_bps: 0
+    narrate: From 1 Jan 2026 tuition at nursery, primary, secondary and tertiary levels is ZERO-RATED under NTA 2025 s.187
+      — input VAT recoverable (previously exempt).
+  citation: NTA 2025, s.187 (DAE Professionals; BDO)
+  effective_from: '2026-01-01'
 - id: vat.zero.export-services
   when:
     item_class: export_of_services
@@ -78,4 +100,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 86ce4a90729c6c5aabcf7178d1296423c5d12163e31a7ac4dbfe0d21705732dfca884e6e62d043e8c2c389301733ab255b5ba980e106e50f06a3e6554f592100
+  signature: 63625ad93d07da057372e8b0498dc67ded6e963584034510b86a6be6982eb90c5189fe44e84052eddc26f001e60b36fb7cb15f371830c104e01d56c095c14e08

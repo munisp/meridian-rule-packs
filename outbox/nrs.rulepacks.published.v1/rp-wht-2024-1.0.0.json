@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWYKP25973YXWGQGTP4K",
+  "id": "01KYWC68EB6HQP7HK0ZG8GGMFY",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-07-31T15:20:23Z",
   "tenant_id": "",
-  "trace_id": "3e1e611d3c5232d87dde9d6f296abf7c",
+  "trace_id": "1684cdb7fa9bff38aaa1a5aa278e3588",
   "rule_pack_version": "rp-wht-2024@1.0.0",
   "data": {
     "pack_id": "rp-wht-2024",
@@ -14,8 +14,8 @@
     "effective_to": null,
     "subject_to_regazette": true,
     "status": "published",
-    "rule_count": 30,
-    "sha256": "b17f59f846157a3185118248fd10f4f6d236b8fb1645fb1f51a0bb50b7c1e316",
+    "rule_count": 40,
+    "sha256": "906076ec9b38cb008292b2f0c643c05b3a8a1c86c5f5984e67803256bfa41368",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Deduction of Tax at Source (Withholding) Regulations 2024, signed 1 July 2024 (FIRS/FMoF)",

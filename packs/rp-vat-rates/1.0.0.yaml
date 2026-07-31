@@ -53,10 +53,12 @@ rules:
   then:
     threshold:
       annual_taxable_supplies_kobo:
-        gte: 10000000000
-    narrate: NTA registration threshold N100m taxable supplies, applied gte (turnover of exactly N100m must register). Aligned
-      with rp-turnover-bands band.exit.register (I13).
+        gt: 10000000000
+    narrate: NTA registration threshold N100m taxable supplies, applied gt — NTAA 2025 s.147 defines a small business as gross
+      turnover of "N100,000,000 or less", so turnover of EXACTLY N100m is still exempt and registration triggers only ABOVE
+      N100m. Consistent with rp-exemption-nta exempt.small-company (lte N100m exempt) and rp-turnover-bands band.exit.register.
   effective_from: '2026-01-01'
+  citation: 'NTAA 2025, s.147 (Forvis Mazars: "annual turnover of N100 million or less")'
 - id: vat.registration.threshold-legacy
   when:
     person: taxable
@@ -72,4 +74,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 33adb7e2b01408a658bfa43759211afb1b8c8187ca6890431f537d1b6a1133bef292957408c6731ab5c42a017e60f55dfedc9b57b5d2fe1762eca8ea228a9a08
+  signature: dd044020e364017b21f93301c129451fb9cde8eaae96df466b5d69886335119e36b83b8d1868899100a942aa65d707a78df3fa963214738a5dbf520bd9906e0c

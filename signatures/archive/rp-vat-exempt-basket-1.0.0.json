@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-vat-exempt-basket",
   "version": "1.0.0",
-  "sha256": "e12e3e2235f21eb18120eff22f81c89597b85ae8d7bf13823e7e0a2ad471a98e",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-exempt-basket/1.0.0/e12e3e2235f21eb1.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
+  "sha256": "b8387045cdd30d91f495975b34e6d4f4e6332fb6818f7095476df851e55f36c4",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-exempt-basket/1.0.0/b8387045cdd30d91.yaml",
+  "archived_at": "2026-07-31T15:20:23Z",
   "key_id": "governance-board-2026",
-  "signature": "6f69f54cd140a84ab882faa35cc7523d24a0873dfdc3336f7033de6c1706e69643322bd8ff0dd3b58c459ac76d068407b271fd9f7eff339024f110403cc9e40c",
-  "publish_event_id": "01KYRKHWTKRX37NSJHW11R6R8E",
+  "signature": "0d91f493d43c05b3cbfb1f52e9484c5f80e41e4d6ada55a12265e5f86d1e6d845140ca85b71e8b673d7510fb0cd5adfb6c810e80c58b4d3a86dfe89631298b00",
+  "publish_event_id": "01KYWC6864PME4ZVMZ83ZHF2SE",
   "immutable": true
 }

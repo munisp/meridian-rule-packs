@@ -76,12 +76,14 @@ rules:
 - id: band.exit.register
   when:
     annual_turnover_kobo:
-      gte: 10000000000
+      gt: 10000000000
   then:
     decision: graduate_to_standard_regime
-    narrate: At or above N100m turnover the operator must register for TIN-based filing AND for VAT (aligned with rp-vat-rates
-      vat.registration.threshold, gte N100m); small-company rules in rp-exemption-nta may still apply.
+    narrate: Above N100m turnover the operator must register for TIN-based filing AND for VAT (aligned with rp-vat-rates vat.registration.threshold,
+      gt N100m — NTAA 2025 s.147 "N100,000,000 or less" remains small/exempt); small-company rules in rp-exemption-nta may
+      still apply.
+  citation: NTAA 2025, s.147
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 02f0be7756e5bf57f2b1dc1e8e681bf7cb9c4901a0977092ba399d0e4d0b7b71ab386dd0c820372db389bc3d6a97ff8cf71cee233607b3c28de73bb2ebf1da0e
+  signature: 914fb1c8802d66feb29725375f1e61fd63a3fc6f443c973fc417abb8abd5650d6cc452a51a72a1175d5d55376013fe4c39a4e278b7facadc4245bde04e413104

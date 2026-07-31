@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWVKF5N7C7E84A03PYTX",
+  "id": "01KYWC688MT08TZSM7CWKXJ8G4",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-07-31T15:20:23Z",
   "tenant_id": "",
-  "trace_id": "8bb0b833515820ac298ab91ac529a617",
+  "trace_id": "80959a4eaf46bfe77e7ecbc02d8cf886",
   "rule_pack_version": "rp-vat-zerorated-basket@1.0.0",
   "data": {
     "pack_id": "rp-vat-zerorated-basket",
@@ -14,8 +14,8 @@
     "effective_to": null,
     "subject_to_regazette": true,
     "status": "published",
-    "rule_count": 7,
-    "sha256": "ccdc42b7dbb5d956c829e14724b49f030eab08fecb1f7acebe2dc4540478c827",
+    "rule_count": 9,
+    "sha256": "30a037dca8f19cf8fb0e6b92c4c244e0476931dbf5cb7a59af5098cb380b7bb4",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Finance Act 2019/2020 zero-rating of basic food; Nigeria Tax Act 2025 zero-rated schedule (basic food, medical, education, exports)",

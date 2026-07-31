@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-vat-zerorated-basket",
   "version": "1.0.0",
-  "sha256": "ccdc42b7dbb5d956c829e14724b49f030eab08fecb1f7acebe2dc4540478c827",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-zerorated-basket/1.0.0/ccdc42b7dbb5d956.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
+  "sha256": "30a037dca8f19cf8fb0e6b92c4c244e0476931dbf5cb7a59af5098cb380b7bb4",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-zerorated-basket/1.0.0/30a037dca8f19cf8.yaml",
+  "archived_at": "2026-07-31T15:20:23Z",
   "key_id": "governance-board-2026",
-  "signature": "86ce4a90729c6c5aabcf7178d1296423c5d12163e31a7ac4dbfe0d21705732dfca884e6e62d043e8c2c389301733ab255b5ba980e106e50f06a3e6554f592100",
-  "publish_event_id": "01KYRKHWVKF5N7C7E84A03PYTX",
+  "signature": "63625ad93d07da057372e8b0498dc67ded6e963584034510b86a6be6982eb90c5189fe44e84052eddc26f001e60b36fb7cb15f371830c104e01d56c095c14e08",
+  "publish_event_id": "01KYWC688MT08TZSM7CWKXJ8G4",
   "immutable": true
 }
