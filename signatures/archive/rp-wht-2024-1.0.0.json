@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-wht-2024",
   "version": "1.0.0",
-  "sha256": "b17f59f846157a3185118248fd10f4f6d236b8fb1645fb1f51a0bb50b7c1e316",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-wht-2024/1.0.0/b17f59f846157a31.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
+  "sha256": "906076ec9b38cb008292b2f0c643c05b3a8a1c86c5f5984e67803256bfa41368",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-wht-2024/1.0.0/906076ec9b38cb00.yaml",
+  "archived_at": "2026-07-31T15:20:23Z",
   "key_id": "governance-board-2026",
-  "signature": "439eecf3def8eb248fbb82f8b1b24775158b08ab57ca6600cc87b48e7abdde4c77fdb0c0c2a0ef1d8bbc88e73c247420ab5675addb3a7ca0bcad2e88f1e94605",
-  "publish_event_id": "01KYRKHWYKP25973YXWGQGTP4K",
+  "signature": "0e99c9cdaef4972bab9fd1294338d39e2e3737231568009a09549b32bfb03bdf4a909f7fdde18e683de7336f3e53ce26033e1113aeacfaf9b48a755c8da62e0c",
+  "publish_event_id": "01KYWC68EB6HQP7HK0ZG8GGMFY",
   "immutable": true
 }
