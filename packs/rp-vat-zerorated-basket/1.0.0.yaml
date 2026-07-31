@@ -21,6 +21,7 @@ rules:
   then:
     rate_bps: 0
     narrate: Basic food items (unprocessed staples per FIRS circular list) zero-rated; input VAT recoverable.
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.medical-products
   when:
     item_class:
@@ -31,6 +32,7 @@ rules:
   then:
     rate_bps: 0
     narrate: Medical and pharmaceutical products zero-rated.
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.education-materials
   when:
     item_class:
@@ -40,12 +42,14 @@ rules:
   then:
     rate_bps: 0
     narrate: Educational books and materials zero-rated.
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.export-goods
   when:
     item_class: export_of_goods
   then:
     rate_bps: 0
     narrate: Exports of goods zero-rated (oil and non-oil).
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.medical-services
   when:
     item_class: medical_services
@@ -77,6 +81,7 @@ rules:
     rate_bps: 0
     narrate: From 1 Jan 2026 exported services are ZERO-RATED (previously exempt) — full input VAT recovery.
   effective_from: '2026-01-01'
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.electricity
   when:
     item_class:
@@ -86,6 +91,7 @@ rules:
   then:
     rate_bps: 0
     narrate: Electricity generation and transmission zero-rated.
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 - id: vat.zero.clean-energy
   when:
     item_class:
@@ -97,7 +103,8 @@ rules:
   then:
     rate_bps: 0
     narrate: CNG, LPG, renewable energy equipment and EV parts zero-rated per energy-transition incentives.
+  citation: "Finance Act 2019/2020; Nigeria Tax Act 2025 (VAT zero-rated schedule)"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 63625ad93d07da057372e8b0498dc67ded6e963584034510b86a6be6982eb90c5189fe44e84052eddc26f001e60b36fb7cb15f371830c104e01d56c095c14e08
+  signature: b078d9f1273422e5b555964f8438e57a7b20d2ead5a2763d6f023c8b3a295d794f63504bd276f8416945a6a87606274818d404a0a74f394a9c2184fd4e814f0a
