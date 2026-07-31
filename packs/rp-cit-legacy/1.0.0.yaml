@@ -1,0 +1,99 @@
+# rp-cit-legacy v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Legacy CIT rates (CITA as amended by Finance Act 2019) — pre-2026 accounting periods
+id: rp-cit-legacy
+version: 1.0.0
+title: Legacy CIT rates (CITA as amended by Finance Act 2019) — pre-2026 accounting periods
+description: 'Pre-NTA Companies Income Tax rules for accounting periods ending on or before 2025-12-31: 0% small company (turnover
+  <= N25m), 20% medium (N25m-N100m), 30% large (> N100m), with the legacy company-size definitions and the 2% Tertiary Education
+  Tax. Retained so 2025-and-earlier CIT assessments compute under old law (effective-date dispatch mirrors the VAT/PIT/CGT
+  legacy packs).'
+effective_from: '2020-01-01'
+effective_to: '2025-12-31'
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Companies Income Tax Act Cap C21 LFN 2004 (as amended by Finance Act 2019, s.11 — new s.40 rate bands)
+  as_gazetted: null
+  source_citation: CITA (as amended by Finance Act 2019); PwC Nigeria corporate tax summaries (historical CITA rates)
+rules:
+- id: cit.legacy.small-company.zero
+  when:
+    tax: CIT
+    entity: company
+    gross_turnover_kobo:
+      lte: 2500000000
+    date:
+      lte: '2025-12-31'
+  then:
+    rate_bps: 0
+    narrate: 'LEGACY CIT: small company (gross turnover <= N25,000,000) — 0% CIT.'
+  citation: CITA s.40 as amended by Finance Act 2019 (PwC corporate summaries)
+  effective_to: '2025-12-31'
+- id: cit.legacy.medium-company.rate
+  when:
+    tax: CIT
+    entity: company
+    gross_turnover_kobo:
+      gt: 2500000000
+      lte: 10000000000
+    date:
+      lte: '2025-12-31'
+  then:
+    rate_bps: 2000
+    narrate: 'LEGACY CIT: medium company (gross turnover > N25m and <= N100m) — 20% CIT.'
+  citation: CITA s.40 as amended by Finance Act 2019 (PwC corporate summaries)
+  effective_to: '2025-12-31'
+- id: cit.legacy.large-company.rate
+  when:
+    tax: CIT
+    entity: company
+    gross_turnover_kobo:
+      gt: 10000000000
+    date:
+      lte: '2025-12-31'
+  then:
+    rate_bps: 3000
+    narrate: 'LEGACY CIT: large company (gross turnover > N100m) — 30% CIT.'
+  citation: CITA s.40 as amended by Finance Act 2019 (PwC corporate summaries)
+  effective_to: '2025-12-31'
+- id: cit.legacy.definition.small
+  when:
+    tax: CIT
+    entity: company
+    gross_turnover_kobo:
+      lte: 2500000000
+  then:
+    decision: small_company_legacy
+    narrate: 'Legacy definition: SMALL company = gross turnover <= N25m (no fixed-assets limb — the NTA N250m fixed-assets
+      test does NOT apply pre-2026).'
+  citation: CITA as amended by Finance Act 2019
+  effective_to: '2025-12-31'
+- id: cit.legacy.definition.medium
+  when:
+    tax: CIT
+    entity: company
+    gross_turnover_kobo:
+      gt: 2500000000
+      lte: 10000000000
+  then:
+    decision: medium_company_legacy
+    narrate: 'Legacy definition: MEDIUM company = gross turnover > N25m and <= N100m (band abolished by NTA 2025; from 2026
+      only small (0%) vs standard (30%) remain — see rp-education-ng).'
+  citation: CITA as amended by Finance Act 2019
+  effective_to: '2025-12-31'
+- id: cit.legacy.tet.rate
+  when:
+    tax: TET
+    entity: company
+    date:
+      lte: '2025-12-31'
+  then:
+    rate_bps: 200
+    narrate: 'LEGACY: Tertiary Education Tax (TET) 2% of assessable profit for accounting periods ending on or before 2025-12-31;
+      consolidated into the 4% Development Levy from 2026 (rp-education-ng cit.development-levy).'
+  citation: TET Act as amended by Finance Act 2021 (2% from 2021); PwC corporate summaries
+  effective_to: '2025-12-31'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 3da5a4e3a9f797f01390a18fbf969fdce2e7bebd0e707a75294107b688328907e6419d8d2f5b87d8b1908927ed2136c0e37863f41b4c4dcab0585d3d89d88d0b
