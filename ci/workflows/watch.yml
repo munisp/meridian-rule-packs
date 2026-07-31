@@ -1,0 +1,35 @@
+# LCE legislation watch (docs/LEGISLATION_WATCH.md) — weekly scheduled check.
+# NOTE: this repo keeps CI workflows in ci/workflows/ (NOT .github/workflows/).
+#
+# Honesty: the job runs --check in fixture mode? No — scheduled runs use --live
+# against the real sources, but the job is advisory only: continue-on-error
+# means a detected change (exit 1) or a network failure (exit 2) never blocks
+# CI. The report is uploaded as an artifact for the reg-watch duty engineer,
+# who files diff-proposal PRs per LEGISLATION_WATCH.md §2.
+name: legislation-watch
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # advisory: never blocks CI on network or pending changes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pyyaml
+      - name: Check sources (live)
+        run: |
+          python tools/watch.py --check --live || true
+          python tools/watch.py --report > out/watch-report.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: legislation-watch-report
+          path: |
+            out/watch-report.md
+            outbox/legislation-diffs/
+          if-no-files-found: ignore

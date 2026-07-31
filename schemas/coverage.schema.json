@@ -53,6 +53,19 @@
           },
           "citation_url": { "type": "string" },
           "citation_kind": { "type": "string", "enum": ["primary", "secondary"] },
+          "ctc": {
+            "type": "object",
+            "description": "Certified True Copy verification registry (tools/ctc.py). Absent = unverified.",
+            "required": ["status"],
+            "additionalProperties": false,
+            "properties": {
+              "status": { "type": "string", "enum": ["unverified", "verified", "waived"] },
+              "verifier": { "type": ["string", "null"], "description": "Counsel who sighted the CTC" },
+              "verified_at": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+              "doc_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+              "source_doc": { "type": ["string", "null"], "description": "Gazette/CTC document reference or path" }
+            }
+          },
           "notes": { "type": "string" },
           "supersedes": { "type": "string" }
         }

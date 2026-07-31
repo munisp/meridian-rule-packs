@@ -76,9 +76,15 @@ conformance/cases/             # 56 seed cases: 29-row WHT matrix + boundary pai
                                # legacy CIT dispatch, NTAA registration threshold
 conformance/adapters/README.md # engine adapter contract (in-proc default, HTTP stub)
 tools/attest.py                # attestation gate: validate → signatures → coverage →
-                               # conformance → drift → per-section PASS/FAIL roll-up
+                               # conformance → drift → CTC coverage → PASS/FAIL roll-up
 ci/workflows/compliance.yml    # CI compliance-gate job (additive to validate.yml)
 docs/LEGISLATION_WATCH.md      # legislation-watch process (feeds, diff proposals, SLAs)
+watch_sources.yaml             # legislation-watch source registry (URL, parser hint, fixture)
+tools/watch.py                 # content-hash diffing over the registry; --check/--snapshot/
+                               # --report; offline (fixtures) by default, --live explicit
+ci/workflows/watch.yml         # weekly advisory watch job (continue-on-error, report artifact)
+tools/ctc.py                   # CTC citation-verification registry: record-verification
+                               # (sha256-pins the sighted gazette doc), waive, --report
 ```
 
 ```bash
@@ -97,7 +103,12 @@ the workspace for the same reason.
 
 - `citation_kind: secondary` — coverage citations pointing at firm commentary
   (KPMG/PwC/UUBO/SHQ Legal/Forvis Mazars) are **working citations, not gazette
-  URLs**, until CTCs are confirmed (G1).
+  URLs**. The G1 verification workflow is now operational: counsel sights the
+  gazette CTC and runs `tools/ctc.py record-verification`, which sha256-pins
+  the sighted document into the section's `ctc:` block and flips
+  `citation_kind` to `primary`. **Current baseline: 0 of 61 sections verified**
+  (`python tools/ctc.py --report`); `tools/attest.py` reports CTC coverage
+  report-only until the ratchet is armed with `--ctc-threshold`.
 - Known gaps are first-class rows, not omissions: WHT treaty relief (#16),
   co-location/brokerage/entertainers/loss-of-employment schedule rates (#15),
   pre-2025 legacy WHT regime (#14), presumptive framework UNSOURCED (#18),

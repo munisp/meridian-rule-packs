@@ -1,0 +1,48 @@
+# Legislation-watch source registry (docs/LEGISLATION_WATCH.md §1).
+#
+# Each source is content-hash diffed by tools/watch.py. `fixture:` points at a
+# local HTML snapshot used for offline operation (the default; tests rely on
+# this). Live fetching requires the explicit --live flag and is never used in
+# CI gating — the weekly CI job runs --check with continue-on-error and uploads
+# the report as an artifact.
+#
+# parser hints:
+#   html-links   — diff the href/title list extracted from the page
+#   html-text    — diff normalised visible text
+#   feed         — RSS/Atom-style feed; diff entry ids/titles
+sources:
+  - id: nrs-circulars
+    title: NRS (formerly FIRS) circulars & public notices
+    url: https://www.firs.gov.ng/circulars
+    parser: html-links
+    enabled: true
+    fixture: tests/fixtures/watch/nrs-circulars.html
+    statute_hint: ntaa-2025
+    notes: Also hosts the presumptive-tax framework (draft) — unblocks finding #18.
+
+  - id: nrs-einvoice-docs
+    title: NRS e-invoicing (MBS) technical documentation
+    url: https://einvoice.firs.gov.ng/
+    parser: html-text
+    enabled: true
+    fixture: tests/fixtures/watch/nrs-einvoice-docs.html
+    statute_hint: ntaa-2025
+    notes: Fiscalisation business rules (NTAA s. penalties.fiscalisation-nonuse).
+
+  - id: fgn-gazette
+    title: Federal Republic of Nigeria Official Gazette feed
+    url: https://gazette.gov.ng/feed
+    parser: feed
+    enabled: true
+    fixture: tests/fixtures/watch/fgn-gazette.xml
+    statute_hint: null
+    notes: Authoritative source; a hit here can flip subject_to_regazette flags and feed CTC requests (G1).
+
+  - id: cbn-circulars
+    title: CBN circulars page (EMTL, thresholds)
+    url: https://www.cbn.gov.ng/Documents/circulars.html
+    parser: html-links
+    enabled: true
+    fixture: tests/fixtures/watch/cbn-circulars.html
+    statute_hint: cbn-circulars
+    notes: Bank reporting/cash thresholds, EMTL N50 >= N10k.
