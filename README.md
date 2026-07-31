@@ -58,6 +58,58 @@ presumptive ceiling (`rp-turnover-bands` band.exit.register, `gte` ₦100m) is
 aligned with the VAT registration threshold (`rp-vat-rates`, `gte` ₦100m from
 2026-01-01; legacy ₦25m before).
 
+## Legislative Compliance Engine (LCE)
+
+The LCE keeps the pack corpus provably aligned with the statute book. Components:
+
+```
+coverage/*.yaml                # 9 statute coverage files (one per statute); sections
+                               # reference implementing rules + conformance tests,
+                               # with explicit IMPLEMENTED/PARTIAL/UNIMPLEMENTED/UNSOURCED status
+schemas/coverage.schema.json   # JSON Schema (draft 2020-12) for coverage files
+tools/refmatch.py              # canonical reference matcher (extracted verbatim from
+                               # tests/test_taxlaw_parity.py — single matching truth)
+tools/coverage_validate.py     # coverage validator (6 FAIL conditions, SPEC-LCE §1.3)
+tools/conformance.py           # declarative case loader + reference/engine runners
+conformance/cases/             # 56 seed cases: 29-row WHT matrix + boundary pairs,
+                               # carve-out kobo arithmetic, no-TIN split, VAT baskets,
+                               # legacy CIT dispatch, NTAA registration threshold
+conformance/adapters/README.md # engine adapter contract (in-proc default, HTTP stub)
+tools/attest.py                # attestation gate: validate → signatures → coverage →
+                               # conformance → drift → per-section PASS/FAIL roll-up
+ci/workflows/compliance.yml    # CI compliance-gate job (additive to validate.yml)
+docs/LEGISLATION_WATCH.md      # legislation-watch process (feeds, diff proposals, SLAs)
+```
+
+```bash
+python tools/coverage_validate.py            # coverage vs packs + tests + cases
+pytest tests/test_conformance.py -q          # reference-mode conformance (always green)
+LCE_WHT_ENGINE=inproc pytest tests/test_engine_drift.py -q   # engine drift ratchet
+python tools/attest.py --engine inproc --out out/attestation # md + JSON report
+```
+
+The in-proc engine adapter expects `meridian-compliance-suite` checked out as a
+sibling (`../meridian-compliance-suite`; override with
+`LCE_COMPLIANCE_SUITE_PATH`). The CI job checks both repos out side by side under
+the workspace for the same reason.
+
+### Honest scope (read before quoting the report)
+
+- `citation_kind: secondary` — coverage citations pointing at firm commentary
+  (KPMG/PwC/UUBO/SHQ Legal/Forvis Mazars) are **working citations, not gazette
+  URLs**, until CTCs are confirmed (G1).
+- Known gaps are first-class rows, not omissions: WHT treaty relief (#16),
+  co-location/brokerage/entertainers/loss-of-employment schedule rates (#15),
+  pre-2025 legacy WHT regime (#14), presumptive framework UNSOURCED (#18),
+  PSC register (identity-gaps), NDPA sections pending privacy audit.
+- **Known engine drift (first-day state):** the wht service's embedded pack
+  predates the tax-law-parity fixes, so engine-drift cases fail on
+  services/directors-fees/winnings/construction rates, the carve-out, and
+  no-TIN passive-income doubling. `tools/attest.py --engine inproc` exits 1
+  naming these (allowlisted in `KNOWN_DRIFT` with expiry 2026-09-30) — that is
+  the correct state until the engine reaches pack parity; the drift suite is
+  the regression ratchet.
+
 ## Quickstart
 
 ```bash

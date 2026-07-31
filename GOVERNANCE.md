@@ -13,7 +13,7 @@ ceremony before any Meridian service may load it as `published`.
 | rp-registry service (core-platform) | Serves published packs to consumers, tracks stale consumers |
 | reg-watch service | Holds gates (G1 CTCs confirmed, G8 presumptive reg, carf.transmit_enabled, …) |
 
-## Ceremony stages (draft → review → simulate → sign → publish → archive)
+## Ceremony stages (draft → review → counsel-review → simulate → sign → publish → archive)
 
 1. **draft** — Author edits `packs/<pack-id>/<version>.yaml` per §1.4 grammar with
    `status: draft`, full `provenance` (`as_passed`, `as_gazetted` or null,
@@ -50,6 +50,16 @@ pytest                                       # full suite
 ```
 
 ## Change management
+
+- Any content change requires a NEW version directory entry (`1.1.0`, `2.0.0`, …) —
+  published files are immutable. Hot fixes in place are re-signed by the ceremony and
+  produce a new archive record, but consumers pin versions via the registry lockfile.
+- Regazette: when CTCs arrive (G1 flipped by the board via reg-watch), provenance
+  `as_gazetted` is updated in a new patch version and `subject_to_regazette` may be
+  set `false`.
+- Production: replace the dev keypair with HSM-backed key custody; `key_id` rotation
+  is recorded in this file and in the archive records.
+anagement
 
 - Any content change requires a NEW version directory entry (`1.1.0`, `2.0.0`, …) —
   published files are immutable. Hot fixes in place are re-signed by the ceremony and
