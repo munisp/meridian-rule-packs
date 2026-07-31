@@ -1,0 +1,113 @@
+# rp-cgt v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Capital Gains Tax — 10% legacy regime (to 2025) and NTA 2025 alignment (from 2026)
+id: rp-cgt
+version: 1.0.0
+title: Capital Gains Tax — 10% legacy regime (to 2025) and NTA 2025 alignment (from 2026)
+description: 'CGT rate table with effective windows: 10% flat on chargeable gains under the CGT Act for disposals before 1
+  Jan 2026; from 1 Jan 2026 companies are charged at the applicable CIT rate (30% large/medium, 0% small) and individuals
+  at their PIT marginal rates under the NTA; principal private residence, compensation and small-proceeds reliefs retained/updated.'
+effective_from: '2004-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Capital Gains Tax Act Cap C1 LFN 2004 (10%); Nigeria Tax Act 2025 (chargeable gains folded into income tax base
+    from 1 Jan 2026)
+  as_gazetted: null
+  source_citation: CGT Act (as amended); Nigeria Tax Act 2025
+rules:
+- id: cgt.rate.legacy
+  when:
+    disposal_date:
+      lt: '2026-01-01'
+  then:
+    rate_bps: 1000
+    narrate: CGT 10% on chargeable gains for disposals before 1 Jan 2026 (CGT Act s.2).
+  effective_from: '2004-01-01'
+  effective_to: '2025-12-31'
+  citation: CGT Act Cap C1 LFN 2004
+- id: cgt.rate.company.nta
+  when:
+    disposal_date:
+      gte: '2026-01-01'
+    entity: company
+    size:
+      in:
+      - medium
+      - large
+  then:
+    rate_bps: 3000
+    narrate: From 2026, chargeable gains of medium/large companies are taxed at the CIT rate of 30% (NTA alignment).
+  effective_from: '2026-01-01'
+  citation: NTA 2025
+- id: cgt.rate.company.small.nta
+  when:
+    disposal_date:
+      gte: '2026-01-01'
+    entity: company
+    gross_turnover_kobo:
+      lte: 10000000000
+    total_fixed_assets_kobo:
+      lte: 25000000000
+  then:
+    rate_bps: 0
+    narrate: Small companies (turnover <= N100m and fixed assets <= N250m) are exempt from CGT from 2026 (aligned with rp-exemption-nta
+      exempt.small-company).
+  effective_from: '2026-01-01'
+  citation: NTA 2025, s.56 & Eleventh Schedule
+- id: cgt.rate.individual.nta
+  when:
+    disposal_date:
+      gte: '2026-01-01'
+    entity: individual
+  then:
+    decision: tax_at_pit_marginal_rate
+    narrate: From 2026, individuals' chargeable gains are aggregated with income and taxed at PIT bands (rp-education-ng pit.band.*);
+      the marginal rate applies.
+  effective_from: '2026-01-01'
+- id: cgt.exempt.principal-residence
+  when:
+    asset_class: principal_private_residence
+  then:
+    rate_bps: 0
+    narrate: Gain on disposal of the taxpayer's only or main private residence is exempt.
+- id: cgt.exempt.compensation
+  when:
+    payment_type: compensation_for_loss_of_office
+    amount_kobo:
+      lte: 5000000000
+  then:
+    rate_bps: 0
+    narrate: Compensation for loss of office/employment up to N50m exempt (NTA raised the threshold from N10m).
+  citation: NTA 2025
+- id: cgt.exempt.compensation-excess
+  when:
+    payment_type: compensation_for_loss_of_office
+    amount_kobo:
+      gt: 5000000000
+  then:
+    decision: excess_taxable
+    taxable_amount_formula: amount_kobo - 5000000000
+    narrate: Only the excess over N50m is chargeable.
+- id: cgt.exempt.gov-securities
+  when:
+    asset_class:
+      in:
+      - federal_government_bond
+      - state_government_bond
+      - treasury_bill
+  then:
+    rate_bps: 0
+    narrate: Gains on disposal of Nigerian government securities exempt.
+- id: cgt.deadline.filing
+  when:
+    disposal_date:
+      exists: true
+  then:
+    deadline: same_return_as_income_tax
+    narrate: 'Legacy regime: CGT returns filed with the annual tax return; under NTA gains are reported in the annual income
+      tax return for the year of disposal.'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 204f20564a31e4808f97e630b24eef459e29d240559980dedf505fb5142f4d82a4b5210c5102b847061fa674475fee3f2dfad43127fef72dc935661d71e9ae09

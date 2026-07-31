@@ -1,0 +1,26 @@
+{
+  "id": "01KYTXKFD77RGYMCZ62ANNXFF9",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-31T01:46:13Z",
+  "tenant_id": "",
+  "trace_id": "0faec2b1bc7287a220f1ce9bf29f40e9",
+  "rule_pack_version": "rp-cgt@1.0.0",
+  "data": {
+    "pack_id": "rp-cgt",
+    "version": "1.0.0",
+    "title": "Capital Gains Tax \u2014 10% legacy regime (to 2025) and NTA 2025 alignment (from 2026)",
+    "effective_from": "2004-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 9,
+    "sha256": "7e5e602e3b07115a30a0ba2f355c4120fe21927208e3b2eac486f12f90ffa796",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Capital Gains Tax Act Cap C1 LFN 2004 (10%); Nigeria Tax Act 2025 (chargeable gains folded into income tax base from 1 Jan 2026)",
+      "as_gazetted": null,
+      "source_citation": "CGT Act (as amended); Nigeria Tax Act 2025"
+    }
+  }
+}

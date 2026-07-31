@@ -1,0 +1,26 @@
+{
+  "id": "01KYTXKFP3E6DV7ZQN6DCVHF5F",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-31T01:46:14Z",
+  "tenant_id": "",
+  "trace_id": "643c791ca16d50de0721d9e3741748a3",
+  "rule_pack_version": "rp-fmt-federal@1.0.0",
+  "data": {
+    "pack_id": "rp-fmt-federal",
+    "version": "1.0.0",
+    "title": "Federal filing matrix \u2014 NRS-administered taxes (VAT, CIT, WHT, CGT, TET/DevLevy, stamp duties)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 12,
+    "sha256": "78e895665cefe6d2a1528ef4fdece9f232016b5a174ed83465c178bd677f5f1d",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Nigeria Tax Administration Act 2025 (filing/payment provisions); VAT Act; CITA; NTA 2025",
+      "as_gazetted": null,
+      "source_citation": "NTAA 2025; VAT Act (as amended); CITA (as amended); Nigeria Tax Act 2025"
+    }
+  }
+}
