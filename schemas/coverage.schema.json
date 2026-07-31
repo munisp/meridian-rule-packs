@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meridian.taxtech/schemas/coverage.schema.json",
+  "title": "LCE statute coverage matrix (SPEC-LCE §1.2)",
+  "type": "object",
+  "required": ["statute", "sections"],
+  "additionalProperties": false,
+  "properties": {
+    "statute": {
+      "type": "object",
+      "required": ["id", "title", "jurisdiction", "effective_from", "subject_to_regazette"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Stable statute slug, e.g. wht-regs-2024"
+        },
+        "title": { "type": "string" },
+        "jurisdiction": { "type": "string", "description": "e.g. NG-FED" },
+        "effective_from": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "effective_to": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "gazette": { "type": ["string", "null"] },
+        "subject_to_regazette": { "type": "boolean" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["section_id", "title", "implementing_rules", "conformance_tests", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "section_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$",
+            "description": "Stable, dot-hierarchical; never renumbered on amendment"
+          },
+          "title": { "type": "string" },
+          "implementing_rules": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^rp-[a-z0-9-]+:[A-Za-z0-9._-]+$" }
+          },
+          "conformance_tests": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "pytest node id suffixes (no dot-prefix ids) or declarative case ids (contain a dot)"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["IMPLEMENTED", "PARTIAL", "UNIMPLEMENTED", "UNSOURCED"]
+          },
+          "citation_url": { "type": "string" },
+          "citation_kind": { "type": "string", "enum": ["primary", "secondary"] },
+          "notes": { "type": "string" },
+          "supersedes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
