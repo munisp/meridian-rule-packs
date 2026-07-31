@@ -32,6 +32,7 @@ rules:
     decision: admissible
     narrate: Ombud reviews complaints about tax authority service/administrative failures; NOT assessment merits (those go
       to TAT).
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.intake.deadline
   when:
     event: complaint_received
@@ -39,12 +40,14 @@ rules:
     acknowledge_within_days: 7
     decision: acknowledge
     narrate: Acknowledge complaints within 7 days; assign case serial.
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.resolution.target
   when:
     case_state: open
   then:
     resolve_within_days: 30
     narrate: Target resolution within 30 days; extension max 30 days with recorded reasons.
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.prior-channel
   when:
     complainant_exhausted_internal_review: false
@@ -52,6 +55,7 @@ rules:
     decision: refer_back
     condition: unless_urgent_or_futility
     narrate: Complainant should first use the authority's internal review unless urgent or futile.
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.powers
   when:
     case_state: investigating
@@ -62,6 +66,7 @@ rules:
     - recommend_remedy
     - publish_systemic_findings
     narrate: Investigative powers; recommendations binding unless overturned by TAT/court.
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.gate.activation
   when:
     service: ombud
@@ -70,6 +75,7 @@ rules:
     gates:
     - ombud.activation
     narrate: Ombud rules active only when reg-watch activation gate armed (rules gazetted).
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 - id: ombud.deposit.link
   when:
     appeal: tat
@@ -77,7 +83,8 @@ rules:
   then:
     decision: independent_tracks
     narrate: Ombud complaint does not stay a TAT appeal or the 20% deposit rule (rp-deposit-20pct).
+  citation: "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 19da8923e244750c9ecb2bb57daaf1d98c895df1f7ad6af3abe06bfd02fb54e847bbb03465f7eb3f915d7a98b0b5e0d25ab338718714677ded768a20094f260b
+  signature: 107b4390bfd621464063e5f56a01b79a40850414d57411c89ff881eff6f0ca6666c67191458fa6b6150e597d9ffe0272f85771369b5ca1a82a74023ea718640a
