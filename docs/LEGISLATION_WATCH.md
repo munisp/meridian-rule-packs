@@ -1,23 +1,41 @@
 # LEGISLATION_WATCH.md — Legislative watch process (SPEC-LCE §4)
 
-**Process document only — no implementation in this session.**
+**Operationalised by `tools/watch.py` + `watch_sources.yaml`** (previously process-only).
+The tool content-hash diffs every registered source, stores snapshots in
+`watch_state/` (gitignored), and emits change events + diff-proposal skeletons.
+It is offline by default (fixtures); live fetching requires `--live` and only
+the weekly advisory CI job (`ci/workflows/watch.yml`, continue-on-error) uses it.
 
-## 1. Source feeds (checked weekly by the reg-watch duty engineer)
+```bash
+python tools/watch.py --check      # report changes; exit 1 while any change is unacknowledged
+python tools/watch.py --snapshot   # after counsel review: update store, acknowledge events
+python tools/watch.py --report     # pending changes + aging vs the 20-business-day SLA
+```
 
-- Federal Republic of Nigeria Official Gazette (government printer / CTC requests via NRS).
-- NRS (formerly FIRS) circulars & public notices page; NRS presumptive-tax framework
-  (currently draft — unblocks finding #18 and flips `subject_to_regazette` flags).
-- Federal Ministry of Finance press releases (WHT-Regs-style instruments).
-- CBN circulars feed (EMTL, thresholds).
+## 1. Source feeds (registered in `watch_sources.yaml`, checked weekly)
+
+- Federal Republic of Nigeria Official Gazette feed (`fgn-gazette`; CTC requests via NRS).
+- NRS (formerly FIRS) circulars & public notices page (`nrs-circulars`); NRS
+  presumptive-tax framework (currently draft — unblocks finding #18 and flips
+  `subject_to_regazette` flags).
+- NRS e-invoicing (MBS) technical documentation (`nrs-einvoice-docs`).
+- CBN circulars page (`cbn-circulars`; EMTL, thresholds).
+- Federal Ministry of Finance press releases (WHT-Regs-style instruments) —
+  add to `watch_sources.yaml` when a stable URL is confirmed.
 - Secondary early-warning (clearly tagged non-authoritative): KPMG/PwC/BDO/Andersen
-  Nigeria tax alerts, UUBO/SHQ Legal/Templars/Aluko & Oyebode briefings.
-- Tracking log: `docs/reg-watch-log.md` — date, source, instrument, action taken.
-  (A markdown log is sufficient; do not build a service.)
+  Nigeria tax alerts, UUBO/SHQ Legal/Templars/Aluko & Oyebode briefings —
+  tracked by the duty engineer; deliberately NOT in the registry (G1: no pack
+  change on secondary-source-only reports).
+- Tracking log: `docs/reg-watch-log.md` — date, source, instrument, action taken
+  (the watch tool's `watch_state/pending.json` is the machine-readable log).
 
 ## 2. Diff proposal format
 
 Every detected change is filed as a PR containing a **diff-proposal YAML** at
-`outbox/legislation-diffs/<yyyy-mm-dd>-<slug>.yaml` plus the pack edits:
+`outbox/legislation-diffs/<yyyy-mm-dd>-<slug>.yaml` plus the pack edits.
+`tools/watch.py --check` writes the **skeleton** (instrument/statute/section
+left for counsel, `excerpt_sha256` and `sla_deadline` = detected + 20 business
+days pre-filled); counsel completes it:
 
 ```yaml
 instrument: Nigeria Tax (Amendment) Act 2026
@@ -40,10 +58,27 @@ A documented (not coded) stage is added to GOVERNANCE.md between **review** and
 **simulate**: **counsel-review** — for any pack change whose diff-proposal touches
 `status: IMPLEMENTED` sections, external counsel must record sign-off in the
 diff-proposal YAML (`counsel.signed_off_at`) before the governance board signs.
-The ceremony tool is unchanged this session; the gate is procedural, enforced by
-the board checklist.
+The ceremony tool is unchanged; the gate is procedural, enforced by the board
+checklist.
 (Future work: `ceremony.py` refuses `sign` when a diff-proposal in the changeset
 lacks `counsel.signed_off_at`.)
+
+**CTC verification is part of counsel-review.** When counsel sights the gazette
+CTC for an instrument, they record it with `tools/ctc.py`:
+
+```bash
+python tools/ctc.py record-verification --statute wht-regs-2024 \
+    --section first-schedule.dividend --document gazette-106-2024.pdf \
+    --verifier "A. Counsel, External Chambers"
+python tools/ctc.py --report    # per-statute verified/unverified/waived counts
+```
+
+This sha256-pins the exact document sighted, writes the `ctc:` block into the
+coverage section, flips `citation_kind: secondary → primary`, and re-validates
+(`coverage_validate.py` FAILs on a `verified` block missing verifier/date/source,
+WARNs if the hash is absent). `tools/attest.py` reports CTC coverage
+(`--ctc-threshold` arms the ratchet; default report-only). Baseline today:
+**all sections unverified** — see `python tools/ctc.py --report`.
 
 ## 4. SLA
 
