@@ -43,12 +43,14 @@ rules:
   then:
     decision: exempt
     narrate: Shared passenger road transport exempt.
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 - id: vat.exempt.plays-performance
   when:
     item_class: plays_performances_conducted_by_educational
   then:
     decision: exempt
     narrate: Plays and performances conducted by educational institutions as part of learning.
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 - id: vat.exempt.real-property
   when:
     item_class:
@@ -59,6 +61,7 @@ rules:
   then:
     decision: exempt
     narrate: Land, buildings and their lease/rental exempt.
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 - id: vat.exempt.money-securities
   when:
     item_class:
@@ -69,12 +72,14 @@ rules:
   then:
     decision: exempt
     narrate: Money and securities transactions exempt (fees/commissions for financial services remain taxable).
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 - id: vat.exempt.humanitarian
   when:
     item_class: non_commercial_humanitarian_religious
   then:
     decision: exempt
     narrate: Non-commercial supplies by humanitarian/religious bodies.
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 - id: vat.exempt.exported-services-legacy
   when:
     item_class: exported_services
@@ -85,7 +90,8 @@ rules:
     narrate: Exported services were EXEMPT before 2026; under NTA they move to ZERO-RATED (rp-vat-zerorated-basket) with input
       recovery.
   effective_to: '2025-12-31'
+  citation: "VAT Act (as amended) First Schedule; Nigeria Tax Act 2025"
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 0d91f493d43c05b3cbfb1f52e9484c5f80e41e4d6ada55a12265e5f86d1e6d845140ca85b71e8b673d7510fb0cd5adfb6c810e80c58b4d3a86dfe89631298b00
+  signature: cceb33c01127aa16afd8fa9e66da0a9e6e5dea3f8277bc418e556ac49a185dc20310bbac121b4aee020c22143624d7835374baeec659dc439f8e84b9c43cac0e
