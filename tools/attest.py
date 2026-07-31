@@ -50,8 +50,6 @@ DEFAULT_SUITE_PATH = REPO.parent / "meridian-compliance-suite"
 KNOWN_DRIFT = [
     {"case_prefix": "wht.rates-matrix.", "reason": "engine embedded rp-wht-2024 copy predates tax-law-parity fixes (services/directors-fees/winnings/construction rates)",
      "expires": "2026-09-30"},
-    {"case_prefix": "wht.carveout.", "reason": "engine E5 TIN-validity gate + stale embedded pack rates",
-     "expires": "2026-09-30"},
     {"case_prefix": "wht.no-tin-double.", "reason": "engine doubles passive income when TIN absent (not_in scoping not honoured) — stale embedded pack",
      "expires": "2026-09-30"},
 ]
