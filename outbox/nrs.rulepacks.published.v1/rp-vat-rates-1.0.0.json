@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHG1TV7JWJ8SMHZG40S97",
+  "id": "01KYTXKXAQ0FB4M9WRFEHXBZBN",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:11:54Z",
+  "time": "2026-07-31T01:46:28Z",
   "tenant_id": "",
-  "trace_id": "cd6144294904e638b9a49c0efe1733a6",
+  "trace_id": "77a79ec64e7426acf2f5928fb1061286",
   "rule_pack_version": "rp-vat-rates@1.0.0",
   "data": {
     "pack_id": "rp-vat-rates",
@@ -14,8 +14,8 @@
     "effective_to": null,
     "subject_to_regazette": true,
     "status": "published",
-    "rule_count": 5,
-    "sha256": "4d45cafb73e48daf66cb49aea1a8b88a5b9d8f3cd5bc67e3b2baa54db686087b",
+    "rule_count": 6,
+    "sha256": "89c9fad56bcce5009f1ec1f65a9f83bd80e5e6e66ad9aefb95e2563fead22b63",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Finance Act 2019 s.34 (VAT rate 5% -> 7.5%, effective 1 Feb 2020); Nigeria Tax Act 2025 (rate retained 7.5%)",

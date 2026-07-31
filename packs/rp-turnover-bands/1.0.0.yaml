@@ -3,7 +3,12 @@
 id: rp-turnover-bands
 version: 1.0.0
 title: Canonical annual turnover band table for presumptive taxation
-description: Shared band definitions consumed by rp-presumptive-* band engines. Bands in integer kobo of annual turnover.
+description: 'Shared band definitions consumed by rp-presumptive-* band engines. Bands in integer kobo of annual turnover.
+  BOUNDARY SEMANTICS (I13): every band is [min_kobo, max_kobo) — min inclusive, max EXCLUSIVE — so adjacent bands sharing
+  a value partition the line without overlap; a turnover exactly equal to a shared boundary belongs to the HIGHER band. The
+  presumptive ceiling is aligned with the N100m VAT-registration threshold (rp-vat-rates vat.registration.threshold): exit
+  uses gte so turnover of exactly N100m already requires registration, mirroring the VAT rule.'
+boundary_semantics: min_inclusive_max_exclusive
 effective_from: '2026-01-01'
 effective_to: null
 status: published
@@ -71,12 +76,12 @@ rules:
 - id: band.exit.register
   when:
     annual_turnover_kobo:
-      gt: 10000000000
+      gte: 10000000000
   then:
     decision: graduate_to_standard_regime
-    narrate: Above N100m turnover the operator must register for TIN-based filing (small-company rules in rp-exemption-nta
-      may still apply).
+    narrate: At or above N100m turnover the operator must register for TIN-based filing AND for VAT (aligned with rp-vat-rates
+      vat.registration.threshold, gte N100m); small-company rules in rp-exemption-nta may still apply.
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 4c40fb1aeb44a77d42643a3da8c3641014f3b8667d949d393e1a7c23c7d00026ff30beb512022bea8e737963ee934041a9aa46c4488222f1fba7d945eb7e6a01
+  signature: 02f0be7756e5bf57f2b1dc1e8e681bf7cb9c4901a0977092ba399d0e4d0b7b71ab386dd0c820372db389bc3d6a97ff8cf71cee233607b3c28de73bb2ebf1da0e

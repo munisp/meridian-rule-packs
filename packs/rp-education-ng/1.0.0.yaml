@@ -80,10 +80,11 @@ rules:
 - id: pit.minimum-wage-exempt
   when:
     annual_income_kobo:
-      lte: 80000000
+      lte: 84000000
   then:
     decision: exempt
-    narrate: Persons earning the national minimum wage or less are exempt from PIT.
+    narrate: Persons earning the national minimum wage or less are exempt from PIT (N70,000/month = N840,000/yr from July
+      2024).
 - id: cit.standard-rate
   when:
     entity: company
@@ -155,4 +156,4 @@ rules:
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 9cd922ab698d558dc337e27c039effbf5efa0b16fab1028b679475484251f985a8f2a1458f4dfb6fdc10b1b104a86265fd73aafc4660f9db89e9e46f810d190e
+  signature: c352473c943515b0809b5e030567a9985b76a5073c711ba6b6307e03b5b58351ab7095d2f03ddf49cc19c2955918f903a6e1d57d6220e70632da58e7aa030c0c
