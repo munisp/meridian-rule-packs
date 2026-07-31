@@ -1,0 +1,123 @@
+# rp-stamp-duty v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Stamp duties — ad valorem and fixed duties (SDA as amended by Finance Acts; NTA 2025)
+id: rp-stamp-duty
+version: 1.0.0
+title: Stamp duties — ad valorem and fixed duties (SDA as amended by Finance Acts; NTA 2025)
+description: 'Stamp duty schedule: ad valorem duties on agreements, leases, share capital, mortgages and marketable securities;
+  fixed N50 duties; electronic money transfer levy N50 on receipts of N10,000+; adjudication and stamping deadline (30 days);
+  exemption classes.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Stamp Duties Act Cap S8 LFN 2004 (as amended by Finance Acts 2019-2023); Nigeria Tax Act 2025 (stamp duty provisions
+    carried into the NTA)
+  as_gazetted: null
+  source_citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
+parameters:
+  emtl_threshold_kobo: 1000000
+rules:
+- id: sd.emtl.electronic-transfer
+  when:
+    instrument: electronic_money_transfer
+    amount_kobo:
+      gte: 1000000
+  then:
+    duty_kobo: 5000
+    narrate: 'Electronic Money Transfer Levy: N50 flat on electronic receipts/transfers of N10,000 or more (recipient''s account;
+      banks collect and remit).'
+  citation: Finance Act 2020 s.48 (SDA s.89A)
+- id: sd.emtl.below-threshold
+  when:
+    instrument: electronic_money_transfer
+    amount_kobo:
+      lt: 1000000
+  then:
+    duty_kobo: 0
+    narrate: Transfers below N10,000 attract no EMTL.
+- id: sd.advalorem.agreement
+  when:
+    instrument: agreement
+  then:
+    rate_bps: 10
+    formula: duty_kobo = max(amount_kobo * 10 / 10000, 0)
+    narrate: 'Ad valorem duty on agreements not otherwise charged: 0.1% of the consideration.'
+  citation: SDA Schedule (agreements)
+- id: sd.advalorem.lease
+  when:
+    instrument: lease_or_tenancy
+    term_years:
+      lte: 7
+  then:
+    rate_bps: 16
+    formula: duty_kobo = rent_kobo * 16 / 10000
+    narrate: 'Leases not exceeding 7 years: 0.16% of rent (approx. 6k in the N37.50 scale); longer terms charged at higher
+      graduated scale per Schedule.'
+  citation: SDA Schedule (lease)
+- id: sd.advalorem.share-capital
+  when:
+    instrument: share_capital_increase
+  then:
+    rate_bps: 75
+    formula: duty_kobo = amount_kobo * 75 / 10000
+    narrate: 'Ad valorem duty on increase in authorised share capital: 0.75%.'
+  citation: SDA Schedule (share capital); CAMA 2020
+- id: sd.advalorem.marketable-securities
+  when:
+    instrument: share_transfer
+  then:
+    rate_bps: 75
+    formula: duty_kobo = consideration_kobo * 75 / 10000
+    narrate: 'Transfer of stocks/shares (marketable securities): 0.75% of consideration.'
+- id: sd.advalorem.mortgage
+  when:
+    instrument: mortgage_or_debenture
+  then:
+    rate_bps: 37
+    formula: duty_kobo = secured_amount_kobo * 37 / 10000
+    narrate: 'Mortgages, bonds, debentures and covenants: 0.375% of the secured amount.'
+- id: sd.fixed.deed
+  when:
+    instrument:
+      in:
+      - deed_of_assignment
+      - power_of_attorney_irrevocable
+      - memorandum_of_understanding_flat
+  then:
+    duty_kobo: 50000
+    narrate: Fixed duty N500 on instruments so charged where no ad valorem scale applies (conveyance-on-sale remains ad valorem
+      at 1.5%).
+- id: sd.advalorem.conveyance
+  when:
+    instrument: conveyance_on_sale
+  then:
+    rate_bps: 150
+    formula: duty_kobo = consideration_kobo * 150 / 10000
+    narrate: 'Conveyance or transfer on sale of property: 1.5% of consideration.'
+- id: sd.deadline.stamping
+  when:
+    instrument_executed: true
+  then:
+    deadline_days: 30
+    narrate: Chargeable instruments must be presented for stamping within 30 days of execution (40 days where executed abroad);
+      late stamping attracts penalty plus interest.
+- id: sd.adjudication
+  when:
+    duty_uncertain: true
+  then:
+    decision: refer_to_adjudication
+    narrate: Taxpayer may require the tax authority to adjudicate the correct duty before stamping.
+- id: sd.exempt.govt-documents
+  when:
+    party:
+      in:
+      - federal_government
+      - state_government
+  then:
+    duty_kobo: 0
+    narrate: Instruments to which a government is a party are exempt from stamp duty unless expressly charged.
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 31ac3e1451b238d177bd714afa442a05efa0b1641261ee559b5bb32459937c81501f346cc2be8fab6bd8d6db4c576416a4251e7331dfff1641d7c213e210aa0f

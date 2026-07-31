@@ -48,11 +48,28 @@ rules:
 - id: vat.registration.threshold
   when:
     person: taxable
+    date:
+      gte: '2026-01-01'
   then:
     threshold:
-      annual_taxable_supplies_kobo: 10000000000
-    narrate: NTA registration threshold N100m taxable supplies (N25m under pre-2026 VAT Act).
+      annual_taxable_supplies_kobo:
+        gte: 10000000000
+    narrate: NTA registration threshold N100m taxable supplies, applied gte (turnover of exactly N100m must register). Aligned
+      with rp-turnover-bands band.exit.register (I13).
+  effective_from: '2026-01-01'
+- id: vat.registration.threshold-legacy
+  when:
+    person: taxable
+    date:
+      lt: '2026-01-01'
+  then:
+    threshold:
+      annual_taxable_supplies_kobo:
+        gte: 2500000000
+    narrate: Pre-2026 VAT Act registration threshold N25m taxable supplies (gte).
+  effective_from: '2020-02-01'
+  effective_to: '2025-12-31'
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: ca038b8f9dff25736cb35e70e2134a7840c34bf4d5f05fa3aa4f4840be2ee4ec801b2e20d38257a610e9073e37dc97bf25139df6f6dbaa06c170b1ed49517302
+  signature: 33adb7e2b01408a658bfa43759211afb1b8c8187ca6890431f537d1b6a1133bef292957408c6731ab5c42a017e60f55dfedc9b57b5d2fe1762eca8ea228a9a08

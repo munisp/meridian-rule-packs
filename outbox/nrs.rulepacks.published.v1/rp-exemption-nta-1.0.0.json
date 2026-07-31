@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW827E7RTF0QG0CWCDHN",
+  "id": "01KYTXKXKWRTMHGD6HNC9CSWXY",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-07-31T01:46:28Z",
   "tenant_id": "",
-  "trace_id": "7f6d6a2e50784b6235c74c8dcc0f81b3",
+  "trace_id": "a9d0ad107b28beb0d18703dcd49c5dcc",
   "rule_pack_version": "rp-exemption-nta@1.0.0",
   "data": {
     "pack_id": "rp-exemption-nta",
@@ -15,7 +15,7 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 6,
-    "sha256": "a06faf51d4ca7ca4a0492423b0bc56061ee0c82de656776a5897483d008b73c3",
+    "sha256": "5eb8ed1e7cabb1ec308dd4d2bf25e515d167cc22ab16f5457c59dccca4635ec7",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 \u2014 exemption provisions and Schedules",

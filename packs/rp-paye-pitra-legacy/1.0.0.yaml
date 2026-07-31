@@ -1,0 +1,128 @@
+# rp-paye-pitra-legacy v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# PAYE progressive bands and consolidated relief under PITA (legacy, to 31 Dec 2025)
+id: rp-paye-pitra-legacy
+version: 1.0.0
+title: PAYE progressive bands and consolidated relief under PITA (legacy, to 31 Dec 2025)
+description: 'Personal income tax under the Personal Income Tax Act as amended: graduated bands 7%/11%/15%/19%/21%/24%, consolidated
+  relief allowance (higher of N200,000 or 1% of gross income, plus 20% of gross), minimum tax 1% of gross where taxable income
+  is fully relieved, tax-exempt deductions (pension, NHF, NHIS, life assurance). Retained for back-period computation and
+  audits of years up to 2025; superseded by rp-education-ng NTA bands from 1 Jan 2026.'
+effective_from: '2011-12-14'
+effective_to: '2025-12-31'
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Personal Income Tax (Amendment) Act 2011 (bands and CRA, effective 14 Dec 2011); PITA Cap P8 LFN 2004
+  as_gazetted: null
+  source_citation: PITA (as amended by PITAM 2011)
+parameters:
+  cra_floor_kobo: 20000000
+  cra_floor_bps_of_gross: 100
+  cra_percent_bps_of_gross: 2000
+rules:
+- id: paye.cra.consolidated-relief
+  when:
+    year:
+      lte: 2025
+  then:
+    formula: cra_kobo = max(20000000, gross_income_kobo * 100 / 10000) + gross_income_kobo * 2000 / 10000
+    narrate: Consolidated Relief Allowance = higher of N200,000 or 1% of gross income, plus 20% of gross income; deducted
+      before applying the bands.
+  citation: PITA s.33 (as amended by PITAM 2011)
+- id: paye.deductions.exempt
+  when:
+    deduction_type:
+      in:
+      - pension_contribution
+      - national_housing_fund
+      - national_health_insurance
+      - life_assurance_premium
+      - gratuity
+  then:
+    decision: deduct_before_cra
+    narrate: Statutory deductions (pension, NHF, NHIS, life assurance, gratuity) are tax-exempt and deducted from gross emolument
+      before CRA and banding.
+  citation: PITA s.33 & Fourth Schedule
+- id: paye.band.1
+  when:
+    annual_taxable_income_kobo:
+      lte: 30000000
+  then:
+    rate_bps: 700
+    band_order: 1
+    narrate: First N300,000 of taxable income at 7%.
+  citation: PITA Sixth Schedule
+- id: paye.band.2
+  when:
+    annual_taxable_income_kobo:
+      gt: 30000000
+      lte: 60000000
+  then:
+    rate_bps: 1100
+    band_order: 2
+    narrate: Next N300,000 at 11%.
+- id: paye.band.3
+  when:
+    annual_taxable_income_kobo:
+      gt: 60000000
+      lte: 110000000
+  then:
+    rate_bps: 1500
+    band_order: 3
+    narrate: Next N500,000 at 15%.
+- id: paye.band.4
+  when:
+    annual_taxable_income_kobo:
+      gt: 110000000
+      lte: 160000000
+  then:
+    rate_bps: 1900
+    band_order: 4
+    narrate: Next N500,000 at 19%.
+- id: paye.band.5
+  when:
+    annual_taxable_income_kobo:
+      gt: 160000000
+      lte: 320000000
+  then:
+    rate_bps: 2100
+    band_order: 5
+    narrate: Next N1,600,000 at 21%.
+- id: paye.band.6
+  when:
+    annual_taxable_income_kobo:
+      gt: 320000000
+  then:
+    rate_bps: 2400
+    band_order: 6
+    narrate: Above N3,200,000 at 24% (top marginal rate under PITA).
+- id: paye.minimum-tax
+  when:
+    taxable_income_after_reliefs_kobo:
+      lte: 0
+  then:
+    formula: minimum_tax_kobo = gross_income_kobo * 100 / 10000
+    narrate: Minimum tax 1% of gross income applies where reliefs eliminate taxable income (not applicable to persons earning
+      the national minimum wage or less).
+  citation: PITA s.37
+- id: paye.minimum-wage-exempt
+  when:
+    annual_income_kobo:
+      lte: 36000000
+  then:
+    decision: exempt
+    narrate: 'Persons earning the national minimum wage or less exempt from PIT. NOTE (legacy window): the N30,000/month (N360,000/yr)
+      minimum wage applied 2019-2024; the N70,000/month (N840,000/yr) wage applies from July 2024 — implementations must apply
+      the wage floor in force on the payroll date.'
+- id: paye.remit.deadline
+  when:
+    tax: PIT_PAYE
+  then:
+    deadline_day_of_month: 10
+    narrate: Employer remits PAYE to the relevant State IRS by the 10th day of the following month; annual employer returns
+      (Form H1) by 31 January.
+  citation: PITA s.81
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 7cc0044b2fafb967ab8b75972a25328944189ba02c1234cd6e107e0ea1e6a231b7352c38a3bf3f6b04b9f5da21a748adfc0e12295dccde9839a2092e7f4cc90e

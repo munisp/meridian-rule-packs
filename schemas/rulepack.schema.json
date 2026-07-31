@@ -48,6 +48,10 @@
         "signature": { "type": "string", "pattern": "^[0-9a-f]{128}$" }
       }
     },
+    "boundary_semantics": {
+      "type": "string",
+      "description": "Optional band/threshold boundary convention (e.g. min_inclusive_max_exclusive) — I13 metadata for packs defining adjacent bands"
+    },
     "parameters": {
       "type": "object",
       "description": "Named scalar parameters referenced by formulas/tables (money in integer kobo unless suffixed otherwise)",

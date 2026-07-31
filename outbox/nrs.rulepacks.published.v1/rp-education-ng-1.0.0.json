@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW4TQQKGGWBPZED48FM8",
+  "id": "01KYTXKXFNCF5D2W5TFFJ81SAF",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-07-31T01:46:28Z",
   "tenant_id": "",
-  "trace_id": "abfc49a896dcc99c9957367dfddd1de8",
+  "trace_id": "60b0b38ad03ecc172dc971369db3180f",
   "rule_pack_version": "rp-education-ng@1.0.0",
   "data": {
     "pack_id": "rp-education-ng",
@@ -15,7 +15,7 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 14,
-    "sha256": "033151344d5a938987ad82fe0284be351116a42b1485a69691545e71a4e010ee",
+    "sha256": "1ae928d4f26a42f5e5b3078f777b519fbb7fd2f36838d228e2244a791c02bbb7",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 \u2014 First/Second Schedules (PIT), Part on CIT & VAT",

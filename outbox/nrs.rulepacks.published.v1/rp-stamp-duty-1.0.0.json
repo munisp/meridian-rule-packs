@@ -1,0 +1,26 @@
+{
+  "id": "01KYTXKF7ZXZ3Z4XB0GQPQ172Z",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-07-31T01:46:13Z",
+  "tenant_id": "",
+  "trace_id": "02aa1901858f4b03fcfdf7c32a018ab4",
+  "rule_pack_version": "rp-stamp-duty@1.0.0",
+  "data": {
+    "pack_id": "rp-stamp-duty",
+    "version": "1.0.0",
+    "title": "Stamp duties \u2014 ad valorem and fixed duties (SDA as amended by Finance Acts; NTA 2025)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 12,
+    "sha256": "fb1f4004efde593676d864f842d3ceaa481ed017c5d67b2d511a234ec074c9a6",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Stamp Duties Act Cap S8 LFN 2004 (as amended by Finance Acts 2019-2023); Nigeria Tax Act 2025 (stamp duty provisions carried into the NTA)",
+      "as_gazetted": null,
+      "source_citation": "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+    }
+  }
+}
