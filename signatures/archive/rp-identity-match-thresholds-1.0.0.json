@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-identity-match-thresholds",
   "version": "1.0.0",
-  "sha256": "d5b23169f1fc5d04c7e8b08c20236ab039fbe38e4e0c45242959d780034b6796",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-identity-match-thresholds/1.0.0/d5b23169f1fc5d04.yaml",
-  "archived_at": "2026-07-30T04:12:06Z",
+  "sha256": "72b1a4755373868be8511e6143be059bc64e3de9dbdd02a411922594dec8ae90",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-identity-match-thresholds/1.0.0/72b1a4755373868b.yaml",
+  "archived_at": "2026-07-31T16:12:18Z",
   "key_id": "governance-board-2026",
-  "signature": "6ff933b295fb410307b3a22639a684094806e70052ed96290adc907910b49cc34d72048b585fc9f2b9bc67d9ad717b8da3b93aa3e452f6a83bd0cec0b010fa0d",
+  "signature": "3b8b142e824e71eb2aed4c768ebf289e167513c5061f95668195cb6369a433f22971f87072774599a6703ca498a0d783ec0653a3411f90cff9ecc2b81284840e",
   "publish_event_id": "01KYRKHWCG1TVZVEAGW4M2R72E",
   "immutable": true
 }
