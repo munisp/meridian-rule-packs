@@ -18,8 +18,12 @@ case_set:
     date: '2025-03-01'
 
 cases:
+  # Fixture TIN 20001593-48761 is structurally valid under the engine's local
+  # validator (services/wht/app/engine.py validate_tin: exactly 13 digits;
+  # no Luhn/registry check when TIN_GRAPH_URL is unset). The old placeholder
+  # SUP-TIN-000001 (6 digits) was rejected by the E5 TIN-validity gate.
   - id: wht.carveout.granted-with-tin
-    facts: {supplier_tin: SUP-TIN-000001}
+    facts: {supplier_tin: 20001593-48761}
     expect:
       rate_bps: 0
       wht_kobo: 0
@@ -34,13 +38,13 @@ cases:
       outcome: deduct_no_tin_double              # engine-mode only
 
   - id: wht.carveout.denied-payer-not-small
-    facts: {supplier_tin: SUP-TIN-000001, payer_size: large}
+    facts: {supplier_tin: 20001593-48761, payer_size: large}
     expect:
       rate_bps: 200
       wht_kobo: 3000000
 
   - id: wht.carveout.denied-over-2m-month
-    facts: {supplier_tin: SUP-TIN-000001, transaction_month_value_kobo: 200000001}
+    facts: {supplier_tin: 20001593-48761, transaction_month_value_kobo: 200000001}
     expect:
       rate_bps: 200
       wht_kobo: 3000000

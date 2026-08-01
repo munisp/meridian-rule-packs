@@ -62,7 +62,11 @@ WHT_REQUEST_KEYS = {
     "supplier_nin": "supplier_nin",
     "amount_kobo": "amount_kobo",
     "date": "payment_date",
-    "transaction_month_value_kobo": "monthly_amount_kobo",
+    # Engine build_context reads transaction_month_value_kobo verbatim (and
+    # falls back to amount_kobo as the month value when it is absent) — the
+    # legacy "monthly_amount_kobo" alias is not honoured by the engine and
+    # must not be used here.
+    "transaction_month_value_kobo": "transaction_month_value_kobo",
     "payer_annual_turnover_kobo": "payer_annual_turnover_kobo",
     "payer_size": "payer_size",
     "beneficiary_residence": "beneficiary_residence",
