@@ -47,12 +47,11 @@ DEFAULT_SUITE_PATH = REPO.parent / "meridian-compliance-suite"
 # Named-failure allowlist (SPEC-LCE §7 risk mitigation): expected engine-drift
 # failures with mandatory expiry. Annotation only — the gate still exits 1
 # while any entry matches. Expired entries are flagged in the report.
-KNOWN_DRIFT = [
-    {"case_prefix": "wht.rates-matrix.", "reason": "engine embedded rp-wht-2024 copy predates tax-law-parity fixes (services/directors-fees/winnings/construction rates)",
-     "expires": "2026-09-30"},
-    {"case_prefix": "wht.no-tin-double.", "reason": "engine doubles passive income when TIN absent (not_in scoping not honoured) — stale embedded pack",
-     "expires": "2026-09-30"},
-]
+# Currently empty — no expected drift. Add entries only for named, understood
+# failures with an expiry; stale entries (matching zero failing cases) must be
+# removed once the underlying fix lands, as happened for wht.rates-matrix.* and
+# wht.no-tin-double.* after the carveout fix.
+KNOWN_DRIFT: list[dict] = []
 HONESTY_BANNER = ("dev ed25519 keypair (prod uses HSM custody) · dev worm:// URIs · "
                   "packs flagged subject_to_regazette may change when CTCs/gazettes land · "
                   "citation_kind: secondary = working citation, not a gazette URL (G1)")
