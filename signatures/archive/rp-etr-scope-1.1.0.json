@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-etr-scope",
+  "version": "1.1.0",
+  "sha256": "4edadc7f0015086145b6a00706b710eaadf461649a9c0b930be76abcb913004b",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-scope/1.1.0/4edadc7f00150861.yaml",
+  "archived_at": "2026-09-18T16:14:38Z",
+  "key_id": "governance-board-2026",
+  "signature": "0162885dd061ccf08b4b37bdc581c0a01b627af74124098c13f76cb32e6dd56d65cf6735a60ead289dff83b2a0d0e88b09b15280079e8b3d46cf6150c9fba50c",
+  "publish_event_id": "01M2TMRSF4H0NJRHN2MS5S47ES",
+  "immutable": true
+}
