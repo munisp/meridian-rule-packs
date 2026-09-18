@@ -1,1 +1,0 @@
-python tools/validate.py     # 40/40 packs valid (schema + signature + archive)
