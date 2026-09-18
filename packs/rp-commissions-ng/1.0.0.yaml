@@ -1,0 +1,47 @@
+# rp-commissions-ng v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Agent hierarchy commission table (NGN, kobo-integers)
+id: rp-commissions-ng
+version: 1.0.0
+title: Agent hierarchy commission table (NGN, kobo-integers)
+description: 'Canonical governed pack for the inclusion-suite agent commission engine: per-level commission rates in basis
+  points of the settled transaction, NGN integer-kobo money convention. Values are copied faithfully from the meridian-inclusion-suite
+  embedded fallback (services/onboarding/packs/rp-commissions-ng.json), which this pack now supersedes as the canonical, signed
+  source (R4-S3 finding #12: the bps table that moves real money existed only as ungoverned embedded JSON).'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Meridian NRS agent commission policy, hierarchy rollout (feature I6)
+  as_gazetted: null
+  source_citation: meridian-inclusion-suite services/onboarding/packs/rp-commissions-ng.json (values copied verbatim); internal
+    Meridian commission policy (not a statutory rate)
+parameters:
+  currency: NGN
+  unit: kobo
+rules:
+- id: commission.level.1
+  when:
+    hierarchy_level: 1
+  then:
+    rate_bps: 250
+    narrate: 'capturing agent: 2.50% of the settled transaction'
+  citation: Meridian NRS agent commission policy (feature I6)
+- id: commission.level.2
+  when:
+    hierarchy_level: 2
+  then:
+    rate_bps: 100
+    narrate: 'direct upline: 1.00%'
+  citation: Meridian NRS agent commission policy (feature I6)
+- id: commission.level.3
+  when:
+    hierarchy_level: 3
+  then:
+    rate_bps: 50
+    narrate: 'second upline: 0.50%'
+  citation: Meridian NRS agent commission policy (feature I6)
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 14060acd2c90e2115438a7c885fcb6bfcbacae6961010162a6d306eea0430538269b820f27b9d664b7332df1651eb9cf83b96b46408c39622179146321ec5203
