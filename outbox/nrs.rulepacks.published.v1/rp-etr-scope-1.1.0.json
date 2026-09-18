@@ -1,0 +1,26 @@
+{
+  "id": "01M2TBBJ1M110KJT8YJCJP7VZC",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-09-18T13:30:07Z",
+  "tenant_id": "",
+  "trace_id": "4cd71893ead6aa1fdd4b16cdbd3e0414",
+  "rule_pack_version": "rp-etr-scope@1.1.0",
+  "data": {
+    "pack_id": "rp-etr-scope",
+    "version": "1.1.0",
+    "title": "GloBE/ETR scope thresholds and excluded entities",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 7,
+    "sha256": "87988c0500c537b4c22ce45f6d104a7241bfba708b1185aa8cbeec3ff0c5c004",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "OECD/G20 Inclusive Framework: Tax Challenges Arising from the Digitalisation of the Economy - Global Anti-Base Erosion Model Rules (Pillar Two), Dec 2021; adopted in Nigeria via NTAA 2025 s.6(4)",
+      "as_gazetted": null,
+      "source_citation": "OECD Pillar Two GloBE Model Rules (2021), Art. 1.1-1.5; Nigeria Tax Administration Act 2025 s.6"
+    }
+  }
+}
