@@ -49,17 +49,24 @@ python tools/validate.py                     # schema + signature + archive chec
 pytest                                       # full suite
 ```
 
-## Change management
+## Retirement / sunset workflow (R4)
 
-- Any content change requires a NEW version directory entry (`1.1.0`, `2.0.0`, …) —
-  published files are immutable. Hot fixes in place are re-signed by the ceremony and
-  produce a new archive record, but consumers pin versions via the registry lockfile.
-- Regazette: when CTCs arrive (G1 flipped by the board via reg-watch), provenance
-  `as_gazetted` is updated in a new patch version and `subject_to_regazette` may be
-  set `false`.
-- Production: replace the dev keypair with HSM-backed key custody; `key_id` rotation
-  is recorded in this file and in the archive records.
-anagement
+A pack superseded by consolidation or new law is **retired, never deleted**:
+
+1. The successor pack is published first (normal ceremony, new or existing pack id).
+2. A new patch/minor version of the legacy pack adds retirement metadata
+   (`superseded_by: <successor-pack-id>`, `retirement_note`, and `effective_to` where
+   not already present) and is re-signed through the ceremony — published files stay
+   immutable, so retirement metadata always lands in a NEW version.
+3. When no consumer should select the pack for new filings any more, the board flips
+   `status: retired` in a final version. Retired packs remain in the WORM archive,
+   remain signature-verifiable, and keep computing back-periods under old law via
+   `get_for_date`; `latest_local()`-style consumers must skip `retired` packs.
+
+Applied at R4: `rp-paye-pitra-legacy` 1.1.0 (`superseded_by: rp-paye-nta`),
+`rp-levies-legacy` 1.0.0 (`superseded_by: rp-education-ng`).
+
+## Change management
 
 - Any content change requires a NEW version directory entry (`1.1.0`, `2.0.0`, …) —
   published files are immutable. Hot fixes in place are re-signed by the ceremony and
