@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-paye-pitra-legacy",
   "version": "1.0.0",
-  "sha256": "89cad8e94050cb0707cf00c2a51a840affa110d0b734ea91852af67ceace67c4",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-paye-pitra-legacy/1.0.0/89cad8e94050cb07.yaml",
-  "archived_at": "2026-07-31T16:12:19Z",
-  "key_id": "governance-board-2026",
-  "signature": "0199d3fadc98ca36255a497617f6cfdaa161918307446fb49d773d631fbdb64e07c8847ea750f05a81ef81f59add4876c95b16a6bb4ae6a095322c2d6480f20e",
-  "publish_event_id": "01KYTXMYMZRG7AGCYHYEBA8J1K",
+  "sha256": "143a8f94c6506f7be725c37a250969a6ed5a9a5e17fca69ba7b56e9c6cdcdbbc",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-paye-pitra-legacy/1.0.0/143a8f94c6506f7b.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "ccd4ab9a6d07ccb96bc93cd2618c3157f721ca5173a2ec603ca964ad858ffcd7de72940f73ae4dde4d7a0055fad98ebf8c7affd6a29864187d4ca070d70a6606",
+  "publish_event_id": "01M2V1DS6TS6CHV4KB2TPS2E5V",
   "immutable": true
 }

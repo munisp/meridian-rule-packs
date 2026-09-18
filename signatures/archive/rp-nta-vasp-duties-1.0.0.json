@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-nta-vasp-duties",
   "version": "1.0.0",
-  "sha256": "cc548d981b90dfdc3baf0d2bb915528464da1d1d43403da5842199d170cba99b",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-nta-vasp-duties/1.0.0/cc548d981b90dfdc.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "140a3e0c41f7349bed8959e84e24f5a4398730e0695beec82387f427ede4fa9207de46a865832790f7418dc4d6ca697d8c098390c3cea295e78da48978ad4202",
-  "publish_event_id": "01KYRKHWF2B70JBZVFPS6DD2MV",
+  "sha256": "8ad4cec0dca384fc2ee0da6b0769acdb6254e358fa31ba3f6542b04a574902df",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-nta-vasp-duties/1.0.0/8ad4cec0dca384fc.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "e4aaa099b44105fcc54db8a2ce57c9e9002de00650c6303ae2d74d0b9b150a9cd2ece61b20a0f1915c7f7418b09cd729089ec73bd55e92138150b917d97eb602",
+  "publish_event_id": "01M2V1DS254FT5P1B99HG7THF0",
   "immutable": true
 }
