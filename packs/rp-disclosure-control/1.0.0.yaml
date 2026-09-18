@@ -23,7 +23,7 @@ rules:
     decision: suppress_if_below
     narrate: 'k-anonymity: any published aggregate cell must represent at least k=5 distinct taxpayers; below k the cell is
       suppressed.'
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 - id: disclosure.complementary-suppression
   when:
     cell: suppressed
@@ -31,7 +31,7 @@ rules:
   then:
     decision: suppress_complement
     narrate: 'Complementary suppression: suppress additional cells so a sub-k cell cannot be derived by subtraction.'
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 - id: disclosure.dominance
   when:
     cell: aggregate
@@ -39,7 +39,7 @@ rules:
   then:
     decision: suppress
     narrate: 'Dominance rule: suppress cells where the largest 2 contributors account for >= 85% of the total (p*q rule).'
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 - id: disclosure.differencing
   when:
     queries: overlapping
@@ -47,14 +47,14 @@ rules:
     decision: rate_limit_and_audit
     narrate: 'Overlapping query protection: rate-limit, audit query patterns, and round published values to protect against
       differencing attacks.'
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 - id: disclosure.pseudonym
   when:
     plane: gold
   then:
     decision: pseudo_tin_only
     narrate: Gold plane exposes pseudo_tin (HMAC) only; re-identification attempts are a security incident.
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 - id: disclosure.case-feed.min-cohort
   when:
     feed: nrs.cases.feed.v1
@@ -62,8 +62,8 @@ rules:
     threshold:
       min_cohort: 5
     narrate: Case feed items aggregated to cohorts >= 5 before leaving the enclave (F-flow rules).
-  citation: "NDPA 2023; NRS data governance & confidentiality policy"
+  citation: NDPA 2023; NRS data governance & confidentiality policy
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 5a607fa99320515d1d0611ba50977b53346dba421377c431502847490825b8b6a1616a0a1cc6293e41f572551a8a8994e456dd807dab1124b269b11c57dd3602
+  key_id: governance-board-2026-r2
+  signature: ff8c36d44588796aa25d389203034f775730aca1aad3114bd489b7c196f4a8becb3debfb24b9cf83b0c5097edff2568d2788f335b9b8ad989720688b3dc75d0f

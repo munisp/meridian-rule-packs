@@ -43,5 +43,5 @@ rules:
   citation: Meridian NRS agent commission policy (feature I6)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 14060acd2c90e2115438a7c885fcb6bfcbacae6961010162a6d306eea0430538269b820f27b9d664b7332df1651eb9cf83b96b46408c39622179146321ec5203
+  key_id: governance-board-2026-r2
+  signature: 3b7ddab897f13ea69c04004db8aeaaeb3083ad3e9420d3d6a46ab429f66994e746a1f38d002619070ebb5baa9b53e83711d0ec169f13a5d64dcf67dc64e96305
