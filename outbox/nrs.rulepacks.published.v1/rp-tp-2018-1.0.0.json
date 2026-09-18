@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWPP3RPTVQ3SC6A4Z5PZ",
+  "id": "01M2V1DSHJWT812ZYWCZBS27ST",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "0a8eaa47d5640a8230cc141f2e4743ce",
+  "trace_id": "2d702e7550822f6b7f139c5a5b75d9c4",
   "rule_pack_version": "rp-tp-2018@1.0.0",
   "data": {
     "pack_id": "rp-tp-2018",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 10,
-    "sha256": "a43880199de930789dfc0976abab75ff7912a21b6fb94188d33e9453f4f129dd",
-    "key_id": "governance-board-2026",
+    "sha256": "108f795a18c6ac7e41b8cde1a8254efd895bdc03c2091dea06407bda0500b697",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Income Tax (Transfer Pricing) Regulations 2018 (FIRS, effective 12 March 2018), based on OECD TP Guidelines and UN TP Manual",
       "as_gazetted": "Federal Republic of Nigeria Official Gazette, TP Regulations 2018 (awaiting CTC)",

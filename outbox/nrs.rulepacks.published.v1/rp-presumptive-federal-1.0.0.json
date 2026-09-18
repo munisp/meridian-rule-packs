@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWHKSPH6483DMK6DZXDV",
+  "id": "01M2V1DSA9MJ5RT4FA6S3QJ2XV",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "58a3dfc2a1eff498ec0d2bd7af43d0e7",
+  "trace_id": "26faaf1296dd0f5ec9f56713760ae5db",
   "rule_pack_version": "rp-presumptive-federal@1.0.0",
   "data": {
     "pack_id": "rp-presumptive-federal",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 5,
-    "sha256": "6c64e5bfabe54e7c6e7cbb21e536e30279c999a0cef3498936ce2a6f76955f99",
-    "key_id": "governance-board-2026",
+    "sha256": "77226a5e39d3a30dbdf2adfefff903155465e161f837304036ab627e0a6ebfff",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "NRS informal-sector presumptive taxation framework under NTA 2025 (regulations awaited)",
       "as_gazetted": null,

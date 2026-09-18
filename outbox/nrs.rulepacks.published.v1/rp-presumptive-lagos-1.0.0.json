@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWJY2SC3TJFMPB7QVD4X",
+  "id": "01M2V1DSBNBTS26CPX6JH3SD2D",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "75db6b047f78c4d5b38803a89e1c921d",
+  "trace_id": "90be355e61c9d308bba45ff6053834e8",
   "rule_pack_version": "rp-presumptive-lagos@1.0.0",
   "data": {
     "pack_id": "rp-presumptive-lagos",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 3,
-    "sha256": "266af7c973521a3dd1f35e187b772661175739be6fc598ca3b2b76335bd7254f",
-    "key_id": "governance-board-2026",
+    "sha256": "9a2a0fae55db9b0faaa705ead5833493a454da2865cb1dc6d8a4d7877574e06c",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Lagos State presumptive tax schedule aligned to NTA 2025 (LIRS circular awaited)",
       "as_gazetted": null,

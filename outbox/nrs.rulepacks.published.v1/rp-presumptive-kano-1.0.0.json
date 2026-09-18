@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWJ91HJ7QZXC8T73QB1Q",
+  "id": "01M2V1DSAZC283TX5TGP0CHNMF",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "7e0426fee3eac998389d43d7812a904f",
+  "trace_id": "83caab14f9cc3882793b8dccc8b91eba",
   "rule_pack_version": "rp-presumptive-kano@1.0.0",
   "data": {
     "pack_id": "rp-presumptive-kano",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 3,
-    "sha256": "e9b49129e81868028cb1cc2ebe70ca63be969d234bcfcc4bc11dba104f7899f2",
-    "key_id": "governance-board-2026",
+    "sha256": "1b4930b67c1d428d62601cd89553fe2a517dc879158b10849188fdc416d40bc6",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Kano State presumptive tax schedule aligned to NTA 2025 (KIRS circular awaited)",
       "as_gazetted": null,
