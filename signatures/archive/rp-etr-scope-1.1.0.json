@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-etr-scope",
   "version": "1.1.0",
-  "sha256": "87988c0500c537b4c22ce45f6d104a7241bfba708b1185aa8cbeec3ff0c5c004",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-scope/1.1.0/87988c0500c537b4.yaml",
-  "archived_at": "2026-09-18T13:30:07Z",
+  "sha256": "4edadc7f0015086145b6a00706b710eaadf461649a9c0b930be76abcb913004b",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-scope/1.1.0/4edadc7f00150861.yaml",
+  "archived_at": "2026-09-18T14:06:22Z",
   "key_id": "governance-board-2026",
-  "signature": "69decbf5a28beb15f7f042c584bf261d23aaa3a1dd44704b7c823477e4c9c96bbc3782f28437824161a389613b16c1eaaef39a1e1eaf4e701cf3a3d244b63302",
-  "publish_event_id": "01M2TBBJ1M110KJT8YJCJP7VZC",
+  "signature": "2b2f744e8439ecbe53455c8cccd1f1c9288d27fa462cbfe2d4af04f95c3b1da175b5ad32a321b74c34cd0f191f4ccfa6992a936a699462d77e8d3c72d569fd00",
+  "publish_event_id": "01M2TMRSF4H0NJRHN2MS5S47ES",
   "immutable": true
 }
