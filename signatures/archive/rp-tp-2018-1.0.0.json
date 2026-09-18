@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-tp-2018",
   "version": "1.0.0",
-  "sha256": "a43880199de930789dfc0976abab75ff7912a21b6fb94188d33e9453f4f129dd",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-tp-2018/1.0.0/a43880199de93078.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "df5b3a6dc4fe530647a12d31198eee34c093bb55ca2f91883a7e206c9e989dbeed6b4401c8f6f32600d7fa67bd22ffce9e9b9c7eece41484effc80d427843b00",
-  "publish_event_id": "01KYRKHWPP3RPTVQ3SC6A4Z5PZ",
+  "sha256": "108f795a18c6ac7e41b8cde1a8254efd895bdc03c2091dea06407bda0500b697",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-tp-2018/1.0.0/108f795a18c6ac7e.yaml",
+  "archived_at": "2026-09-18T19:55:49Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "67b420019dcd6029c2030b9744339fa12fa8a8c765ae7833931de340ff7228319f68ce9eef05d6605a724aa71745a90e9deec3413a69d38aba5aca03cd8f9705",
+  "publish_event_id": "01M2V1DSHJWT812ZYWCZBS27ST",
   "immutable": true
 }

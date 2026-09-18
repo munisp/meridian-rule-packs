@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-presumptive-federal",
   "version": "1.0.0",
-  "sha256": "6c64e5bfabe54e7c6e7cbb21e536e30279c999a0cef3498936ce2a6f76955f99",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-federal/1.0.0/6c64e5bfabe54e7c.yaml",
-  "archived_at": "2026-07-31T16:12:19Z",
-  "key_id": "governance-board-2026",
-  "signature": "ee7753a0154bce589c42448bafaef81c24ec1b824980d4c42e3a02946ac739570f86dea776dc0670bc3b9242b31f646c92fdad65e0f30dc642df321f81a32e05",
-  "publish_event_id": "01KYRKHWHKSPH6483DMK6DZXDV",
+  "sha256": "77226a5e39d3a30dbdf2adfefff903155465e161f837304036ab627e0a6ebfff",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-federal/1.0.0/77226a5e39d3a30d.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "4b0d61d00b7f1e9af54948a512312f2a37852bd8111fb3771cb4774f93bd2ab931b9428620a92861782c07d3fff90e52da89209da27cc5636e96f0fde4f4cc0f",
+  "publish_event_id": "01M2V1DSA9MJ5RT4FA6S3QJ2XV",
   "immutable": true
 }
