@@ -96,5 +96,5 @@ rules:
     narrate: Transmission only when reg-watch gate carf.transmit_enabled is armed (F3 cross-zone flow).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: bab870426cdbe632946fc585b063806f1f25bcb56d46ff6a55c571d96007988be611758d2d02ecf5cbfddc3b7e388c92e5acc0bc4093b06374daece2149fcb09
+  key_id: governance-board-2026-r2
+  signature: 9012633630098dc725eddf96c9fd61ffb9ee7450d9cf371ee5e406d9a9d85304988b5095c5f471c3d5f79b7ee5ce675c537fb859c7a744f1f21e5b3b7a876f02
