@@ -14,7 +14,7 @@ schemas/rulepack.schema.json     # JSON Schema (draft 2020-12) for the §1.4 gra
 tools/validate.py                # schema + ed25519 signature + WORM archive validation
 tools/ceremony.py                # §9.1 ceremony: draft→review→simulate→sign→publish→archive
 tools/rpcommon.py                # canonicalisation, keys, ULID, §1.1 event envelope
-tools/keys/                      # DEV ed25519 keypair (governance-board-2026) — not prod
+tools/keys/                      # PUBLIC verification key only — private key burned (see tools/keys/README.md)
 tests/                           # pytest suite (validator + ceremony + boundaries)
 signatures/archive/              # WORM archive records (sha256 + worm_uri per pack)
 outbox/nrs.rulepacks.published.v1/  # publish events (SPEC §1.1 envelope)
@@ -126,15 +126,19 @@ the workspace for the same reason.
 ```bash
 python3 -m venv venv && . venv/bin/activate   # or system python 3.12
 pip install -r requirements.txt
-python tools/validate.py     # 39/39 packs valid (schema + signature + archive)
-pytest -q                    # 176 passed
+python tools/validate.py     # 40/40 packs valid (schema + signature + archive)
+pytest -q                    # test suite
 python tools/ceremony.py --all   # idempotent re-run of the §9.1 ceremony
 ```
 
 ## Honesty tags (what is dev/simulated)
 
-- `tools/keys/governance-board-2026.*` — **dev keypair**, auto-generated; production
-  uses HSM custody (see GOVERNANCE.md).
+- `tools/keys/governance-board-2026.ed25519.public` — **public verification key only**.
+  **SECURITY:** the matching dev private key was previously committed here and signed
+  every published pack; it is **burned** (removed in the R4 trust-root fix) and must be
+  rotated out of any deployment that trusted it. No private key material is ever
+  committed; production uses HSM custody (see GOVERNANCE.md), and
+  `tools/rpcommon.ensure_dev_keypair` refuses to silently regenerate a burned key_id.
 - `worm://meridian-dev-worm/...` URIs — dev WORM scheme; production wires to the
   audit-evidence WORM object store (MinIO/compliance mode).
 - Band amounts, presumptive schedules and NTAA sharing coefficients flagged
