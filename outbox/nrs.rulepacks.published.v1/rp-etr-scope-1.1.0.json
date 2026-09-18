@@ -2,9 +2,9 @@
   "id": "01M2TMRSF4H0NJRHN2MS5S47ES",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T14:06:22Z",
+  "time": "2026-09-18T16:14:38Z",
   "tenant_id": "",
-  "trace_id": "4cd71893ead6aa1fdd4b16cdbd3e0414",
+  "trace_id": "1d30e9e3ee913ff2b29dbf2dd2d73496",
   "rule_pack_version": "rp-etr-scope@1.1.0",
   "data": {
     "pack_id": "rp-etr-scope",

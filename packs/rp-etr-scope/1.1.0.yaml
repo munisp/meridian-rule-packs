@@ -5,8 +5,8 @@ version: 1.1.0
 title: GloBE/ETR scope thresholds and excluded entities
 description: 'Scope gate for the ETR engine: EUR 750m consolidated revenue test (2 of 4 preceding fiscal years), excluded
   entities, N50bn domestic overlay (framework-only: the etr engine has no domestic-overlay lookup). v1.1.0 adds engine-lookup
-  alias rules (underscore IDs) matching the compliance-suite etr service contract in services/etr/app/packs.py exactly
-  (revenue_threshold = GloBE EUR 750m scope test; exclusions in engine vocabulary); canonical hyphen IDs retained.'
+  alias rules (underscore IDs) matching the compliance-suite etr service contract in services/etr/app/packs.py exactly (revenue_threshold
+  = GloBE EUR 750m scope test; exclusions in engine vocabulary); canonical hyphen IDs retained.'
 effective_from: '2026-01-01'
 effective_to: null
 status: published
@@ -64,20 +64,20 @@ rules:
       gte: 5000000000000
   then:
     decision: in_scope_nta
-    narrate: 'NTA overlay: domestic groups at N50bn+ treated in scope of the 15% minimum ETR (rp-etr-nta).
-      FRAMEWORK-ONLY: the compliance-suite etr engine (services/etr/app/packs.py) performs no lookup for this
-      rule; it is NOT aliased to etr.scope.revenue_threshold, which is the GloBE EUR 750m scope test.'
+    narrate: 'NTA overlay: domestic groups at N50bn+ treated in scope of the 15% minimum ETR (rp-etr-nta). FRAMEWORK-ONLY:
+      the compliance-suite etr engine (services/etr/app/packs.py) performs no lookup for this rule; it is NOT aliased to etr.scope.revenue_threshold,
+      which is the GloBE EUR 750m scope test.'
 - id: etr.scope.revenue_threshold
   description: Engine-lookup alias of etr.scope.revenue-test (etr service underscore ID contract, services/etr/app/packs.py
-    revenue_threshold_kobo()). This ID is the GloBE EUR 750m scope test in the engine, NOT the N50bn domestic overlay
-    (the engine has no domestic-overlay lookup; etr.scope.domestic-overlay is framework-only).
+    revenue_threshold_kobo()). This ID is the GloBE EUR 750m scope test in the engine, NOT the N50bn domestic overlay (the
+    engine has no domestic-overlay lookup; etr.scope.domestic-overlay is framework-only).
   when:
     group: mne
   then:
     threshold_ngn_kobo: 12000000000000000
     threshold_note: EUR 750m consolidated revenue, NGN kobo equivalent (matches engine default 12_000_000_000_000_000)
-    narrate: 'MNE group in scope when consolidated revenue >= EUR 750m in 2 of 4 prior years. Alias of etr.scope.revenue-test;
-      value matches the engine embedded fallback exactly (12,000,000,000,000,000 kobo).'
+    narrate: MNE group in scope when consolidated revenue >= EUR 750m in 2 of 4 prior years. Alias of etr.scope.revenue-test;
+      value matches the engine embedded fallback exactly (12,000,000,000,000,000 kobo).
   citation: GloBE Model Rules Art. 1.1.1; NTA 2025, s.57
 - id: etr.scope.exclusions
   description: Engine-lookup alias of etr.scope.excluded-entities (etr service underscore ID contract).
@@ -98,10 +98,10 @@ rules:
     - pension_fund
     - investment_fund_upe
     - real_estate_investment_vehicle_upe
-    narrate: 'Excluded entities per GloBE Art. 1.5, in the etr engine vocabulary (services/etr embedded pack:
-      international_org, not international_organisation). Alias of etr.scope.excluded-entities.'
+    narrate: 'Excluded entities per GloBE Art. 1.5, in the etr engine vocabulary (services/etr embedded pack: international_org,
+      not international_organisation). Alias of etr.scope.excluded-entities.'
   citation: GloBE Model Rules Art. 1.5
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 2b2f744e8439ecbe53455c8cccd1f1c9288d27fa462cbfe2d4af04f95c3b1da175b5ad32a321b74c34cd0f191f4ccfa6992a936a699462d77e8d3c72d569fd00
+  signature: 0162885dd061ccf08b4b37bdc581c0a01b627af74124098c13f76cb32e6dd56d65cf6735a60ead289dff83b2a0d0e88b09b15280079e8b3d46cf6150c9fba50c
