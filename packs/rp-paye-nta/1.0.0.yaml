@@ -1,0 +1,132 @@
+# rp-paye-nta v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# PAYE/PIT under the Nigeria Tax Act 2025 (bands 0/15/18/21/23/25, N800,000 exemption) — from 2026
+id: rp-paye-nta
+version: 1.0.0
+title: PAYE/PIT under the Nigeria Tax Act 2025 (bands 0/15/18/21/23/25, N800,000 exemption) — from 2026
+description: 'Canonical PAYE/personal income tax rules under the Nigeria Tax Act 2025, effective 2026-01-01: graduated bands
+  0% (first N800,000) / 15% / 18% / 21% / 23% / 25% (above N50m), N800,000 annual exemption threshold, rent relief 20% of
+  rent capped at N500,000, no Consolidated Relief Allowance (CRA abolished), old 1% minimum tax replaced by the expanded 0%
+  band. Pre-2026 years remain governed by rp-paye-pitra-legacy.'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+boundary_semantics: min_inclusive_max_exclusive
+provenance:
+  as_passed: Nigeria Tax Act 2025 (signed 26 June 2025), Fourth Schedule (PIT rates) and s.30 (reliefs); effective 1 January
+    2026
+  as_gazetted: null
+  source_citation: Nigeria Tax Act 2025 (nass.gov.ng gazette copy, https://nass.gov.ng/documents/download/11249); PwC Nigeria
+    individual tax summaries (https://taxsummaries.pwc.com/nigeria/individual/taxes-on-personal-income); JTB Personal Income
+    Tax Guidelines 2026 (https://www.jtb.gov.ng/assets/2026-pit-guidelines-TJG3n9-T.pdf)
+rules:
+- id: paye.nta.exemption.threshold
+  when:
+    annual_gross_income_kobo:
+      lte: 80000000
+  then:
+    decision: exempt
+    narrate: Individuals earning N800,000 or less per annum are fully exempt from PIT (expanded 0% band); employees at/below
+      the national minimum wage (N70,000/month) have no PAYE liability.
+  citation: NTA 2025, Fourth Schedule; PwC individual tax summaries
+- id: paye.nta.rent-relief
+  when:
+    deduction_type: rent
+  then:
+    formula: rent_relief_kobo = min(annual_rent_paid_kobo * 2000 / 10000, 50000000)
+    narrate: 'Rent relief: 20% of annual rent paid, capped at N500,000, deducted before banding.'
+  citation: NTA 2025 s.30; JTB PIT Guidelines 2026
+- id: paye.nta.deductions.exempt
+  when:
+    deduction_type:
+      in:
+      - pension_contribution
+      - national_housing_fund
+      - national_health_insurance
+      - life_assurance_premium
+      - owner_occupied_house_loan_interest
+  then:
+    decision: deduct_before_banding
+    narrate: Statutory deductions (pension, NHF, NHIS, life assurance, owner-occupied house loan interest) deducted from gross
+      income before banding. No CRA under the NTA.
+  citation: NTA 2025 s.30; JTB PIT Guidelines 2026
+- id: paye.nta.band.1
+  when:
+    annual_taxable_income_kobo:
+      lte: 80000000
+  then:
+    rate_bps: 0
+    band_order: 1
+    narrate: First N800,000 of taxable income at 0%.
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.band.2
+  when:
+    annual_taxable_income_kobo:
+      gt: 80000000
+      lte: 300000000
+  then:
+    rate_bps: 1500
+    band_order: 2
+    narrate: Next N2,200,000 at 15%.
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.band.3
+  when:
+    annual_taxable_income_kobo:
+      gt: 300000000
+      lte: 1200000000
+  then:
+    rate_bps: 1800
+    band_order: 3
+    narrate: Next N9,000,000 at 18%.
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.band.4
+  when:
+    annual_taxable_income_kobo:
+      gt: 1200000000
+      lte: 2500000000
+  then:
+    rate_bps: 2100
+    band_order: 4
+    narrate: Next N13,000,000 at 21%.
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.band.5
+  when:
+    annual_taxable_income_kobo:
+      gt: 2500000000
+      lte: 5000000000
+  then:
+    rate_bps: 2300
+    band_order: 5
+    narrate: Next N25,000,000 at 23%.
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.band.6
+  when:
+    annual_taxable_income_kobo:
+      gt: 5000000000
+  then:
+    rate_bps: 2500
+    band_order: 6
+    narrate: Above N50,000,000 at 25% (top marginal rate).
+  citation: NTA 2025, Fourth Schedule
+- id: paye.nta.no-cra
+  when:
+    year:
+      gte: 2026
+  then:
+    decision: no_consolidated_relief_allowance
+    narrate: CRA (higher of N200k/1% + 20% of gross) is abolished from 2026; the old 1% minimum tax is replaced by the expanded
+      0% band.
+  citation: NTA 2025 (repeal of PITA reliefs); PwC individual tax summaries
+- id: paye.nta.remit-deadline
+  when:
+    tax: PAYE
+    event: remittance
+  then:
+    deadline_day_of_month: 10
+    frequency: monthly
+    narrate: Employers remit PAYE by the 10th day of the following month (unchanged from PITA practice).
+  citation: NTAA 2025 (PAYE remittance provisions); PITA practice carried over
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 3131ee11237d5be38531ec9f03c2ad2bc205034059cedcfea067cf39a62a109fdcc4e32835486336391560b3e3b8384c28486d94899187b235c72ef916f7a20a
