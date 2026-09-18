@@ -1,0 +1,56 @@
+# rp-attribution-formula v1.1.0 — Meridian rule pack (SPEC §1.4 format)
+# NTAA VAT attribution formula — 50% equality / 20% population / 30% place-of-consumption
+id: rp-attribution-formula
+version: 1.1.0
+title: NTAA VAT attribution formula — 50% equality / 20% population / 30% place-of-consumption
+description: 'Horizontal VAT sharing among states/LGAs under NTAA 2025 s.81: the 90% states+LGA pool is distributed 50% equality,
+  20% population, 30% place-of-consumption. There is NO derivation limb and no consumption/derivation/equality 30/50/20 split.
+  v1.1.0 corrects v1.0.0, which encoded 0.30*consumption + 0.50*derivation + 0.20*equality — contradicting the gazette (and
+  its own header).'
+effective_from: '2026-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: 'Nigeria Tax Administration Act 2025, s.81 — VAT distribution: FG 10% / States 55% / LGAs 35%; states+LGA share
+    distributed 50% equality, 20% population, 30% place-of-consumption'
+  as_gazetted: null
+  source_citation: Nigeria Tax Administration Act 2025 s.81 (gazette); Forvis Mazars 2025 NTA VAT key changes; Afriwise review
+    of 2025 tax reform laws
+rules:
+- id: attr.formula.state-share
+  when:
+    feed: attribution
+    tax: VAT
+  then:
+    formula: state_amount_kobo = vat_pool_states_lga_kobo * (0.50 * equality_share + 0.20 * state_population_share + 0.30
+      * state_consumption_index)
+    narrate: States'/LGAs' 90% pool distributed 50% equality, 20% population, 30% place-of-consumption (NTAA 2025 s.81; no
+      derivation limb).
+  citation: Nigeria Tax Administration Act 2025 s.81
+- id: attr.consumption.index
+  when:
+    data: pos_b2c_feeds
+  then:
+    formula: state_consumption_index = state_attributed_consumption_kobo / total_consumption_kobo
+    narrate: Consumption index built from T6 POS attribution + B2C reports + import landing data (T15).
+  citation: Nigeria Tax Administration Act 2025 s.81 (place-of-consumption attribution)
+- id: attr.output.signed
+  when:
+    feed: attribution
+  then:
+    decision: sign_output
+    narrate: Attribution feed (F7) signed by JRB service key; WORM receipt per cross-zone rules.
+  citation: Nigeria Tax Administration Act 2025 (VAT sharing/attribution provisions)
+- id: attr.reconciliation
+  when:
+    feed: attribution
+    period: monthly
+  then:
+    decision: publish_with_variance
+    narrate: Monthly attribution published with variance vs treasury receipts; breaks feed recon workflow.
+  citation: Nigeria Tax Administration Act 2025 (VAT sharing/attribution provisions)
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 96579182dea1cb9e05cb83f29096f60736df9361e279687764b4261a026e84d74b58d2611fa56de274f0939da4343c969fa9a242e2baf4ed0c5199092eb48a0e
