@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-attribution-formula",
+  "version": "1.1.0",
+  "sha256": "1a1d723a41b0a116021b9aa71f3deef782b924d1f93ab4a4ebfa43abf431d698",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-attribution-formula/1.1.0/1a1d723a41b0a116.yaml",
+  "archived_at": "2026-09-18T13:14:43Z",
+  "key_id": "governance-board-2026",
+  "signature": "96579182dea1cb9e05cb83f29096f60736df9361e279687764b4261a026e84d74b58d2611fa56de274f0939da4343c969fa9a242e2baf4ed0c5199092eb48a0e",
+  "publish_event_id": "01M2TAFBVCZMMB1BYA231Q7CZN",
+  "immutable": true
+}
