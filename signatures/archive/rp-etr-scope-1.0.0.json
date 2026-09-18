@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-etr-scope",
   "version": "1.0.0",
-  "sha256": "94a9ae4dfe5771877b34d88e8b1ba2ec1d629d9c8828581996564f7301eec6e3",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-scope/1.0.0/94a9ae4dfe577187.yaml",
-  "archived_at": "2026-07-30T04:12:06Z",
-  "key_id": "governance-board-2026",
-  "signature": "dd3bdaf6732922c85b696ca32ccb6f7d4d5dcf46c68649687ffcc952f8f2be481ba9f49e90b58fd879e6591c8a675a31d61a3b6bec67bd7d2844a3defbf55304",
-  "publish_event_id": "01KYRKHW76HYPDRVHPK8VNE5W1",
+  "sha256": "b7857fdfcbf164f36a645e3f5f7a63dbfa4daf1fb130d3d50b56809069623b96",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-scope/1.0.0/b7857fdfcbf164f3.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "c71ab2f5f4247f06cba1be7dcdedfdcae12cd053bb2b016ef8985edf71bd2a0e1063c806515285d9cdcc6d2a7b119316643f536aa12efe6a243795e334673107",
+  "publish_event_id": "01M2V1DRHYZRVNQB5ZTRC54CHA",
   "immutable": true
 }

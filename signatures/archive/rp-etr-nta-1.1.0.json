@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-etr-nta",
   "version": "1.1.0",
-  "sha256": "28d2aba91bbb8ac3144f4d0c4baafcda87c069a5d6a05c512481d794dae29c1a",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-nta/1.1.0/28d2aba91bbb8ac3.yaml",
-  "archived_at": "2026-09-18T13:30:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "65a69ae7961e4b7be7439aefba2a6748be2caf91e8d5d9f93740f11663126370e05fc52f85eb93035714c621536f6efb81d48d217d404a98d8879474eb3f670c",
-  "publish_event_id": "01M2TBBHYZSTC0MW48Z8H8AATX",
+  "sha256": "edd3998c12400ebbb727d06f64a13e178a5c2c4d94e2b45f8117b62f49129f1c",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-nta/1.1.0/edd3998c12400ebb.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "2436a4096688614c939c2fd671818734dd36e4c0b97db85afdd7780590325c14f59b5e668d4821e47c94793377804cf985b6dbdd5957c354e51ca559c774ad09",
+  "publish_event_id": "01M2V1DRH30CVZKWV6A629DEDY",
   "immutable": true
 }

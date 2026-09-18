@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-etr-cfc",
   "version": "1.0.0",
-  "sha256": "30f19fb74b294bc54917c1f478101c50c67a1ba257a2e9569bfa21796f4b6f24",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-cfc/1.0.0/30f19fb74b294bc5.yaml",
-  "archived_at": "2026-07-30T04:12:06Z",
-  "key_id": "governance-board-2026",
-  "signature": "602a2f508722ea0b94dac7f17a9eb21031bd8f5efdeeaba5322661c574bfa36ac22c40a3d0625d492ee72899508586086ce478261fbcaaef3adb9d2ea892f906",
-  "publish_event_id": "01KYRKHW5FNF012WBZRGS8ZXCD",
+  "sha256": "444de4f5302b1f4f0c6850a6e335a0722dd462b3872b9b9dd5ce644e809e9b2f",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-etr-cfc/1.0.0/444de4f5302b1f4f.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "1619c153a1e826f6ad196130b6bb87e11308b891157f8de79ed6d9d2d67e73d1cda8b5aa801763bf110ead22ec607131e38d7a6e38118f3dd5b84496089d330e",
+  "publish_event_id": "01M2V1DRES3RTW1V3647B5WYMR",
   "immutable": true
 }
