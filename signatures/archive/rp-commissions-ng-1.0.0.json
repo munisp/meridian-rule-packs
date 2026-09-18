@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-commissions-ng",
+  "version": "1.0.0",
+  "sha256": "85a0b6e1350fbbcbb96072be3465125e9c7423e0fbd9b79c8ad4f0fe6dbed29d",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-commissions-ng/1.0.0/85a0b6e1350fbbcb.yaml",
+  "archived_at": "2026-09-18T13:36:40Z",
+  "key_id": "governance-board-2026",
+  "signature": "14060acd2c90e2115438a7c885fcb6bfcbacae6961010162a6d306eea0430538269b820f27b9d664b7332df1651eb9cf83b96b46408c39622179146321ec5203",
+  "publish_event_id": "01M2TBQJA7BBQTMB5ZT0FZ7K7Z",
+  "immutable": true
+}

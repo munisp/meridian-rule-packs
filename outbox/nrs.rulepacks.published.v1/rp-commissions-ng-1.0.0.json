@@ -1,0 +1,26 @@
+{
+  "id": "01M2TBQJA7BBQTMB5ZT0FZ7K7Z",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-09-18T13:36:40Z",
+  "tenant_id": "",
+  "trace_id": "4e3943cbe461681c5fc02c82607554f6",
+  "rule_pack_version": "rp-commissions-ng@1.0.0",
+  "data": {
+    "pack_id": "rp-commissions-ng",
+    "version": "1.0.0",
+    "title": "Agent hierarchy commission table (NGN, kobo-integers)",
+    "effective_from": "2026-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 3,
+    "sha256": "85a0b6e1350fbbcbb96072be3465125e9c7423e0fbd9b79c8ad4f0fe6dbed29d",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Meridian NRS agent commission policy, hierarchy rollout (feature I6)",
+      "as_gazetted": null,
+      "source_citation": "meridian-inclusion-suite services/onboarding/packs/rp-commissions-ng.json (values copied verbatim); internal Meridian commission policy (not a statutory rate)"
+    }
+  }
+}
