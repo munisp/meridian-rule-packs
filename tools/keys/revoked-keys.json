@@ -1,0 +1,15 @@
+{
+  "_comment": "Revoked/burned ceremony signing keys. Keys listed here must NOT be trusted for packs signed after their revocation timestamp. Public keys are kept in this directory ONLY so historical/archived pack signatures (signed before revocation) remain verifiable. Policy: treat any signature from a revoked key created after `revoked_at` as invalid.",
+  "revoked_keys": [
+    {
+      "key_id": "governance-board-2026",
+      "algorithm": "ed25519",
+      "public_key_hex": "b2ff472e90baec10063060f374780f5e6df0c295a421af74d28b2e276f98c529",
+      "status": "REVOKED",
+      "reason": "dev private key was committed to this repo by mistake and signed every published pack; the key is burned/compromised (R4-9a rotation)",
+      "revoked_at": "2026-09-18T19:55:00Z",
+      "replaced_by": "governance-board-2026-r2",
+      "public_key_retained_for": "historical verification of packs archived before the rotation only"
+    }
+  ]
+}

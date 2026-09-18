@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW0NS2CQ4900R3ZYCTZ2",
+  "id": "01M2V1DR47NJFCJ5YMHYM3G3HP",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "46c321035003c624bc3098052da9fca2",
+  "trace_id": "3a25ad2984f181038d09de7d8b91bc99",
   "rule_pack_version": "rp-bank-thresholds@1.0.0",
   "data": {
     "pack_id": "rp-bank-thresholds",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 6,
-    "sha256": "dd850a7820c5837886fd88291417976e47bd1ec2fa0fe9fc22d5671349ba3115",
-    "key_id": "governance-board-2026",
+    "sha256": "c196c8a73f5e49f42c54f851e2346060fcf4d295e2d741d2e3f68a6707a5182b",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025 (third-party reporting); CBN cash withdrawal policy (Dec 2022, revised 2023); Money Laundering (Prevention & Prohibition) Act 2022",
       "as_gazetted": null,
