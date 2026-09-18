@@ -1,10 +1,10 @@
 {
-  "id": "01KYWC6864PME4ZVMZ83ZHF2SE",
+  "id": "01M2V1DSP5VYP3Y48RMGF4H2GH",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-31T15:20:23Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "642901f895e5cc0abc814ddac36ebcb8",
+  "trace_id": "8b3ca609faa553994f7b0836d7f35af7",
   "rule_pack_version": "rp-vat-exempt-basket@1.0.0",
   "data": {
     "pack_id": "rp-vat-exempt-basket",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 8,
-    "sha256": "ebbb864054c24ee886c5214a05908feddd034576fcf365ecc40d084e58c609ae",
-    "key_id": "governance-board-2026",
+    "sha256": "89ebf205dd164df009938be6dce604c0e3f13a3d280edc9cc465151cd8e26b30",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "VAT Act First Schedule (as amended by Finance Acts 2019-2021); Nigeria Tax Act 2025 exemption schedule",
       "as_gazetted": null,

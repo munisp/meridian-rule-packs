@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWSH1MKE1T94GH4QEZSF",
+  "id": "01M2V1DSMXFNVBF7QD4ZYX9MMS",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "c1de34c8264a9a35dcb85ea5bce9d314",
+  "trace_id": "79ac4f08e9c167236105ff6861e36583",
   "rule_pack_version": "rp-vat-attribution-mode@1.0.0",
   "data": {
     "pack_id": "rp-vat-attribution-mode",
@@ -15,10 +15,10 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 5,
-    "sha256": "f903ed4f80229b08e3ab4ce6dcacc2a8b5a46f7152bf356098555c483118d914",
-    "key_id": "governance-board-2026",
+    "sha256": "ff3ff606fc562c6e0052883991452e4a1e5dc3f47fa47639c945d50c6e1d7e06",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
-      "as_passed": "Nigeria Tax Administration Act 2025 \u2014 VAT revenue attribution & sharing (derivation-based); pre-2025 VAT Act s.40 sharing formula",
+      "as_passed": "Nigeria Tax Administration Act 2025 — VAT revenue attribution & sharing (derivation-based); pre-2025 VAT Act s.40 sharing formula",
       "as_gazetted": null,
       "source_citation": "Nigeria Tax Administration Act 2025 (s.22/Part on distribution); VAT Act s.40 (legacy)"
     }
