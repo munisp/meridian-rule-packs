@@ -9,7 +9,7 @@
   "data": {
     "pack_id": "rp-attribution-formula",
     "version": "1.1.0",
-    "title": "NTAA VAT attribution formula — 50% equality / 20% population / 30% place-of-consumption",
+    "title": "NTAA VAT attribution formula \u2014 50% equality / 20% population / 30% place-of-consumption",
     "effective_from": "2026-01-01",
     "effective_to": null,
     "subject_to_regazette": true,
@@ -18,7 +18,7 @@
     "sha256": "9034cc06a9a335af6e7d6f7de7d3843c20425c23c907596a193b4c48d7bb0ee2",
     "key_id": "governance-board-2026-r2",
     "provenance": {
-      "as_passed": "Nigeria Tax Administration Act 2025, s.81 — VAT distribution: FG 10% / States 55% / LGAs 35%; states+LGA share distributed 50% equality, 20% population, 30% place-of-consumption",
+      "as_passed": "Nigeria Tax Administration Act 2025, s.81 \u2014 VAT distribution: FG 10% / States 55% / LGAs 35%; states+LGA share distributed 50% equality, 20% population, 30% place-of-consumption",
       "as_gazetted": null,
       "source_citation": "Nigeria Tax Administration Act 2025 s.81 (gazette); Forvis Mazars 2025 NTA VAT key changes; Afriwise review of 2025 tax reform laws"
     }
