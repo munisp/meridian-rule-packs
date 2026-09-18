@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-cit-legacy",
+  "version": "1.1.0",
+  "sha256": "c7777040e83298810ceb96f27d8d7e4c81529467be3a92a5ba9c1c0b5725fdf5",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-cit-legacy/1.1.0/c7777040e8329881.yaml",
+  "archived_at": "2026-09-18T16:22:48Z",
+  "key_id": "governance-board-2026",
+  "signature": "a11f08299406ab165c6e175c8c4dc44ffe957f4f65a58b63fcc1ae37b2175ec24a3f626881c8928011c6e8992fe1fe7983d8653abe0bc5cd26a14c27260f5b04",
+  "publish_event_id": "01M2TN7RQBAYEWB6AFRMBQEE61",
+  "immutable": true
+}

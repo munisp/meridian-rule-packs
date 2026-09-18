@@ -1,0 +1,26 @@
+{
+  "id": "01M2TN7RQBAYEWB6AFRMBQEE61",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-09-18T16:22:48Z",
+  "tenant_id": "",
+  "trace_id": "8700a37a519c8be916ed233d343c6832",
+  "rule_pack_version": "rp-cit-legacy@1.1.0",
+  "data": {
+    "pack_id": "rp-cit-legacy",
+    "version": "1.1.0",
+    "title": "Legacy CIT rates (CITA as amended by Finance Act 2019) \u2014 pre-2026 accounting periods",
+    "effective_from": "2020-01-01",
+    "effective_to": "2025-12-31",
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 8,
+    "sha256": "c7777040e83298810ceb96f27d8d7e4c81529467be3a92a5ba9c1c0b5725fdf5",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Companies Income Tax Act Cap C21 LFN 2004 (as amended by Finance Act 2019, s.11 \u2014 new s.40 rate bands)",
+      "as_gazetted": null,
+      "source_citation": "CITA (as amended by Finance Act 2019); PwC Nigeria corporate tax summaries (historical CITA rates)"
+    }
+  }
+}
