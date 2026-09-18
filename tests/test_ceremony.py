@@ -16,10 +16,27 @@ from ceremony import (  # noqa: E402
 KEY_DIR = rpcommon.KEYS_DIR
 
 
-def test_dev_keypair_exists_with_governance_key_id():
+def test_governance_public_key_present_private_key_burned():
+    """Trust-root convention: only the PUBLIC verification key is committed.
+
+    The dev private key was committed by mistake, is considered burned, and must
+    never return to the repo (tools/keys/README.md)."""
     priv, pub = rpcommon.key_paths("governance-board-2026")
-    assert priv.exists() and pub.exists()
+    assert pub.exists(), "public verification key must stay committed"
+    assert not priv.exists(), "private key material must never be committed"
     assert len(bytes.fromhex(pub.read_text().strip())) == 32  # hex-encoded ed25519 key
+
+
+def test_burned_key_id_refuses_silent_regeneration(tmp_path, monkeypatch):
+    """ensure_dev_keypair fails closed when pub exists but priv is missing."""
+    keys = tmp_path / "keys"
+    keys.mkdir()
+    (keys / "governance-board-2026.ed25519.public").write_text(
+        (KEY_DIR / "governance-board-2026.ed25519.public").read_text()
+    )
+    monkeypatch.setattr(rpcommon, "KEYS_DIR", keys)
+    with pytest.raises(RuntimeError, match="burned|refusing"):
+        rpcommon.ensure_dev_keypair("governance-board-2026")
 
 
 def test_all_packs_published_with_archive_and_event():
@@ -93,6 +110,8 @@ def test_ceremony_fresh_pack(tmp_path, monkeypatch):
     monkeypatch.setattr(cer, "PACKS_DIR", fake_root / "packs")
     monkeypatch.setattr(cer, "OUTBOX_DIR", fake_root / "outbox")
     monkeypatch.setattr(cer, "ARCHIVE_DIR", fake_root / "signatures" / "archive")
+    # sandbox key material too: signing must never touch the repo key dir
+    monkeypatch.setattr(rpcommon, "KEYS_DIR", fake_root / "keys")
 
     res = cer.run_ceremony("rp-test-pack", "9.9.9")
     assert res["result"] == "published"

@@ -72,7 +72,14 @@ def key_paths(key_id: str = DEFAULT_KEY_ID) -> tuple[Path, Path]:
 
 
 def ensure_dev_keypair(key_id: str = DEFAULT_KEY_ID):
-    """Generate the dev ed25519 keypair if absent. Returns (signing_key, verify_key)."""
+    """Load the dev ed25519 keypair; generate one only for a pristine key_id.
+
+    FAIL CLOSED: if the public key exists but the private key is missing, the
+    key_id is burned/rotated (see tools/keys/README.md). Silently generating a
+    new private key under the same key_id would fork the trust root, so we raise
+    instead. Rotate via the documented ceremony in GOVERNANCE.md under a NEW
+    key_id.
+    """
     from nacl.signing import SigningKey
 
     priv_path, pub_path = key_paths(key_id)
@@ -80,6 +87,12 @@ def ensure_dev_keypair(key_id: str = DEFAULT_KEY_ID):
         # keys stored as hex text (git/GitHub friendly)
         sk = SigningKey(bytes.fromhex(priv_path.read_text().strip()))
         return sk, sk.verify_key
+    if pub_path.exists():
+        raise RuntimeError(
+            f"signing key_id {key_id!r} has a public key but no private key — "
+            "the key is burned/rotated; refusing to silently regenerate under "
+            "the same key_id (see tools/keys/README.md, GOVERNANCE.md)"
+        )
     KEYS_DIR.mkdir(parents=True, exist_ok=True)
     sk = SigningKey.generate()
     priv_path.write_text(bytes(sk).hex() + "\n")
