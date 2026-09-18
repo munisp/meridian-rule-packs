@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-asset-taxonomy",
   "version": "1.0.0",
-  "sha256": "7fca854fb9a8352758cb29d3180b663bbe1c3ba3b88f63264b7f07577088b390",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-asset-taxonomy/1.0.0/7fca854fb9a83527.yaml",
-  "archived_at": "2026-07-30T04:12:06Z",
-  "key_id": "governance-board-2026",
-  "signature": "d19508bc9f510482c0766ea36f45db83642897a66bb4cc8f4d21139e5cd549c3e56b912db890727fe45743619da3290054ecd422ebd21ec97916b80ff14cb707",
-  "publish_event_id": "01KYRKHVZ5HD09M7126JVWHBWA",
+  "sha256": "d6682d6822a5dfeedc91e2c62cc7ac49bc4a76fe75aa124e53dcb8d4afe66a12",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-asset-taxonomy/1.0.0/d6682d6822a5dfee.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "2a93ba891c254393921c9f046dc1f23382ec0e2958952339459170bd10edafdd9b825447a5ec9986c1fd0c726f84034df4892c4822fc7af81969cf86fc826b0d",
+  "publish_event_id": "01M2V1DR1RAPKEDXWZFN2ANKR9",
   "immutable": true
 }
