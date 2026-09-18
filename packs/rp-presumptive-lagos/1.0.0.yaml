@@ -49,5 +49,5 @@ rules:
     narrate: N800,000 PIT-exempt line honoured in Lagos.
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: a1c5092dbdba9f1441d1c99f33455f65ed66b032c9556c6e82051a0c55cd623dfbec2664ff4fe69773efd0427e8b2b843f01093a71bad3a69c393e246dd85a0a
+  key_id: governance-board-2026-r2
+  signature: 174ba236e96cea2f605ed2c69b07fcae0ce26948699e5c52c53c26c67faf31496803afa27b7ab29418096aaaa3ae53d623f8f0f099e167313fa789c86705530b

@@ -135,5 +135,5 @@ retirement_note: 'Retired for 2026+ years of assessment: NTA 2025 PIT bands (0/1
   2025-12-31).'
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 05171bb65b427a6c7c08e8385f6bd203bd218606209e4d9122a106c9cbc34b7b3bb37304ebb79c0e38297ef87ebedec37e495b4e576c2ffe91747ff957d3fd0b
+  key_id: governance-board-2026-r2
+  signature: aca14351ae22f4fe4cb09fe9cc133c5c95ecea9819862a6c42cdf5dc4166940b2b3184f8fe03ee803ff97c7b44427a5330cc09e34e2753eed6fa90c106c20503

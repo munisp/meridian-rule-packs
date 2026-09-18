@@ -50,5 +50,5 @@ rules:
       food-security relief).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 1a54e4ee0e95a49345576b1dba3f82720a310c97ba8a2272d7939d6a25e78cb9aeabbbaac860f34e635d22c0b9631a23ba5fadd727b4ca114aacd25414585a03
+  key_id: governance-board-2026-r2
+  signature: 882f47e16436cedb0abf5341d1677ffa1a952fff022afc81ab0fe53d7f2cb64f3c1b32aa06c6ed61f79c5229fa3c3ff208cbeef9dfaca7c5e9046ab262d6d809

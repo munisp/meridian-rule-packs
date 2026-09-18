@@ -62,5 +62,5 @@ rules:
     narrate: Platform-issued invoices must show VAT separately (UBL fields per rp-ubl-bis).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 17909d2b465d11de1bbfe482c0c447128bfb2d6417de15dc84bd790eaf2a03785dcd87502159e9587635d9ca1392ce791ebdb778503dd7fcd58931835007fb0e
+  key_id: governance-board-2026-r2
+  signature: 4e1c4883f44175ce16be1215525f00662d6d44cfb022cc5992cfce0ca676b8b9334a6ac0bf1be686e7cd5ec44ee78528c55763c4c0e2dfd386109eb84ed08604
