@@ -5,8 +5,9 @@ version: 1.1.0
 title: Legacy CIT rates (CITA as amended by Finance Act 2019) — pre-2026 accounting periods
 description: 'Pre-NTA Companies Income Tax rules for accounting periods ending on or before 2025-12-31: 0% small company (turnover
   <= N25m), 20% medium (N25m-N100m), 30% large (> N100m), with the legacy company-size definitions and effective-dated Tertiary
-  Education Tax bands (2% <=2021, 2.5% 2022-2023, 3% from 2023-09-01). v1.1.0 corrects the v1.0.0 TET rule, which stamped
-  a flat 2% across all periods (TET rose to 2.5% by Finance Act 2021 and 3% by Finance Act 2023).'
+  Education Tax bands (2% <=2021, 2.5% 2022 to mid-2023, 3% for accounting years ending on/after 2023-07-01). v1.1.0 corrects
+  the v1.0.0 TET rule, which stamped a flat 2% across all periods (TET rose to 2.5% by Finance Act 2021 and 3% by Finance
+  Act 2023).'
 effective_from: '2020-01-01'
 effective_to: '2025-12-31'
 status: published
@@ -99,30 +100,31 @@ rules:
     entity: company
     date:
       gt: '2021-12-31'
-      lte: '2023-08-31'
+      lt: '2023-07-01'
   then:
     rate_bps: 250
-    narrate: 'LEGACY: TET 2.5% of assessable profit for accounting periods in the Finance Act 2021 band (from 1 January 2022
-      until the Finance Act 2023 rate change).'
+    narrate: 'LEGACY: TET 2.5% of assessable profit for accounting periods ending before 1 July 2023 (Finance Act 2021 band,
+      from 1 January 2022 until the Finance Act 2023 rate change).'
   citation: Finance Act 2021 s.56 — TET raised from 2% to 2.5% with effect 1 January 2022; PwC Nigeria Tax Alert
   effective_from: '2022-01-01'
-  effective_to: '2023-08-31'
+  effective_to: '2023-06-30'
 - id: cit.legacy.tet.rate-2023
   when:
     tax: TET
     entity: company
     date:
-      gt: '2023-08-31'
+      gte: '2023-07-01'
       lte: '2025-12-31'
   then:
     rate_bps: 300
-    narrate: 'LEGACY: TET 3% of assessable profit from 1 September 2023 (Finance Act 2023); per Shell v FIRS the 3% rate applies
-      to the entire 2023 accounting period. Consolidated into the 4% Development Levy from 2026 (rp-education-ng cit.development-levy).'
-  citation: Finance Act 2023 — TET raised to 3% effective 1 September 2023; Shell Nigeria Business Operations v FIRS (2026)
-    97 TLRN 74; Templars Tax Digest May 2026
-  effective_from: '2023-09-01'
+    narrate: 'LEGACY: TET 3% of assessable profit for accounting years ending on or after 1 July 2023 (Finance Act 2023, per
+      FIRS Information Circular of 9 June 2023); Shell v FIRS confirms full-year application of the 3% rate to the 2023 accounting
+      period. Consolidated into the 4% Development Levy from 2026 (rp-education-ng cit.development-levy).'
+  citation: Finance Act 2023 — TET raised to 3%; FIRS Information Circular (9 June 2023) — applies to accounting years ending
+    on or after 1 July 2023; Shell Nigeria Business Operations v FIRS (2026) 97 TLRN 74; Templars Tax Digest May 2026
+  effective_from: '2023-07-01'
   effective_to: '2025-12-31'
 signed:
   algorithm: ed25519
   key_id: governance-board-2026
-  signature: 3b2300d8f28206b0229c4c8974aedfe68e1fcbc0c3235ccc64e3c021daa71ed97debfcb3255d5553b5fe1c40963bf0dfc3f9b38f75c62862f01fe6e303191c0b
+  signature: a11f08299406ab165c6e175c8c4dc44ffe957f4f65a58b63fcc1ae37b2175ec24a3f626881c8928011c6e8992fe1fe7983d8653abe0bc5cd26a14c27260f5b04

@@ -1,10 +1,10 @@
 {
-  "id": "01M2T9HMQRWBCJQ0EX50EGTV0Z",
+  "id": "01M2TN7RQBAYEWB6AFRMBQEE61",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T12:58:29Z",
+  "time": "2026-09-18T16:22:48Z",
   "tenant_id": "",
-  "trace_id": "f8d4e146ce26e7415747f5a9497f4e7c",
+  "trace_id": "8700a37a519c8be916ed233d343c6832",
   "rule_pack_version": "rp-cit-legacy@1.1.0",
   "data": {
     "pack_id": "rp-cit-legacy",
@@ -15,7 +15,7 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 8,
-    "sha256": "5e95985114e80c59c67b68fce4cfc3e57b70cf09067c4693473e09d4edd5d5b4",
+    "sha256": "c7777040e83298810ceb96f27d8d7e4c81529467be3a92a5ba9c1c0b5725fdf5",
     "key_id": "governance-board-2026",
     "provenance": {
       "as_passed": "Companies Income Tax Act Cap C21 LFN 2004 (as amended by Finance Act 2019, s.11 \u2014 new s.40 rate bands)",
