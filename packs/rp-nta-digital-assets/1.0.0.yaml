@@ -20,7 +20,7 @@ rules:
   then:
     decision: chargeable
     narrate: Digital assets (crypto, tokens, NFTs where held as investment) are chargeable assets; disposal gains are taxable.
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 - id: da.gain.formula
   when:
     event: disposal
@@ -28,7 +28,7 @@ rules:
     formula: gain_kobo = disposal_proceeds_kobo - allowable_cost_kobo - incidental_costs_kobo
     narrate: Chargeable gain = proceeds less cost basis (FIFO or WAC per taxpayer election, consistently applied) and incidental
       costs.
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 - id: da.loss.ringfence
   when:
     event: loss
@@ -36,14 +36,14 @@ rules:
   then:
     decision: ring_fenced
     narrate: Losses on digital assets deductible ONLY against gains on other digital assets in the same or future years (ring-fence).
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 - id: da.individual.rate
   when:
     taxpayer: individual
   then:
     decision: pit_bands_apply
     narrate: 'Individuals: digital-asset gains taxed under PIT bands (rp-education-ng) as income from other sources.'
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 - id: da.company.rate
   when:
     taxpayer: company
@@ -54,7 +54,7 @@ rules:
   then:
     rate_bps: 3000
     narrate: 'Companies: gains taxed at CIT 30%; small companies exempt (rp-exemption-nta).'
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 - id: da.events.taxable
   when:
     event:
@@ -66,8 +66,8 @@ rules:
   then:
     decision: disposal
     narrate: Taxable disposal events; transfers between own wallets are NOT disposals.
-  citation: "Nigeria Tax Act 2025 (digital assets; chargeable gains)"
+  citation: Nigeria Tax Act 2025 (digital assets; chargeable gains)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 9452ea44e5aa556beef8ac0c0adbc510a2760e9281de12e28d72bf0f2487c966f8ac3221846dadb8e831f595c6c18474740ac7495b454aa15573ab3c95cb2e0f
+  key_id: governance-board-2026-r2
+  signature: 8688b1ae4d4bf1ab709053ea1190d3411ba003ba32825fa37b65a6c9542c6ee74d6645163451f476839ed5fc6d129d5ccc3d8d5cabc5f829a21a6cf9c10ad30a

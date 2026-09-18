@@ -55,5 +55,5 @@ rules:
     narrate: VASP reports feed both NTA returns and CARF message build (rp-carf-schema) once gates arm.
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 140a3e0c41f7349bed8959e84e24f5a4398730e0695beec82387f427ede4fa9207de46a865832790f7418dc4d6ca697d8c098390c3cea295e78da48978ad4202
+  key_id: governance-board-2026-r2
+  signature: e4aaa099b44105fcc54db8a2ce57c9e9002de00650c6303ae2d74d0b9b150a9cd2ece61b20a0f1915c7f7418b09cd729089ec73bd55e92138150b917d97eb602
