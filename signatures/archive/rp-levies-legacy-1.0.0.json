@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-levies-legacy",
   "version": "1.0.0",
-  "sha256": "6697a7c635f2466687c1b1e17c9b12c5e8ceb8fe4b6faf145102623edea9a51b",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-levies-legacy/1.0.0/6697a7c635f24666.yaml",
-  "archived_at": "2026-09-18T13:39:40Z",
-  "key_id": "governance-board-2026",
-  "signature": "dfe790b9f4ce11bde58947be8fd6ef37d0dc97a61b4e773d0b9f0f094b24e9a8965a3a7425cf508a258ef211fcd55fee3e351ace234b5e2de5c83c080ba5f60f",
-  "publish_event_id": "01M2TBX1D7B1RMWPG64A2XCC61",
+  "sha256": "369f7cc9bfb3320ae052c4bbad5f1a965a9eebfeb963211cf2b70a54f22bb4af",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-levies-legacy/1.0.0/369f7cc9bfb3320a.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "7f0bc26318c8ee405422c565ce47e51adac5adb16c6f484fd4be1088ef1053b9c4e99764706b78da0024999f9fab22edfa7bb6221bafcbbdc166453fa51fe502",
+  "publish_event_id": "01M2V1DRZE16Q97CCBMNA83HDF",
   "immutable": true
 }

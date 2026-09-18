@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-identity-match-thresholds",
   "version": "1.0.0",
-  "sha256": "72b1a4755373868be8511e6143be059bc64e3de9dbdd02a411922594dec8ae90",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-identity-match-thresholds/1.0.0/72b1a4755373868b.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "3b8b142e824e71eb2aed4c768ebf289e167513c5061f95668195cb6369a433f22971f87072774599a6703ca498a0d783ec0653a3411f90cff9ecc2b81284840e",
-  "publish_event_id": "01KYRKHWCG1TVZVEAGW4M2R72E",
+  "sha256": "5ea948f77d4443b86986b9f2f5fd8c4c69df61334a8016823eab0803a7b0cf58",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-identity-match-thresholds/1.0.0/5ea948f77d4443b8.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "3ae3da8bd235d0231a763e4d6c746655f00942d272a258421e7435b3b6496c8670010069254bc5b470496a39a8c024e4c292eb5f947533801aa550db34dc010f",
+  "publish_event_id": "01M2V1DRYKJ14STP078VGJBNG9",
   "immutable": true
 }

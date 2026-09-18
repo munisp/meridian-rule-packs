@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-gir-schema",
   "version": "1.1.0",
-  "sha256": "09a4d3d8cba3f5e9e48a3826eaa4aa4f9b0f861d9a50d7809134925131e719e5",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-gir-schema/1.1.0/09a4d3d8cba3f5e9.yaml",
-  "archived_at": "2026-09-18T13:30:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "1302170d3ee0d35d740a2b70e00a4e80a0edb65a00e754119991f49428be34c43a6b8f62937bade9a8f57bd79d2a09c868ffeaf31a1e1d2bca4dd55f62dc370d",
-  "publish_event_id": "01M2TBBJ7A7SH67WKGBMBJQN9E",
+  "sha256": "8b0a600a81a875aef15f1d83914845557c420c74d39d94b593a7ce1ef3fcdfb1",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-gir-schema/1.1.0/8b0a600a81a875ae.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "e8bb548f099c9412c59a2098ffbbff26ebbde268730b18e46a102c5fdd76e2479d778dee6c4cca6932fa11171734b3ef54880369803632a1473892c5f122dd04",
+  "publish_event_id": "01M2V1DRT21G1NF1SHPZ4FTRNR",
   "immutable": true
 }
