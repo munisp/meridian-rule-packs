@@ -1,0 +1,60 @@
+# rp-excise-ng v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Excise duties (honest minimal pack) — sweetened beverages ₦10/litre; telecom 5% suspended then abolished
+id: rp-excise-ng
+version: 1.0.0
+title: Excise duties (honest minimal pack) — sweetened beverages ₦10/litre; telecom 5% suspended then abolished
+description: 'Minimal effective-dated excise pack. SOURCED rules only: (1) ₦10/litre excise on non-alcoholic, sweetened carbonated
+  drinks (Finance Act 2021, from 1 Jan 2022); (2) 5% excise on telecommunication services (Finance Act 2020 regime, suspended
+  by presidential order July 2023, formally ABOLISHED 19 Aug 2025). The full excise goods schedule (alcohol/tobacco specific
+  rates per centilitre/stick, ''whichever is higher'' import rules) is NOT encoded: those rates could not be verified against
+  the gazette schedule — see excise.framework.unsourced (UNSOURCED gate, framework-only).'
+effective_from: '2022-01-01'
+effective_to: null
+status: published
+subject_to_regazette: true
+provenance:
+  as_passed: Finance Act 2021 (excise on sweetened non-alcoholic beverages, ₦10/litre); Finance Act 2020 (5% excise on telecom
+    services); presidential suspension 2023; abolition announced 19 Aug 2025
+  as_gazetted: null
+  source_citation: Finance Act 2021 s.52 (sweetened beverage excise); Orbitax "Nigeria Abolishes 5% Excise Tax on Telecommunication
+    Services" (https://orbitax.com/news/country/article/Nigeria-Abolishes-5-Excise-Ta-59705); PwC Nigeria tax summaries (excise/excise-like
+    levies)
+rules:
+- id: excise.beverages.sweetened
+  when:
+    tax: EXCISE
+    good: non_alcoholic_sweetened_beverage
+    date:
+      gte: '2022-01-01'
+  then:
+    formula: excise_kobo = volume_litres * 1000
+    narrate: ₦10 per litre excise on non-alcoholic, carbonated and sweetened beverages (Finance Act 2021), effective 1 January
+      2022.
+  citation: Finance Act 2021 (sweetened beverage excise ₦10/litre); PwC Nigeria tax summaries
+  effective_from: '2022-01-01'
+- id: excise.telecom.suspended-abolished
+  when:
+    tax: EXCISE
+    service: telecommunication
+    date:
+      gte: '2023-07-06'
+  then:
+    rate_bps: 0
+    narrate: 5% excise on telecom services (FA2020) was SUSPENDED by presidential order (July 2023) and formally ABOLISHED
+      on 19 August 2025 — do not charge.
+  citation: 'Orbitax: Nigeria Abolishes 5% Excise Tax on Telecommunication Services (2025-08-19/25)'
+  effective_from: '2023-07-06'
+- id: excise.framework.unsourced
+  when:
+    tax: EXCISE
+    good: other_excisable
+  then:
+    decision: UNSOURCED_gate
+    narrate: 'FRAMEWORK-ONLY: the full excise goods schedule (alcohol, tobacco, motor vehicles, plastics, "whichever is higher"
+      import rules) is not encoded — rates not verified against the gazette schedule. Any consumer must treat unlisted excisable
+      goods as UNSOURCED and gate on the CTC workflow, per repo conventions.'
+  citation: UNSOURCED — awaiting gazette CTC verification (tools/ctc.py workflow)
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: 529317649107784c486763ae7fa9adb6391ce769b7823d5bf1b0cd3a5b529c75f7457812330b38345a926ec71e58dff76c5fc5d466e982008e1086f8e0ae4400

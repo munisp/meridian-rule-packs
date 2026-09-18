@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-excise-ng",
+  "version": "1.0.0",
+  "sha256": "55aa1c76c54cb15c6bda6861ac9c9ddba712f50461d2c2c3899fbb1a1ddb9079",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-excise-ng/1.0.0/55aa1c76c54cb15c.yaml",
+  "archived_at": "2026-09-18T13:39:39Z",
+  "key_id": "governance-board-2026",
+  "signature": "529317649107784c486763ae7fa9adb6391ce769b7823d5bf1b0cd3a5b529c75f7457812330b38345a926ec71e58dff76c5fc5d466e982008e1086f8e0ae4400",
+  "publish_event_id": "01M2TBX1ASK8C3Q5JFJJGRR6B3",
+  "immutable": true
+}
