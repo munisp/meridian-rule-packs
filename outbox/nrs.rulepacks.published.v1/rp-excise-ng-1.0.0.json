@@ -1,0 +1,26 @@
+{
+  "id": "01M2TBX1ASK8C3Q5JFJJGRR6B3",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-09-18T13:39:39Z",
+  "tenant_id": "",
+  "trace_id": "fd2a3625675c3011c15f66712d00b684",
+  "rule_pack_version": "rp-excise-ng@1.0.0",
+  "data": {
+    "pack_id": "rp-excise-ng",
+    "version": "1.0.0",
+    "title": "Excise duties (honest minimal pack) \u2014 sweetened beverages \u20a610/litre; telecom 5% suspended then abolished",
+    "effective_from": "2022-01-01",
+    "effective_to": null,
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 3,
+    "sha256": "55aa1c76c54cb15c6bda6861ac9c9ddba712f50461d2c2c3899fbb1a1ddb9079",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Finance Act 2021 (excise on sweetened non-alcoholic beverages, \u20a610/litre); Finance Act 2020 (5% excise on telecom services); presidential suspension 2023; abolition announced 19 Aug 2025",
+      "as_gazetted": null,
+      "source_citation": "Finance Act 2021 s.52 (sweetened beverage excise); Orbitax \"Nigeria Abolishes 5% Excise Tax on Telecommunication Services\" (https://orbitax.com/news/country/article/Nigeria-Abolishes-5-Excise-Ta-59705); PwC Nigeria tax summaries (excise/excise-like levies)"
+    }
+  }
+}

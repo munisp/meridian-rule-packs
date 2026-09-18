@@ -1,0 +1,62 @@
+# rp-levies-legacy v1.0.0 — Meridian rule pack (SPEC §1.4 format)
+# Legacy earmarked levies (NASENI 0.25%, Police Trust Fund 0.005%) — pre-2026, superseded by the 4% Development Levy
+id: rp-levies-legacy
+version: 1.0.0
+title: Legacy earmarked levies (NASENI 0.25%, Police Trust Fund 0.005%) — pre-2026, superseded by the 4% Development Levy
+description: 'Legacy earmarked levies on companies for accounting periods ending on or before 2025-12-31: NASENI levy 0.25%
+  of profit before tax and Police Trust Fund levy 0.005% of net profit. From 2026 both are consolidated into the 4% Development
+  Levy (NTA 2025 s.59 — see rp-education-ng cit.development-levy); TETFUND/NASENI/PTF continue to be funded from the Development
+  Levy. Retained for back-period computation only.'
+effective_from: '2020-01-01'
+effective_to: '2025-12-31'
+status: published
+subject_to_regazette: true
+superseded_by: rp-education-ng
+retirement_note: 'Sunset from 2026-01-01: NASENI 0.25% and PTF 0.005% levies consolidated into the 4% Development Levy (NTA
+  2025 s.59); use rp-education-ng cit.development-levy for 2026+. This pack computes legacy back-periods only.'
+provenance:
+  as_passed: NASENI Act (0.25% levy on profit before tax); Nigeria Police Trust Fund (Establishment) Act 2019 (0.005% of net
+    profit); NTA 2025 s.59 (consolidation into Development Levy from 2026)
+  as_gazetted: null
+  source_citation: NASENI Act; Nigeria Police Trust Fund (Establishment) Act 2019 s.4; NTA 2025 s.59; PwC Nigeria corporate
+    tax summaries
+rules:
+- id: levy.naseni.rate
+  when:
+    tax: NASENI_LEVY
+    entity: company
+    date:
+      lte: '2025-12-31'
+  then:
+    rate_bps: 25
+    narrate: 'LEGACY: NASENI levy 0.25% of profit before tax for accounting periods ending on or before 2025-12-31; consolidated
+      into the 4% Development Levy from 2026 (rp-education-ng).'
+  citation: NASENI Act (0.25% levy); PwC corporate tax summaries
+  effective_to: '2025-12-31'
+- id: levy.police-trust-fund.rate
+  when:
+    tax: PTF_LEVY
+    entity: company
+    date:
+      lte: '2025-12-31'
+  then:
+    formula: ptf_levy_kobo = net_profit_kobo * 5 / 100000
+    narrate: 'LEGACY: Nigeria Police Trust Fund levy 0.005% of net profit (0.5 basis points — expressed as a formula because
+      it is sub-bps) for accounting periods ending on or before 2025-12-31; consolidated into the 4% Development Levy from
+      2026 (rp-education-ng).'
+  citation: Nigeria Police Trust Fund (Establishment) Act 2019 s.4(1)(b); PwC corporate tax summaries
+  effective_to: '2025-12-31'
+- id: levy.legacy.sunset
+  when:
+    date:
+      gte: '2026-01-01'
+  then:
+    decision: use_development_levy
+    narrate: 'From 2026-01-01 NASENI and PTF levies are sunset: compute the 4% Development Levy instead (NTA 2025 s.59; rp-education-ng
+      cit.development-levy). Beneficiary agencies continue to be funded from the Development Levy.'
+  citation: NTA 2025 s.59
+  effective_from: '2026-01-01'
+signed:
+  algorithm: ed25519
+  key_id: governance-board-2026
+  signature: dfe790b9f4ce11bde58947be8fd6ef37d0dc97a61b4e773d0b9f0f094b24e9a8965a3a7425cf508a258ef211fcd55fee3e351ace234b5e2de5c83c080ba5f60f
