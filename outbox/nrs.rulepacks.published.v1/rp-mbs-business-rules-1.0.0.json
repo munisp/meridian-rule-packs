@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWDJZ8TSE8W8DFKTVYKE",
+  "id": "01M2V1DS0G97QY23M36NASFX1E",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "22fe71ef6c54eb9e5c3b03c7082fad43",
+  "trace_id": "c39ce42518e784a846fbca5b630ac98b",
   "rule_pack_version": "rp-mbs-business-rules@1.0.0",
   "data": {
     "pack_id": "rp-mbs-business-rules",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 9,
-    "sha256": "daa0e41ceda5537325df8d91dae231811659f06e1bb447833e39e967618df979",
-    "key_id": "governance-board-2026",
+    "sha256": "c747e7df59bae5b7ea2198c884ae1e36711a2b9cacd695b0d077813af459a0b1",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "NRS (formerly FIRS) Merchant-Buyer Solution e-invoicing programme business rules, 2024-2025 circulars and pilot specifications",
       "as_gazetted": null,

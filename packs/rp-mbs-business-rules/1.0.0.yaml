@@ -82,5 +82,5 @@ rules:
     narrate: Non-NGN invoices must carry FX rate source and NGN tax amount (CBN rate of transaction date).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 74f0376b9ee2f7d17f2c951732917f1c453466072c1ae36aac3e848932094b5fbbda400ce0e87319d24a2c057ed4283b335d806e6e1d93117cd6f40ed728560e
+  key_id: governance-board-2026-r2
+  signature: e052d6ed3f560cfe8a2c2d2e0c57b5f6d1b48d2cd01a80f1b3e359b9a0f86581f9aabdccd20d77484ee1be941ad152023207fb4eec38cae2da5c1a7aee1c980d

@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-paye-nta",
   "version": "1.0.0",
-  "sha256": "1c3e4ab69315c892774763afc76c476a49fd562fde7021fa56144e50770d7263",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-paye-nta/1.0.0/1c3e4ab69315c892.yaml",
-  "archived_at": "2026-09-18T13:17:21Z",
-  "key_id": "governance-board-2026",
-  "signature": "3131ee11237d5be38531ec9f03c2ad2bc205034059cedcfea067cf39a62a109fdcc4e32835486336391560b3e3b8384c28486d94899187b235c72ef916f7a20a",
-  "publish_event_id": "01M2TAM66CD82RE6QKPDE0GD77",
+  "sha256": "1245a864c6bde49c28ee83d1b9092f6706b910e7a79a51d467723739d6836bf7",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-paye-nta/1.0.0/1245a864c6bde49c.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "cf5939166675e5f733017186f552eea03bbe6c9d5daca5c5d3fce53d9cdebecd6891bd4d89f176ab22fe827fb470eb9676b08c9c5e4803c204c1982d2dbc0007",
+  "publish_event_id": "01M2V1DS569VN4306QTGDMCBGT",
   "immutable": true
 }

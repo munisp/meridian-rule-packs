@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWRQ5FEF1HYCFXRY4M7B",
+  "id": "01M2V1DSM14S9Z3M5ST6XCA8QG",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "e88dedc596abd90d70a5552c76325e52",
+  "trace_id": "0661353ddc08e588cd592f6043b542ff",
   "rule_pack_version": "rp-ubl-bis@1.0.0",
   "data": {
     "pack_id": "rp-ubl-bis",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 11,
-    "sha256": "41af109370692749d8770587ea0bb4086b2a65f38879a00d15c2e96dbb04cbac",
-    "key_id": "governance-board-2026",
+    "sha256": "eabc2e060a7157efece51392ce12f211fd4d114c9269c1a679be7d121fa61112",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "OASIS UBL 2.1 (ISO/IEC 19845:2015); Peppol BIS Billing 3.0; FIRS/MBS e-invoicing technical specifications (Merchant-Buyer Solution, 2024-2025 pilot)",
       "as_gazetted": null,

@@ -51,5 +51,5 @@ rules:
       per Art. 4.3.2(c).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 602a2f508722ea0b94dac7f17a9eb21031bd8f5efdeeaba5322661c574bfa36ac22c40a3d0625d492ee72899508586086ce478261fbcaaef3adb9d2ea892f906
+  key_id: governance-board-2026-r2
+  signature: 1619c153a1e826f6ad196130b6bb87e11308b891157f8de79ed6d9d2d67e73d1cda8b5aa801763bf110ead22ec607131e38d7a6e38118f3dd5b84496089d330e

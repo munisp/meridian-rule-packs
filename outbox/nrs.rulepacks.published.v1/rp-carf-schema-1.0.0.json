@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW1MGNJ11RHQC5B4KD52",
+  "id": "01M2V1DR5AGXCFCEFQSGM5S768",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "e175274d5e5538783931ea45a8f5b239",
+  "trace_id": "1e50056c1f0e37b7429d63348e9cf0bd",
   "rule_pack_version": "rp-carf-schema@1.0.0",
   "data": {
     "pack_id": "rp-carf-schema",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 8,
-    "sha256": "f9755b7ab6af947e578ed3e0c1f40366cca03c659c521b62814e4cb6fdd9f549",
-    "key_id": "governance-board-2026",
+    "sha256": "d50f0dc8f91952982a90bbbd1f0f372dad13ed9cf9ec191bda5839643fa9811e",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "OECD, Crypto-Asset Reporting Framework and Amendments to the Common Reporting Standard (2022), incl. CARF XML Schema v1.1 (2024)",
       "as_gazetted": null,

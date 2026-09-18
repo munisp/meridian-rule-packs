@@ -58,5 +58,5 @@ rules:
     narrate: Land Use Charge annual assessment (LUC Law 2018); not part of NRS collection rail.
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: c47f881c29d60393d23ca69eb6cb31f95e0da0bb86848b274c1f87cb24bd43ca874bb4f775c1cc64222e44d482f2eb745a602b9901a304b1eed51736b757e500
+  key_id: governance-board-2026-r2
+  signature: 8bd0e3b7aef0c6ec454e8a97015d630c1c4dd368716a0a42b1887a0bb122c11e7319f2b1046a0f17b5a00617650767bad7aa4293f87c243150970fc97412ec02

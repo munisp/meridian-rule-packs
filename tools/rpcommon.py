@@ -23,7 +23,10 @@ KEYS_DIR = REPO_ROOT / "tools" / "keys"
 OUTBOX_DIR = REPO_ROOT / "outbox"
 ARCHIVE_DIR = REPO_ROOT / "signatures" / "archive"
 
-DEFAULT_KEY_ID = "governance-board-2026"
+# R4-9a rotation (2026-09-18): governance-board-2026 is REVOKED/burned (dev
+# private key was committed; see tools/keys/README.md and revoked-keys.json).
+# All packs re-signed under governance-board-2026-r2.
+DEFAULT_KEY_ID = "governance-board-2026-r2"
 
 _CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
 

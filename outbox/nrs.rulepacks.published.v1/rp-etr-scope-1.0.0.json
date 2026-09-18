@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW76HYPDRVHPK8VNE5W1",
+  "id": "01M2V1DRHYZRVNQB5ZTRC54CHA",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "75c64938c59606448f3651bf85c96258",
+  "trace_id": "234b6bae2d840339fde817386fe79c77",
   "rule_pack_version": "rp-etr-scope@1.0.0",
   "data": {
     "pack_id": "rp-etr-scope",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 5,
-    "sha256": "94a9ae4dfe5771877b34d88e8b1ba2ec1d629d9c8828581996564f7301eec6e3",
-    "key_id": "governance-board-2026",
+    "sha256": "b7857fdfcbf164f36a645e3f5f7a63dbfa4daf1fb130d3d50b56809069623b96",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "OECD/G20 Inclusive Framework: Tax Challenges Arising from the Digitalisation of the Economy - Global Anti-Base Erosion Model Rules (Pillar Two), Dec 2021; adopted in Nigeria via NTAA 2025 s.6(4)",
       "as_gazetted": null,

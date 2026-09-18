@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHVZ5HD09M7126JVWHBWA",
+  "id": "01M2V1DR1RAPKEDXWZFN2ANKR9",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "99e14fa8dcc4e455640c45aed2c91373",
+  "trace_id": "15d6d54434c32e38696e0a0165ca3396",
   "rule_pack_version": "rp-asset-taxonomy@1.0.0",
   "data": {
     "pack_id": "rp-asset-taxonomy",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 7,
-    "sha256": "7fca854fb9a8352758cb29d3180b663bbe1c3ba3b88f63264b7f07577088b390",
-    "key_id": "governance-board-2026",
+    "sha256": "d6682d6822a5dfeedc91e2c62cc7ac49bc4a76fe75aa124e53dcb8d4afe66a12",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Meridian taxonomy synthesised from OECD CARF definitions (2022), SEC Rules on Digital Assets (2022) and NTA 2025 chargeable-asset provisions",
       "as_gazetted": null,

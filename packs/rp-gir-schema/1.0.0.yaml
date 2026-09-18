@@ -71,5 +71,5 @@ rules:
     narrate: 'All TINs in GIR validated against jurisdiction-specific TIN structure rules (Nigeria: 10-14 digit NRS TIN).'
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 62f3b5be8792d06b9f91a9c4a4d6c5d5a7b506354356d3ce34c59a4ab0e61b1a52721d5d3ef91b284bda213319fe3e12c66c4658392d7e411f33c39cb5a15b01
+  key_id: governance-board-2026-r2
+  signature: 521911085c99d828c7be0b059f3e96b4fcd5ee6808a9c850d223e12d6220f904c61f00a6f2d2ec4509e3f351a6a5fba98052ecb255b0d3087abb7a5c2b8d0a02

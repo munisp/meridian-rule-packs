@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-disclosure-control",
   "version": "1.0.0",
-  "sha256": "e09d95f3b2c2266619d801f93c6d59fc0fbe79916920e60dcdedab4a059dd06c",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-disclosure-control/1.0.0/e09d95f3b2c22666.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "5a607fa99320515d1d0611ba50977b53346dba421377c431502847490825b8b6a1616a0a1cc6293e41f572551a8a8994e456dd807dab1124b269b11c57dd3602",
-  "publish_event_id": "01KYRKHW35B5W8H6F4QRDRHCDY",
+  "sha256": "3923b3b01725177e23ed6f63cef8cf10b127fe93c14f3ccbf315280ce7f8bd7e",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-disclosure-control/1.0.0/3923b3b01725177e.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "ff8c36d44588796aa25d389203034f775730aca1aad3114bd489b7c196f4a8becb3debfb24b9cf83b0c5097edff2568d2788f335b9b8ad989720688b3dc75d0f",
+  "publish_event_id": "01M2V1DRC4H2F0NP2Z9KQH7RP7",
   "immutable": true
 }

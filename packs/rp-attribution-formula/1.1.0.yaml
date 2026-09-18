@@ -52,5 +52,5 @@ rules:
   citation: Nigeria Tax Administration Act 2025 (VAT sharing/attribution provisions)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 96579182dea1cb9e05cb83f29096f60736df9361e279687764b4261a026e84d74b58d2611fa56de274f0939da4343c969fa9a242e2baf4ed0c5199092eb48a0e
+  key_id: governance-board-2026-r2
+  signature: 6dafcb8ca2b8c366832d6ec6ce7b4c4559075dab73dcce927ca5c6e603d52cd48cc1a2c2af6c9e2f0e33be0a52b16b96584d1b9221fc15cc007e8de6b3d51c02

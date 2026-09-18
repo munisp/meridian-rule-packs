@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-presumptive-kano",
   "version": "1.0.0",
-  "sha256": "e9b49129e81868028cb1cc2ebe70ca63be969d234bcfcc4bc11dba104f7899f2",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-kano/1.0.0/e9b49129e8186802.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "1a54e4ee0e95a49345576b1dba3f82720a310c97ba8a2272d7939d6a25e78cb9aeabbbaac860f34e635d22c0b9631a23ba5fadd727b4ca114aacd25414585a03",
-  "publish_event_id": "01KYRKHWJ91HJ7QZXC8T73QB1Q",
+  "sha256": "1b4930b67c1d428d62601cd89553fe2a517dc879158b10849188fdc416d40bc6",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-kano/1.0.0/1b4930b67c1d428d.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "882f47e16436cedb0abf5341d1677ffa1a952fff022afc81ab0fe53d7f2cb64f3c1b32aa06c6ed61f79c5229fa3c3ff208cbeef9dfaca7c5e9046ab262d6d809",
+  "publish_event_id": "01M2V1DSAZC283TX5TGP0CHNMF",
   "immutable": true
 }

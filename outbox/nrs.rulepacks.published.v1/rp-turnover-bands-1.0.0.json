@@ -1,10 +1,10 @@
 {
-  "id": "01KYWC68444Y2HK83R8551Q262",
+  "id": "01M2V1DSJSQ1TMX9EE4XFGEJ3S",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-31T15:20:23Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "617a5cdb13ec745b0e2f2341522c2c64",
+  "trace_id": "7ee37ed7963cc576cdba29216bc6c096",
   "rule_pack_version": "rp-turnover-bands@1.0.0",
   "data": {
     "pack_id": "rp-turnover-bands",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 7,
-    "sha256": "b460a65b9577505d56d3e45022279850506d7b3836bbdd32e059b42ac0570108",
-    "key_id": "governance-board-2026",
+    "sha256": "c3f3294cd659db6eb8c60787d817f90446916afbb437e3c54ccb26cc0b04ff59",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 \u2014 presumptive taxation of the informal sector; NRS informal-sector regulations (awaiting gazette)",
       "as_gazetted": null,

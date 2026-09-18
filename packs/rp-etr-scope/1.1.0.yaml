@@ -103,5 +103,5 @@ rules:
   citation: GloBE Model Rules Art. 1.5
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 0162885dd061ccf08b4b37bdc581c0a01b627af74124098c13f76cb32e6dd56d65cf6735a60ead289dff83b2a0d0e88b09b15280079e8b3d46cf6150c9fba50c
+  key_id: governance-board-2026-r2
+  signature: ed355e95c70c04dc2dfd22f4c09fe18ca8ec1e29c144fb13b0edd9b3a818759ffff85083ec6933fd78a4c7459d9d8544a416e48a549a947a216800b56343e20b

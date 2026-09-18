@@ -152,5 +152,5 @@ rules:
   citation: GloBE Model Rules Art. 9.2 (transition)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 71c23b86cb9ee0d058cc423794c01d89d274085a6da62be9097b260932602d00d4df1ce6d7d18ca2cbd7a4c14a99754b57403c318a4959004086da1c904d3700
+  key_id: governance-board-2026-r2
+  signature: d082c1b943cefafeb1be18908d518180edcee6c6df5dbffed6c40377dcb5e02f959dd2893f64345dc801b3a93899560538e8447b6b2dc9f774f9a7c5d4a80b04

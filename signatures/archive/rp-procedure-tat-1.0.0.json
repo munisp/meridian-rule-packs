@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-procedure-tat",
   "version": "1.0.0",
-  "sha256": "96009249ceae19d72200a6dcc89ef8936f1c67f7c5fa4bae9a1503f979dbd307",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-procedure-tat/1.0.0/96009249ceae19d7.yaml",
-  "archived_at": "2026-07-31T16:12:19Z",
-  "key_id": "governance-board-2026",
-  "signature": "d694036ae9f6ee175bb333df9780e5d2cbee8d1b554b7a1eb3d76f74f13294b759a1092e66882d715b2badbed8f57872e5068b9eb9a27a9db0f55defa828510e",
-  "publish_event_id": "01KYRKHWMRQ1BVFMTZ99CK9KFB",
+  "sha256": "3651560ab2354304ecbf754402d934522493cfc53e112e4f83ca8c67701c4b23",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-procedure-tat/1.0.0/3651560ab2354304.yaml",
+  "archived_at": "2026-09-18T19:55:49Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "7ca1269f2ccd6fb5413e74fd219f2695652c4324e35151fa17e8185a705d9045273eb0824a14d00c807e2cae4146a26b190ab9bdef9323fbdd5f2289f81b670c",
+  "publish_event_id": "01M2V1DSDQJDAJFPTTC96QXTYX",
   "immutable": true
 }

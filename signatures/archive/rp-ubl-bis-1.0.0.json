@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-ubl-bis",
   "version": "1.0.0",
-  "sha256": "41af109370692749d8770587ea0bb4086b2a65f38879a00d15c2e96dbb04cbac",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-ubl-bis/1.0.0/41af109370692749.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "cddc7baf692d3f6162202a200d1e650bc69b3fbac9905a79b1c22cd36e15e75eec2491f426054be19045612698a0acb04f4de3394d49ad637f654824eb589706",
-  "publish_event_id": "01KYRKHWRQ5FEF1HYCFXRY4M7B",
+  "sha256": "eabc2e060a7157efece51392ce12f211fd4d114c9269c1a679be7d121fa61112",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-ubl-bis/1.0.0/eabc2e060a7157ef.yaml",
+  "archived_at": "2026-09-18T19:55:49Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "d47c54d676211e327c7545a5205a4c7e753393f684f2a854c841c55ea70190cf63246f74e396cdba748d0167138b6d4377048b8737dee505f914c3e5ea419e08",
+  "publish_event_id": "01M2V1DSM14S9Z3M5ST6XCA8QG",
   "immutable": true
 }

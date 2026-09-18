@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW35B5W8H6F4QRDRHCDY",
+  "id": "01M2V1DRC4H2F0NP2Z9KQH7RP7",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "bd0383489bf9e2d36a46a013803bcce6",
+  "trace_id": "c401961057e3f831adb507f6ac3beb13",
   "rule_pack_version": "rp-disclosure-control@1.0.0",
   "data": {
     "pack_id": "rp-disclosure-control",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 6,
-    "sha256": "e09d95f3b2c2266619d801f93c6d59fc0fbe79916920e60dcdedab4a059dd06c",
-    "key_id": "governance-board-2026",
+    "sha256": "3923b3b01725177e23ed6f63cef8cf10b127fe93c14f3ccbf315280ce7f8bd7e",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Meridian analytics governance implementing Nigeria Data Protection Act 2023 and NRS data-governance policy",
       "as_gazetted": null,

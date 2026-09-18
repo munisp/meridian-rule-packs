@@ -65,5 +65,5 @@ rules:
     narrate: 'NTA overlay: domestic groups at N50bn+ treated in scope of the 15% minimum ETR (rp-etr-nta).'
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: dd3bdaf6732922c85b696ca32ccb6f7d4d5dcf46c68649687ffcc952f8f2be481ba9f49e90b58fd879e6591c8a675a31d61a3b6bec67bd7d2844a3defbf55304
+  key_id: governance-board-2026-r2
+  signature: c71ab2f5f4247f06cba1be7dcdedfdcae12cd053bb2b016ef8985edf71bd2a0e1063c806515285d9cdcc6d2a7b119316643f536aa12efe6a243795e334673107

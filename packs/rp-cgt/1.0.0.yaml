@@ -65,14 +65,14 @@ rules:
     narrate: From 2026, individuals' chargeable gains are aggregated with income and taxed at PIT bands (rp-education-ng pit.band.*);
       the marginal rate applies.
   effective_from: '2026-01-01'
-  citation: "CGT Act (as amended); Nigeria Tax Act 2025"
+  citation: CGT Act (as amended); Nigeria Tax Act 2025
 - id: cgt.exempt.principal-residence
   when:
     asset_class: principal_private_residence
   then:
     rate_bps: 0
     narrate: Gain on disposal of the taxpayer's only or main private residence is exempt.
-  citation: "CGT Act (as amended); Nigeria Tax Act 2025"
+  citation: CGT Act (as amended); Nigeria Tax Act 2025
 - id: cgt.exempt.compensation
   when:
     payment_type: compensation_for_loss_of_office
@@ -91,7 +91,7 @@ rules:
     decision: excess_taxable
     taxable_amount_formula: amount_kobo - 5000000000
     narrate: Only the excess over N50m is chargeable.
-  citation: "CGT Act (as amended); Nigeria Tax Act 2025"
+  citation: CGT Act (as amended); Nigeria Tax Act 2025
 - id: cgt.exempt.gov-securities
   when:
     asset_class:
@@ -102,7 +102,7 @@ rules:
   then:
     rate_bps: 0
     narrate: Gains on disposal of Nigerian government securities exempt.
-  citation: "CGT Act (as amended); Nigeria Tax Act 2025"
+  citation: CGT Act (as amended); Nigeria Tax Act 2025
 - id: cgt.deadline.filing
   when:
     disposal_date:
@@ -111,8 +111,8 @@ rules:
     deadline: same_return_as_income_tax
     narrate: 'Legacy regime: CGT returns filed with the annual tax return; under NTA gains are reported in the annual income
       tax return for the year of disposal.'
-  citation: "CGT Act (as amended); Nigeria Tax Act 2025"
+  citation: CGT Act (as amended); Nigeria Tax Act 2025
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 3801314a40c49f1de1442855b04ee8f610911ba61a9ae98730655a1d4565d1eec030c390ca3889f2eb63a2d60f527800daf465cfa255af927d8659af9d2e0308
+  key_id: governance-board-2026-r2
+  signature: 2cb014f42af68cffda99cd861a246d4e6f756dea651404b09e226b2897d257e85ece9a54cf60d2c2006e6d53cef77075855ff38fae85d61a4250f3d183001e00

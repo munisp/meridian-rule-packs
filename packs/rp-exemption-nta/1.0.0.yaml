@@ -38,7 +38,7 @@ rules:
     decision: exempt
     narrate: National minimum wage earners exempt from PIT (N70,000/month = N840,000/yr); the 0% PIT band to N800,000 covers
       this.
-  citation: "Nigeria Tax Act 2025"
+  citation: Nigeria Tax Act 2025
 - id: exempt.bodies
   when:
     entity_type:
@@ -52,7 +52,7 @@ rules:
     decision: exempt
     condition: non_commercial_income_only
     narrate: Exempt bodies retain exemption for non-commercial income; commercial profits are taxable.
-  citation: "Nigeria Tax Act 2025"
+  citation: Nigeria Tax Act 2025
 - id: exempt.cgt.compensation
   when:
     payment_type: compensation_for_loss_of_office
@@ -61,7 +61,7 @@ rules:
   then:
     decision: exempt
     narrate: Compensation for loss of office/employment up to N50m exempt from CGT.
-  citation: "Nigeria Tax Act 2025"
+  citation: Nigeria Tax Act 2025
 - id: exempt.dividend.small-payer
   when:
     payment_type: dividend
@@ -69,7 +69,7 @@ rules:
   then:
     decision: exempt
     narrate: Dividends paid by small companies exempt from WHT and further tax in shareholders' hands.
-  citation: "Nigeria Tax Act 2025"
+  citation: Nigeria Tax Act 2025
 - id: exempt.agriculture.holiday
   when:
     sector:
@@ -80,8 +80,8 @@ rules:
     decision: tax_holiday
     duration_years: 5
     narrate: Priority-sector reliefs per NTA schedules; details subject to gazette.
-  citation: "Nigeria Tax Act 2025"
+  citation: Nigeria Tax Act 2025
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: ed2f437b8dbfa36c80a1a9f15289e405b7a856e733420580f696c5c00128e84edcd187abf677477b01918957ce2748cadb8a3760c2c17add65208665ffc10502
+  key_id: governance-board-2026-r2
+  signature: 928532eb6eb40cd6d6f9a1ab478aee7b2e8663967a5f270cb20ecb2bfa54e2c47477a430a17139494204045a0ea48aa0b5d4017bfd2a79425e84902ac57b8d0d

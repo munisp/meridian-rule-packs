@@ -1,24 +1,27 @@
 # rp-excise-ng v1.0.0 — Meridian rule pack (SPEC §1.4 format)
-# Excise duties (honest minimal pack) — sweetened beverages ₦10/litre; telecom 5% suspended then abolished
+# Excise duties — SSB ₦10/litre; telecom 5% abolished; alcohol/tobacco schedule 2020-2024 (2018 Order + FPM 2022 roadmap)
 id: rp-excise-ng
 version: 1.0.0
-title: Excise duties (honest minimal pack) — sweetened beverages ₦10/litre; telecom 5% suspended then abolished
-description: 'Minimal effective-dated excise pack. SOURCED rules only: (1) ₦10/litre excise on non-alcoholic, sweetened carbonated
-  drinks (Finance Act 2021, from 1 Jan 2022); (2) 5% excise on telecommunication services (Finance Act 2020 regime, suspended
-  by presidential order July 2023, formally ABOLISHED 19 Aug 2025). The full excise goods schedule (alcohol/tobacco specific
-  rates per centilitre/stick, ''whichever is higher'' import rules) is NOT encoded: those rates could not be verified against
-  the gazette schedule — see excise.framework.unsourced (UNSOURCED gate, framework-only).'
-effective_from: '2022-01-01'
+title: Excise duties — SSB ₦10/litre; telecom 5% abolished; alcohol/tobacco schedule 2020-2024 (2018 Order + FPM 2022 roadmap)
+description: 'Effective-dated excise pack. SOURCED: (1) ₦10/litre on non-alcoholic, carbonated sweetened beverages (Finance
+  Act 2021, from 1 Jan 2022); (2) 5% excise on telecom services (Finance Act 2020 regime, suspended July 2023, abolished 19
+  Aug 2025); (3) alcohol and tobacco specific/ad-valorem schedule: 2020-2021 rates in force under the 2018 excise amendment
+  roadmap and the FPM 2022 approved roadmap for 2022-2024 (effective 1 June 2022), incl. the July 2023 Executive-Order suspension
+  of the FPM 2023 escalation. Residual scope (motor vehicles, plastics, "whichever is higher" import rules) remains UNSOURCED
+  — see excise.framework.unsourced.'
+effective_from: '2020-01-01'
 effective_to: null
 status: published
 subject_to_regazette: true
 provenance:
   as_passed: Finance Act 2021 (excise on sweetened non-alcoholic beverages, ₦10/litre); Finance Act 2020 (5% excise on telecom
-    services); presidential suspension 2023; abolition announced 19 Aug 2025
+    services); Customs & Excise tariff amendment Order 2018 (3-year alcohol/tobacco roadmap, rates in force 2020-2021); Fiscal
+    Policy Measures 2022 (excise roadmap 2022-2024, effective 1 June 2022); presidential Executive Orders July 2023 (suspension
+    of FPM 2023 escalation); telecom excise abolished 19 Aug 2025
   as_gazetted: null
-  source_citation: Finance Act 2021 s.52 (sweetened beverage excise); Orbitax "Nigeria Abolishes 5% Excise Tax on Telecommunication
-    Services" (https://orbitax.com/news/country/article/Nigeria-Abolishes-5-Excise-Ta-59705); PwC Nigeria tax summaries (excise/excise-like
-    levies)
+  source_citation: Finance Act 2021 s.52; PwC tax alert "Highlights of Nigeria's 2022 Fiscal Policy Measures" (https://www.pwc.com/ng/en/assets/pdf/pwc-tax-alert-highlights-of-nigeria-2022-fiscal-policy-measures.pdf);
+    Alawode et al. 2025, Rep Glob Health Res 8:219 (PwC 2023 rate tables) https://www.gavinpublishers.com/article/view/implementation-status-of-health-tax-policies-in-nigeria-and-their-alignment-with-global-standards
+    ; BusinessDay 2023-05-02; TheCable 2023-05-04; DailyTrust 2023-07-23; Orbitax telecom abolition (2025-08-19)
 rules:
 - id: excise.beverages.sweetened
   when:
@@ -44,17 +47,237 @@ rules:
       on 19 August 2025 — do not charge.
   citation: 'Orbitax: Nigeria Abolishes 5% Excise Tax on Telecommunication Services (2025-08-19/25)'
   effective_from: '2023-07-06'
+- id: excise.beer-stout.2020-2021
+  when:
+    tax: EXCISE
+    good: beer_or_stout
+    date:
+      gte: '2020-01-01'
+      lt: '2022-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 3500
+    narrate: Specific excise ₦35 per litre on beer and stout — final rate of the 2018 excise amendment roadmap (₦0.35/cl),
+      in force 2020-2021; unchanged by Finance Acts 2020/2021. No ad valorem on beer/stout in this period.
+  citation: 'PwC FPM 2022 tax alert (rates table 2018-2020, 2020 rate applied in 2021): https://www.pwc.com/ng/en/assets/pdf/pwc-tax-alert-highlights-of-nigeria-2022-fiscal-policy-measures.pdf
+    ; BusinessDay 2023-05-02 (₦0.35/cl 2019-2020)'
+  effective_from: '2020-01-01'
+  effective_to: '2022-05-31'
+- id: excise.wines.2020-2021
+  when:
+    tax: EXCISE
+    good: wines
+    date:
+      gte: '2020-01-01'
+      lt: '2022-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 15000
+    narrate: Specific excise ₦150 per litre (₦1.50/cl) on wines, in force 2020-2021 under the 2018 excise amendment roadmap;
+      unchanged by FA2020/FA2021.
+  citation: PwC FPM 2022 tax alert (wines ₦150/L 2019-2021); Alawode et al. 2025, Rep Glob Health Res 8:219 Table 2 (PwC 2023)
+  effective_from: '2020-01-01'
+  effective_to: '2022-05-31'
+- id: excise.spirits.2020-2021
+  when:
+    tax: EXCISE
+    good: spirits
+    date:
+      gte: '2020-01-01'
+      lt: '2022-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 20000
+    narrate: Specific excise ₦200 per litre (₦2.00/cl) on spirits (whisky, brandy, vodka, rum), in force 2020-2021 under the
+      2018 excise amendment roadmap; unchanged by FA2020/FA2021.
+  citation: PwC FPM 2022 tax alert (spirits ₦200/L 2020-2021); BusinessDay 2023-05-02 (₦2.00/cl in 2020)
+  effective_from: '2020-01-01'
+  effective_to: '2022-05-31'
+- id: excise.tobacco.cigarettes.2020-2021
+  when:
+    tax: EXCISE
+    good: cigarettes
+    date:
+      gte: '2020-01-01'
+      lt: '2022-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + sticks * 290
+    narrate: 'Cigarettes: 20% ad valorem + specific ₦2.90 per stick, in force 2020-2021 (2018 amendment roadmap: ₦1.00/stick
+      2018, ₦2.00 2019, ₦2.90 2020).'
+  citation: 'Alawode et al. 2025, Rep Glob Health Res 8:219 Table 1 (PwC 2023): 20% + ₦2.9/stick 2020-2021; BusinessDay 2023-05-02'
+  effective_from: '2020-01-01'
+  effective_to: '2022-05-31'
+- id: excise.tobacco.other.2020
+  when:
+    tax: EXCISE
+    good: other_tobacco
+    date:
+      gte: '2020-01-01'
+  then:
+    formula: excise_kobo = max(weight_kg * 100000, volume_litres * 300000)
+    narrate: 'Other tobacco (smokeless, shisha, homogenised/reconstituted): ₦1,000 per kg or ₦3,000 per litre as of 2020.'
+  citation: Alawode et al. 2025, Rep Glob Health Res 8:219 (₦1,000/kg or ₦3,000/L as of 2020)
+  effective_from: '2020-01-01'
+- id: excise.beer-stout.fpm2022
+  when:
+    tax: EXCISE
+    good: beer_or_stout
+    date:
+      gte: '2022-06-01'
+      lt: '2023-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 4000
+    narrate: 'FPM 2022 roadmap: beer and stout ₦40 per litre (year 2022), no ad valorem on beer/stout; effective 1 June 2022.'
+  citation: 'PwC FPM 2022 tax alert (beer/stout ₦40/L 2022): https://www.pwc.com/ng/en/assets/pdf/pwc-tax-alert-highlights-of-nigeria-2022-fiscal-policy-measures.pdf
+    ; TheCable 2023-05-04 (₦40/L in 2022)'
+  effective_from: '2022-06-01'
+  effective_to: '2023-05-31'
+- id: excise.beer-stout.fpm2022-2023
+  when:
+    tax: EXCISE
+    good: beer_or_stout
+    date:
+      gte: '2023-06-01'
+      lt: '2024-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 4500
+    narrate: 'FPM 2022 roadmap year 2023: beer and stout ₦45 per litre. NOTE: FPM 2023 would have raised this to 20% ad valorem
+      + ₦75/L from 1 June 2023, but the escalation was SUSPENDED by presidential Executive Order (July 2023); FPM 2022 roadmap
+      rates remain the operative schedule.'
+  citation: PwC FPM 2022 tax alert (₦45/L 2023); DailyTrust 2023-07-23 (Tinubu Executive Orders suspension); Guardian 2022-12-27
+  effective_from: '2023-06-01'
+  effective_to: '2024-05-31'
+- id: excise.beer-stout.fpm2022-2024
+  when:
+    tax: EXCISE
+    good: beer_or_stout
+    date:
+      gte: '2024-06-01'
+  then:
+    formula: excise_kobo = volume_litres * 5000
+    narrate: 'FPM 2022 roadmap year 2024: beer and stout ₦50 per litre (final year of the approved 2022-2024 roadmap).'
+  citation: PwC FPM 2022 tax alert (₦50/L 2024)
+  effective_from: '2024-06-01'
+- id: excise.wines.fpm2022
+  when:
+    tax: EXCISE
+    good: wines
+    date:
+      gte: '2022-06-01'
+      lt: '2023-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 5000
+    narrate: 'FPM 2022: wines 20% ad valorem + ₦50 per litre (2022); effective 1 June 2022.'
+  citation: PwC FPM 2022 tax alert (wines 20%+₦50 2022); TheCable 2023-05-04 (₦50/L in 2022, 20% ad valorem 2022)
+  effective_from: '2022-06-01'
+  effective_to: '2023-05-31'
+- id: excise.wines.fpm2022-2023
+  when:
+    tax: EXCISE
+    good: wines
+    date:
+      gte: '2023-06-01'
+      lt: '2024-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 6000
+    narrate: 'FPM 2022 roadmap year 2023: wines 20% ad valorem + ₦60 per litre (FPM 2023 escalation to 30% + ₦75/L suspended
+      by Executive Order July 2023).'
+  citation: PwC FPM 2022 tax alert (wines 20%+₦60 2023); DailyTrust 2023-07-23 (EO suspension)
+  effective_from: '2023-06-01'
+  effective_to: '2024-05-31'
+- id: excise.wines.fpm2022-2024
+  when:
+    tax: EXCISE
+    good: wines
+    date:
+      gte: '2024-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 7000
+    narrate: 'FPM 2022 roadmap year 2024: wines 20% ad valorem + ₦70 per litre.'
+  citation: PwC FPM 2022 tax alert (wines 20%+₦70 2024)
+  effective_from: '2024-06-01'
+- id: excise.spirits.fpm2022
+  when:
+    tax: EXCISE
+    good: spirits
+    date:
+      gte: '2022-06-01'
+      lt: '2023-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 5000
+    narrate: 'FPM 2022: spirits (whisky, brandy, vodka, rum) 20% ad valorem + ₦50 per litre (2022); effective 1 June 2022.'
+  citation: PwC FPM 2022 tax alert (spirits 20%+₦50 2022); Alawode et al. 2025 Table 2 (PwC 2023)
+  effective_from: '2022-06-01'
+  effective_to: '2023-05-31'
+- id: excise.spirits.fpm2022-2023
+  when:
+    tax: EXCISE
+    good: spirits
+    date:
+      gte: '2023-06-01'
+      lt: '2024-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 6500
+    narrate: 'FPM 2022 roadmap year 2023: spirits 20% ad valorem + ₦65 per litre (FPM 2023 escalation to 30% + ₦150/L suspended
+      by Executive Order July 2023).'
+  citation: PwC FPM 2022 tax alert (spirits 20%+₦65 2023); DailyTrust 2023-07-23 (EO suspension)
+  effective_from: '2023-06-01'
+  effective_to: '2024-05-31'
+- id: excise.spirits.fpm2022-2024
+  when:
+    tax: EXCISE
+    good: spirits
+    date:
+      gte: '2024-06-01'
+  then:
+    rate_bps: 2000
+    formula: excise_kobo = ad_valorem_kobo + volume_litres * 7500
+    narrate: 'FPM 2022 roadmap year 2024: spirits 20% ad valorem + ₦75 per litre.'
+  citation: PwC FPM 2022 tax alert (spirits 20%+₦75 2024)
+  effective_from: '2024-06-01'
+- id: excise.tobacco.cigarettes.fpm2022
+  when:
+    tax: EXCISE
+    good: cigarettes
+    date:
+      gte: '2022-06-01'
+      lt: '2023-06-01'
+  then:
+    rate_bps: 3000
+    formula: excise_kobo = ad_valorem_kobo + sticks * 420
+    narrate: 'FPM 2022: cigarettes 30% ad valorem + ₦4.20 per stick (2022); effective 1 June 2022.'
+  citation: 'Alawode et al. 2025, Rep Glob Health Res 8:219 Table 1 (PwC 2023): 30% + ₦4.2/stick 2022; BusinessDay 2023-05-02
+    (₦4.2/stick in 2022)'
+  effective_from: '2022-06-01'
+  effective_to: '2023-05-31'
+- id: excise.tobacco.cigarettes.fpm2022-2023
+  when:
+    tax: EXCISE
+    good: cigarettes
+    date:
+      gte: '2023-06-01'
+  then:
+    rate_bps: 3000
+    formula: excise_kobo = ad_valorem_kobo + sticks * 470
+    narrate: 'FPM 2022 roadmap year 2023: cigarettes 30% ad valorem + ₦4.70 per stick (FPM 2023 escalation to ₦8.20/stick
+      suspended by Executive Order July 2023).'
+  citation: 'Alawode et al. 2025 Table 1 (PwC 2023): 30% + ₦4.7/stick 2023; BusinessDay 2023-05-02 (₦8.20 FPM2023 suspended)'
+  effective_from: '2023-06-01'
 - id: excise.framework.unsourced
   when:
     tax: EXCISE
     good: other_excisable
   then:
     decision: UNSOURCED_gate
-    narrate: 'FRAMEWORK-ONLY: the full excise goods schedule (alcohol, tobacco, motor vehicles, plastics, "whichever is higher"
-      import rules) is not encoded — rates not verified against the gazette schedule. Any consumer must treat unlisted excisable
-      goods as UNSOURCED and gate on the CTC workflow, per repo conventions.'
-  citation: UNSOURCED — awaiting gazette CTC verification (tools/ctc.py workflow)
+    narrate: 'FRAMEWORK-ONLY: residual excise scope not encoded — motor-vehicle green tax / Import Adjustment Tax, single-use
+      plastics (10%, suspended July 2023), and "whichever is higher" import rules. Alcohol/tobacco/SSB specific+ad valorem
+      rates ARE encoded above (sourced). Treat unlisted excisable goods as UNSOURCED and gate on the CTC workflow.'
+  citation: UNSOURCED — awaiting gazette CTC verification (tools/ctc.py workflow); Reanda 2023-04-20 FPM2023 summary (green
+    tax/IAT)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 529317649107784c486763ae7fa9adb6391ce769b7823d5bf1b0cd3a5b529c75f7457812330b38345a926ec71e58dff76c5fc5d466e982008e1086f8e0ae4400
+  key_id: governance-board-2026-r2
+  signature: bd7e73b421eb89b704f438b7bd008bad48b3d88992014f51ed07b699805c78b7e6b07d831dd1628d1998d7d2f001220a649b2b66950f2f5af99c254e6a3dde01

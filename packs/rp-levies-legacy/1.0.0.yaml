@@ -58,5 +58,5 @@ rules:
   effective_from: '2026-01-01'
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: dfe790b9f4ce11bde58947be8fd6ef37d0dc97a61b4e773d0b9f0f094b24e9a8965a3a7425cf508a258ef211fcd55fee3e351ace234b5e2de5c83c080ba5f60f
+  key_id: governance-board-2026-r2
+  signature: 7f0bc26318c8ee405422c565ce47e51adac5adb16c6f484fd4be1088ef1053b9c4e99764706b78da0024999f9fab22edfa7bb6221bafcbbdc166453fa51fe502

@@ -76,5 +76,5 @@ rules:
     narrate: 'Wrapped/staked/LP positions: look-through to underlying; staking/yield rewards taxed as income at FMV on receipt.'
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: d19508bc9f510482c0766ea36f45db83642897a66bb4cc8f4d21139e5cd549c3e56b912db890727fe45743619da3290054ecd422ebd21ec97916b80ff14cb707
+  key_id: governance-board-2026-r2
+  signature: 2a93ba891c254393921c9f046dc1f23382ec0e2958952339459170bd10edafdd9b825447a5ec9986c1fd0c726f84034df4892c4822fc7af81969cf86fc826b0d

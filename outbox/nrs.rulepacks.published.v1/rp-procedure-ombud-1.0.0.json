@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWKWE5RD755S25MKZ6GB",
+  "id": "01M2V1DSCQM68T82GTAW3KG5PK",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "6b205ba7deda8a115bc655458a2cba1c",
+  "trace_id": "09e4353ca749925406556920ab8ce1a3",
   "rule_pack_version": "rp-procedure-ombud@1.0.0",
   "data": {
     "pack_id": "rp-procedure-ombud",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 7,
-    "sha256": "92dcb83c2f942d36cb3dc04cd62a3ded80ea4913100e55e414464e65e19d7379",
-    "key_id": "governance-board-2026",
+    "sha256": "89761ed3209dd3c20ccd1a86ef55096f4e06c4582e19fca911da78d0100adc3b",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025 \u2014 Part establishing the Office of the Tax Ombud",
       "as_gazetted": null,

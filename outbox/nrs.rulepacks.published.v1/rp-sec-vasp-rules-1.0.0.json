@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWNE1KNQF3A76EJDSEQ1",
+  "id": "01M2V1DSEF4DRQY29Y4ZE5K6WC",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "d28069a9a2999f0ad4e6f3ec7426cfad",
+  "trace_id": "1e956805d4e197322f59eba52eabb3ff",
   "rule_pack_version": "rp-sec-vasp-rules@1.0.0",
   "data": {
     "pack_id": "rp-sec-vasp-rules",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 5,
-    "sha256": "18f77b41eb7d3ad2c5bb00670a113d12441920b2b1861e0aa9fa6b4795d5c143",
-    "key_id": "governance-board-2026",
+    "sha256": "2551c335b450c08b7f4fe83281880d23715f4b9dc2e0eb3f1acb5d555da433e3",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "SEC Nigeria, Rules on Digital Assets (11 May 2022); Accelerated Regulatory Incubation Programme (ARIP) amendments (2024); Investments and Securities Act 2025",
       "as_gazetted": null,

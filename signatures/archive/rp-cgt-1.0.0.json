@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-cgt",
   "version": "1.0.0",
-  "sha256": "6b1e0b6d8e33129a8deec6513d63a9a3536dc4aa9e6936bf2355f1d0c4d778b0",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-cgt/1.0.0/6b1e0b6d8e33129a.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "3801314a40c49f1de1442855b04ee8f610911ba61a9ae98730655a1d4565d1eec030c390ca3889f2eb63a2d60f527800daf465cfa255af927d8659af9d2e0308",
-  "publish_event_id": "01KYTXKFD77RGYMCZ62ANNXFF9",
+  "sha256": "05e4f1c728c493aab09844f44f42a1e94ddab9519d72113d8c4229d7d541ee40",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-cgt/1.0.0/05e4f1c728c493aa.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "2cb014f42af68cffda99cd861a246d4e6f756dea651404b09e226b2897d257e85ece9a54cf60d2c2006e6d53cef77075855ff38fae85d61a4250f3d183001e00",
+  "publish_event_id": "01M2V1DR6QBSPWV1FQGQP1P1K9",
   "immutable": true
 }

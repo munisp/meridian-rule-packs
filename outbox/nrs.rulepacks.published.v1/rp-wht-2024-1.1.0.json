@@ -1,10 +1,10 @@
 {
-  "id": "01M2TRXC4B5FT0W52PZG4QV115",
+  "id": "01M2V1DT65DVWKXFMPWAXYE8ZC",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T17:27:02Z",
+  "time": "2026-09-18T19:55:49Z",
   "tenant_id": "",
-  "trace_id": "be8e0185be362fe199ca6aaef5e37bbb",
+  "trace_id": "8c37d0cdb9bed2141b0899968d8b2590",
   "rule_pack_version": "rp-wht-2024@1.1.0",
   "data": {
     "pack_id": "rp-wht-2024",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 41,
-    "sha256": "597bc736e0e1eeb87372a263dbd0f5242816f47720c30052c936dbd3c6e85c3d",
-    "key_id": "governance-board-2026",
+    "sha256": "277a18284a0ed8ee914182af59f65293faade2b6a469940526db561b2f7eae62",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Deduction of Tax at Source (Withholding) Regulations 2024, signed 1 July 2024 (FIRS/FMoF)",
       "as_gazetted": "Federal Republic of Nigeria Official Gazette No. 106, Vol. 111 of 2024 (awaiting CTC confirmation)",

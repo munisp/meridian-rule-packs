@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-ntaa-penalties",
   "version": "1.0.0",
-  "sha256": "fbcf1c74c376e03ba0bf01e18877ce0336a565632fed42bbb1cbb2e5e9149bfc",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-ntaa-penalties/1.0.0/fbcf1c74c376e03b.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "87c43af4f53b5c5171cf7afb656e42c55023615f6c08595dbcc132f758f52d1f56ba4432d852d112f2179fcb9003573a586a61c7e78bc6e1a3ef237be1dced02",
-  "publish_event_id": "01KYWC67ZCCMCMBWZJYJRAQSYH",
+  "sha256": "6cb6a8b430bf2cc7b34a16e86b2ac2a6a71b8160375d3f2cb2af714ed292c629",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-ntaa-penalties/1.0.0/6cb6a8b430bf2cc7.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "a37d25ce3b0d25d6411c50a027e9df813c6d2c1b66f5efe472a94e4829a821d2ef0fcbb623cdf04f3cdceab07df18848d8fb7a713acecfab37cba48939093e02",
+  "publish_event_id": "01M2V1DS3JVT7J22JWGQ8KC7GE",
   "immutable": true
 }

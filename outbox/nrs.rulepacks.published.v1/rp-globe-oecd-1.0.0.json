@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWBHG5WY4J9AVYS1RNE4",
+  "id": "01M2V1DRVC578E6SP57R0N8WP8",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "17bb611bbccceffb71ab2604f0c019fb",
+  "trace_id": "a39d5fd8f556840409deb859ad11f184",
   "rule_pack_version": "rp-globe-oecd@1.0.0",
   "data": {
     "pack_id": "rp-globe-oecd",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 8,
-    "sha256": "eeaf5355269026e09216daa87bd8728c89d07b273885a831c8c97d652a643d35",
-    "key_id": "governance-board-2026",
+    "sha256": "3acfe8fc7b82162dcfcd2782adbf3927a88b05a7d0adfaa16a3a563b3302ffc5",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "OECD/G20 Inclusive Framework, Global Anti-Base Erosion (GloBE) Model Rules (Pillar Two), 20 Dec 2021, with Administrative Guidance 2023-2025",
       "as_gazetted": null,

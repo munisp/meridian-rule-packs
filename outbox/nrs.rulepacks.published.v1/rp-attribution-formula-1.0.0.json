@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHVZVBEHDPE9VYGAYDD8W",
+  "id": "01M2V1DR2GX06NNT9MB6AYAFQM",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "c4cd97ddca82a4b17672ac91f3bd7260",
+  "trace_id": "b3652b3317b827dd08cc5bcbee7fc8c6",
   "rule_pack_version": "rp-attribution-formula@1.0.0",
   "data": {
     "pack_id": "rp-attribution-formula",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 4,
-    "sha256": "3f706125e2b943d0270b591a74cc16e89742d7826ebca54747b5ec22b7d19c94",
-    "key_id": "governance-board-2026",
+    "sha256": "79b445cd10b12bd7041db03774410f4986c7a22d2a87000f6d125a5aaf27e19e",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025 \u2014 VAT distribution by derivation (place-of-consumption attribution); Joint Revenue Board attribution framework",
       "as_gazetted": null,

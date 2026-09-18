@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-commissions-ng",
   "version": "1.0.0",
-  "sha256": "85a0b6e1350fbbcbb96072be3465125e9c7423e0fbd9b79c8ad4f0fe6dbed29d",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-commissions-ng/1.0.0/85a0b6e1350fbbcb.yaml",
-  "archived_at": "2026-09-18T13:36:40Z",
-  "key_id": "governance-board-2026",
-  "signature": "14060acd2c90e2115438a7c885fcb6bfcbacae6961010162a6d306eea0430538269b820f27b9d664b7332df1651eb9cf83b96b46408c39622179146321ec5203",
-  "publish_event_id": "01M2TBQJA7BBQTMB5ZT0FZ7K7Z",
+  "sha256": "421c85d4d4b398bae952c20887dea24554bbce353597e59973331575112aea0c",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-commissions-ng/1.0.0/421c85d4d4b398ba.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "3b7ddab897f13ea69c04004db8aeaaeb3083ad3e9420d3d6a46ab429f66994e746a1f38d002619070ebb5baa9b53e83711d0ec169f13a5d64dcf67dc64e96305",
+  "publish_event_id": "01M2V1DRAC8W51APPPT8GY09MS",
   "immutable": true
 }

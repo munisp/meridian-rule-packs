@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHW2DVM07C4502AG56H0G",
+  "id": "01M2V1DRB7ZGWFBNYVSQA18T75",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "fbafe301fe39662cd4031ccf8fcb4099",
+  "trace_id": "0ffd338b8e37d6c1c927303239f3f740",
   "rule_pack_version": "rp-deposit-20pct@1.0.0",
   "data": {
     "pack_id": "rp-deposit-20pct",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 6,
-    "sha256": "5413b3d360d26265c1d5d3ad917d42b9218aa23c11afa75aaef6ab893dd4f4a2",
-    "key_id": "governance-board-2026",
+    "sha256": "50fa38578ac20a12ca253110859dc143b1b50f081c1194e9716a4e5ef06b3756",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025 \u2014 dispute resolution deposit provision; TAT practice directions",
       "as_gazetted": null,

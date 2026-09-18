@@ -1,10 +1,10 @@
 {
-  "id": "01M2TBBHYZSTC0MW48Z8H8AATX",
+  "id": "01M2V1DRH30CVZKWV6A629DEDY",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T13:30:07Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "bf19338fb174bda0412354047d024cf4",
+  "trace_id": "58e2cddae8b0aa1902e1fe70953769cc",
   "rule_pack_version": "rp-etr-nta@1.1.0",
   "data": {
     "pack_id": "rp-etr-nta",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 9,
-    "sha256": "28d2aba91bbb8ac3144f4d0c4baafcda87c069a5d6a05c512481d794dae29c1a",
-    "key_id": "governance-board-2026",
+    "sha256": "edd3998c12400ebbb727d06f64a13e178a5c2c4d94e2b45f8117b62f49129f1c",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 \u2014 minimum effective tax rate provisions (Ch. 2, Part on companies income tax)",
       "as_gazetted": null,

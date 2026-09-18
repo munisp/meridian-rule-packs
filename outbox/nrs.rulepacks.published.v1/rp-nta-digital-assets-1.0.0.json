@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWECFHWC7Y0MN7788TF4",
+  "id": "01M2V1DS1EX3JGBJCYJR3P0WKE",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:06Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "d78a3c1ce48c50d1ecfa2178a1b3bc35",
+  "trace_id": "c36bb489ddc0548614781ad85a923936",
   "rule_pack_version": "rp-nta-digital-assets@1.0.0",
   "data": {
     "pack_id": "rp-nta-digital-assets",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 6,
-    "sha256": "b8b8f15b350a2083e0f07c9ca7e7641bdbb41c1536c97198b89104bd0fbf6fca",
-    "key_id": "governance-board-2026",
+    "sha256": "b7200046505cc7087714fcdce7d068209eda2e7206c4d42019968bdbcecd3fe5",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Act 2025 (NTA), signed 26 June 2025 \u2014 chargeable assets definition extended to digital/virtual assets",
       "as_gazetted": null,

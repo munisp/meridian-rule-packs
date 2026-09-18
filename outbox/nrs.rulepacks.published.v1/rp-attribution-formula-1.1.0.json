@@ -1,10 +1,10 @@
 {
-  "id": "01M2TAFBVCZMMB1BYA231Q7CZN",
+  "id": "01M2V1DR39TTTDG88D4HMZJM7Q",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T13:14:43Z",
+  "time": "2026-09-18T19:55:47Z",
   "tenant_id": "",
-  "trace_id": "b732e2a30f568316ba459a93ad42bb40",
+  "trace_id": "a0511d287f4c7c06d39908e10fbd2124",
   "rule_pack_version": "rp-attribution-formula@1.1.0",
   "data": {
     "pack_id": "rp-attribution-formula",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 4,
-    "sha256": "1a1d723a41b0a116021b9aa71f3deef782b924d1f93ab4a4ebfa43abf431d698",
-    "key_id": "governance-board-2026",
+    "sha256": "9034cc06a9a335af6e7d6f7de7d3843c20425c23c907596a193b4c48d7bb0ee2",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Nigeria Tax Administration Act 2025, s.81 \u2014 VAT distribution: FG 10% / States 55% / LGAs 35%; states+LGA share distributed 50% equality, 20% population, 30% place-of-consumption",
       "as_gazetted": null,

@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-presumptive-lagos",
   "version": "1.0.0",
-  "sha256": "266af7c973521a3dd1f35e187b772661175739be6fc598ca3b2b76335bd7254f",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-lagos/1.0.0/266af7c973521a3d.yaml",
-  "archived_at": "2026-07-30T04:12:07Z",
-  "key_id": "governance-board-2026",
-  "signature": "a1c5092dbdba9f1441d1c99f33455f65ed66b032c9556c6e82051a0c55cd623dfbec2664ff4fe69773efd0427e8b2b843f01093a71bad3a69c393e246dd85a0a",
-  "publish_event_id": "01KYRKHWJY2SC3TJFMPB7QVD4X",
+  "sha256": "9a2a0fae55db9b0faaa705ead5833493a454da2865cb1dc6d8a4d7877574e06c",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-presumptive-lagos/1.0.0/9a2a0fae55db9b0f.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "174ba236e96cea2f605ed2c69b07fcae0ce26948699e5c52c53c26c67faf31496803afa27b7ab29418096aaaa3ae53d623f8f0f099e167313fa789c86705530b",
+  "publish_event_id": "01M2V1DSBNBTS26CPX6JH3SD2D",
   "immutable": true
 }

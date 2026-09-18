@@ -24,7 +24,7 @@ rules:
     decision: report_to_nrs
     frequency: monthly
     narrate: Banks report individual accounts with monthly turnover >= N25m to NRS (data-sharing rail).
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 - id: bank.report.corporate
   when:
     account_holder: corporate
@@ -34,7 +34,7 @@ rules:
     decision: report_to_nrs
     frequency: monthly
     narrate: Corporate accounts with monthly turnover >= N100m reportable.
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 - id: bank.cash.limit.individual
   when:
     channel: cash_withdrawal
@@ -43,7 +43,7 @@ rules:
     threshold:
       weekly_limit_kobo: 50000000
     narrate: 'CBN cash withdrawal cap: N500,000/week individuals (processing fee above).'
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 - id: bank.cash.limit.corporate
   when:
     channel: cash_withdrawal
@@ -52,7 +52,7 @@ rules:
     threshold:
       weekly_limit_kobo: 500000000
     narrate: 'CBN cash withdrawal cap: N5,000,000/week corporates.'
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 - id: bank.cash.single-report
   when:
     channel: cash
@@ -61,15 +61,15 @@ rules:
   then:
     decision: scuml_reportable
     narrate: Single cash transactions >= N5m (individual) / N10m (corporate) reportable under MLPPA (SCUML where DNFBP).
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 - id: bank.pseudonymise.feed
   when:
     feed: bank_reporting
   then:
     decision: tin_hash_in_analytics
     narrate: Bank feeds land in bronze; analytics planes carry tin_hash only (SPEC 1.3).
-  citation: "NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022"
+  citation: NTAA 2025; CBN cash policy circulars 2022/2023; MLPPA 2022
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: c060858c0b85d62a97455967fb24f94cab610dce10369f87a976fb3bc962b91d9cffe90f97a3d422b3aa2cebfffec94b06779422888d6aa71081c818cf7c900b
+  key_id: governance-board-2026-r2
+  signature: 6b92ea69d6e238e997edf6dc865d8e7143527eddc70604dce403ec1026a6e2b07ef7e7b30bb52e49d7c8bf524923d0b4e0e27b5392fffa0d6c48ea5e5d622b0b
