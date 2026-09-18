@@ -1,10 +1,10 @@
 {
-  "id": "01M2TC4CY8AZT0JKBA186FEJWD",
+  "id": "01M2V1DS8G96MM7XRDN3K80DRP",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-09-18T13:43:41Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "d09e56938c570ef2dc3f8c98cb717080",
+  "trace_id": "8fce9fab40448d119dc49b26e3240ff7",
   "rule_pack_version": "rp-paye-pitra-legacy@1.1.0",
   "data": {
     "pack_id": "rp-paye-pitra-legacy",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 11,
-    "sha256": "2c7965f81f1ed0139b9b8d4b9f6a5b5ecbcd58dc085c7b817d13f84f2cd8f655",
-    "key_id": "governance-board-2026",
+    "sha256": "fb08f87d81e239f69c1215703a85e30eeadeb4e8342b67a9faad599f6c496e03",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "Personal Income Tax (Amendment) Act 2011 (bands and CRA, effective 14 Dec 2011); PITA Cap P8 LFN 2004",
       "as_gazetted": null,

@@ -1,10 +1,10 @@
 {
-  "id": "01KYWC67ZCCMCMBWZJYJRAQSYH",
+  "id": "01M2V1DS3JVT7J22JWGQ8KC7GE",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-31T15:20:23Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "65afdbc4c15b00bd6a7ad69248a7e86f",
+  "trace_id": "f5da430406ca8c7a653d3d2af61be4c6",
   "rule_pack_version": "rp-ntaa-penalties@1.0.0",
   "data": {
     "pack_id": "rp-ntaa-penalties",
@@ -15,10 +15,10 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 9,
-    "sha256": "fbcf1c74c376e03ba0bf01e18877ce0336a565632fed42bbb1cbb2e5e9149bfc",
-    "key_id": "governance-board-2026",
+    "sha256": "6cb6a8b430bf2cc7b34a16e86b2ac2a6a71b8160375d3f2cb2af714ed292c629",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
-      "as_passed": "Nigeria Tax Administration Act 2025 \u2014 offences and penalties provisions",
+      "as_passed": "Nigeria Tax Administration Act 2025 — offences and penalties provisions",
       "as_gazetted": null,
       "source_citation": "Nigeria Tax Administration Act 2025 (penalty provisions)"
     }

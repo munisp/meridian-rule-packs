@@ -1,10 +1,10 @@
 {
-  "id": "01KYRKHWGTB5BHA8YHZNZA44K4",
+  "id": "01M2V1DS9A70P4WK487DBSBH6M",
   "type": "nrs.rulepacks.published.v1",
   "source": "rulepack-ceremony",
-  "time": "2026-07-30T04:12:07Z",
+  "time": "2026-09-18T19:55:48Z",
   "tenant_id": "",
-  "trace_id": "30b719bf3f2f5ccf3be98c3412c66626",
+  "trace_id": "a05f6fd25dd2a4c196b6d77e8002185f",
   "rule_pack_version": "rp-platform-collectors@1.0.0",
   "data": {
     "pack_id": "rp-platform-collectors",
@@ -15,8 +15,8 @@
     "subject_to_regazette": true,
     "status": "published",
     "rule_count": 5,
-    "sha256": "06bdebcb67d264aee4cebc47e844d909258b143fe4a57234dbc7cd3f8e610990",
-    "key_id": "governance-board-2026",
+    "sha256": "297d129ed755b6cb375bae5720f90f3128c57236cfc8b75e1d0143db60c28ee9",
+    "key_id": "governance-board-2026-r2",
     "provenance": {
       "as_passed": "FIRS Guidelines on Simplified Compliance Regime for VAT for Non-Resident Suppliers (2022); Finance Act 2019 s.10; Nigeria Tax Act 2025 (agent-of-collection powers)",
       "as_gazetted": null,
