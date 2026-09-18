@@ -161,7 +161,7 @@ the workspace for the same reason.
 ```bash
 python3 -m venv venv && . venv/bin/activate   # or system python 3.12
 pip install -r requirements.txt
-python tools/validate.py     # 40/40 packs valid (schema + signature + archive)
+python tools/validate.py     # 51/51 pack versions valid (schema + signature + archive) post-R4-wave
 pytest -q                    # test suite
 python tools/ceremony.py --all   # idempotent re-run of the §9.1 ceremony
 ```
