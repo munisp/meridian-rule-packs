@@ -9,7 +9,7 @@ ceremony with real ed25519 signatures.
 ## Layout
 
 ```
-packs/<pack-id>/<version>.yaml   # 40 packs (39 dirs + versions), signed & published; +4 dirs / +10 versions in the R4 wave
+packs/<pack-id>/<version>.yaml   # 40 packs (39 dirs + versions), signed & published; +4 dirs / +11 versions in the R4 wave
 schemas/rulepack.schema.json     # JSON Schema (draft 2020-12) for the §1.4 grammar
 tools/validate.py                # schema + ed25519 signature + WORM archive validation
 tools/ceremony.py                # §9.1 ceremony: draft→review→simulate→sign→publish→archive
@@ -161,7 +161,7 @@ the workspace for the same reason.
 ```bash
 python3 -m venv venv && . venv/bin/activate   # or system python 3.12
 pip install -r requirements.txt
-python tools/validate.py     # 40/40 on main; 50/50 pack versions once the R4 fix wave merges
+python tools/validate.py     # 40/40 on main; 51/51 pack versions once the R4 fix wave merges
 pytest -q                    # test suite
 python tools/ceremony.py --all   # idempotent re-run of the §9.1 ceremony
 ```
