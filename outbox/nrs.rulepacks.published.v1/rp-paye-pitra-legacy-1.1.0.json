@@ -1,0 +1,26 @@
+{
+  "id": "01M2TC4CY8AZT0JKBA186FEJWD",
+  "type": "nrs.rulepacks.published.v1",
+  "source": "rulepack-ceremony",
+  "time": "2026-09-18T13:43:41Z",
+  "tenant_id": "",
+  "trace_id": "d09e56938c570ef2dc3f8c98cb717080",
+  "rule_pack_version": "rp-paye-pitra-legacy@1.1.0",
+  "data": {
+    "pack_id": "rp-paye-pitra-legacy",
+    "version": "1.1.0",
+    "title": "PAYE progressive bands and consolidated relief under PITA (legacy, to 31 Dec 2025)",
+    "effective_from": "2011-12-14",
+    "effective_to": "2025-12-31",
+    "subject_to_regazette": true,
+    "status": "published",
+    "rule_count": 11,
+    "sha256": "2c7965f81f1ed0139b9b8d4b9f6a5b5ecbcd58dc085c7b817d13f84f2cd8f655",
+    "key_id": "governance-board-2026",
+    "provenance": {
+      "as_passed": "Personal Income Tax (Amendment) Act 2011 (bands and CRA, effective 14 Dec 2011); PITA Cap P8 LFN 2004",
+      "as_gazetted": null,
+      "source_citation": "PITA (as amended by PITAM 2011)"
+    }
+  }
+}

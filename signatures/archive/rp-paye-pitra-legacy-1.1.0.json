@@ -1,0 +1,11 @@
+{
+  "pack_id": "rp-paye-pitra-legacy",
+  "version": "1.1.0",
+  "sha256": "2c7965f81f1ed0139b9b8d4b9f6a5b5ecbcd58dc085c7b817d13f84f2cd8f655",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-paye-pitra-legacy/1.1.0/2c7965f81f1ed013.yaml",
+  "archived_at": "2026-09-18T13:43:41Z",
+  "key_id": "governance-board-2026",
+  "signature": "05171bb65b427a6c7c08e8385f6bd203bd218606209e4d9122a106c9cbc34b7b3bb37304ebb79c0e38297ef87ebedec37e495b4e576c2ffe91747ff957d3fd0b",
+  "publish_event_id": "01M2TC4CY8AZT0JKBA186FEJWD",
+  "immutable": true
+}

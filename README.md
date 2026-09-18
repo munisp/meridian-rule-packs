@@ -9,7 +9,7 @@ ceremony with real ed25519 signatures.
 ## Layout
 
 ```
-packs/<pack-id>/<version>.yaml   # 39 packs, v1.0.0 each, signed & published
+packs/<pack-id>/<version>.yaml   # 40 packs (39 dirs + versions), signed & published; +4 dirs / +11 versions in the R4 wave
 schemas/rulepack.schema.json     # JSON Schema (draft 2020-12) for the §1.4 grammar
 tools/validate.py                # schema + ed25519 signature + WORM archive validation
 tools/ceremony.py                # §9.1 ceremony: draft→review→simulate→sign→publish→archive
@@ -22,7 +22,7 @@ GOVERNANCE.md                    # ceremony definition and change management
 ci/workflows/validate.yml        # CI: validate + test on every change
 ```
 
-## Packs (39)
+## Packs (40 on main; 44 after the R4 fix wave)
 
 | Pack | Domain |
 |---|---|
@@ -42,7 +42,42 @@ ci/workflows/validate.yml        # CI: validate + test on every change
 | rp-cgt | Capital gains: legacy 10% flat (to 2025-12-31), NTA alignment from 2026 (30% medium/large companies, 0% small companies, PIT marginal for individuals), residence/compensation ₦50m/gov-securities reliefs |
 | rp-paye-pitra-legacy | Pre-2026 PAYE/PIT: PITA bands 7/11/15/19/21/24%, CRA (higher of ₦200k or 1% + 20% of gross), exempt deductions (pension/NHF/NHIS/life), 1% minimum tax, PAYE remit 10th |
 | rp-fmt-federal | Federal filing calendar: VAT 21st, WHT 21st (companies)/30th (individuals), PAYE 10th, CIT 6 months after year-end, DevLevy with CIT, stamp duty 30 days, e-invoice clearance before issuance |
+| **R4 additions** | |
+| rp-paye-nta | NTA 2025 PAYE bands 0/15/18/21/23/25 with ₦800k zero band, rent relief, no CRA — canonical pack for 2026+ (rp-paye-pitra-legacy kept for back periods) |
+| rp-commissions-ng | Canonical signed agent commission table (250/100/50 bps by hierarchy level) — supersedes the inclusion-suite embedded JSON |
+| rp-excise-ng | Excise (honest minimal): ₦10/litre sweetened beverages (FA2021), telecom 5% abolished 2025-08-19; full schedule UNSOURCED-gated |
+| rp-levies-legacy | Legacy NASENI 0.25% / Police Trust Fund 0.005% levies ≤2025-12-31, superseded_by rp-education-ng (4% Development Levy from 2026) |
+| v1.1.0 corrections | rp-cit-legacy (TET 2%/2.5%/3% bands), rp-attribution-formula (50/20/30 equality/population/consumption), rp-etr-nta/rp-etr-scope/rp-globe-oecd/rp-gir-schema (engine-ID aliases), rp-paye-pitra-legacy (retirement metadata) |
 
+## Retirement / sunset convention (R4)
+
+Packs superseded by consolidation or new law are **never deleted** — they carry
+documented sunset metadata so back periods still compute under old law:
+
+- `effective_to` — last date the pack's rules apply (already pack/rule-level);
+- `superseded_by` — id of the pack governing from `effective_to` (schema-supported, optional);
+- `retirement_note` — free-text why/what-replaces note;
+- `status: retired` — terminal lifecycle state (a retired pack stays in the WORM archive
+  and remains signature-verifiable; `latest_local()` consumers must not select it for
+  new filings).
+
+Applied at R4: `rp-paye-pitra-legacy` 1.1.0 (`superseded_by: rp-paye-nta` from 2026),
+`rp-levies-legacy` (`superseded_by: rp-education-ng` from 2026).
+
+## Provisioned-ahead packs (honest consumer status)
+
+`rp-fmt-lagos`, `rp-fmt-fct` and `rp-sec-vasp-rules` currently have **zero runtime
+consumers** (confirmed by cross-repo reference audit, R4-S4 §1). They are retained
+deliberately as **provisioned-ahead** content, not deleted:
+
+- `rp-fmt-lagos` / `rp-fmt-fct` — intended consumers: state filing-calendar surfaces
+  (compliance-suite filings calendar + taxpayer PWA deadline views) once state matrices
+  are wired like `rp-fmt-federal` is.
+- `rp-sec-vasp-rules` — intended consumer: compliance-suite vasp-carf service rule pack
+  set (SEC VASP obligations alongside CARF schema packs).
+
+Until those consumers land, treat these packs as signed reference content; do not
+interpret their presence as wired coverage.
 
 ## Money convention
 
