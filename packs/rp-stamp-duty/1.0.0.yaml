@@ -36,7 +36,7 @@ rules:
   then:
     duty_kobo: 0
     narrate: Transfers below N10,000 attract no EMTL.
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.advalorem.agreement
   when:
     instrument: agreement
@@ -71,7 +71,7 @@ rules:
     rate_bps: 75
     formula: duty_kobo = consideration_kobo * 75 / 10000
     narrate: 'Transfer of stocks/shares (marketable securities): 0.75% of consideration.'
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.advalorem.mortgage
   when:
     instrument: mortgage_or_debenture
@@ -79,7 +79,7 @@ rules:
     rate_bps: 37
     formula: duty_kobo = secured_amount_kobo * 37 / 10000
     narrate: 'Mortgages, bonds, debentures and covenants: 0.375% of the secured amount.'
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.fixed.deed
   when:
     instrument:
@@ -91,7 +91,7 @@ rules:
     duty_kobo: 50000
     narrate: Fixed duty N500 on instruments so charged where no ad valorem scale applies (conveyance-on-sale remains ad valorem
       at 1.5%).
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.advalorem.conveyance
   when:
     instrument: conveyance_on_sale
@@ -99,7 +99,7 @@ rules:
     rate_bps: 150
     formula: duty_kobo = consideration_kobo * 150 / 10000
     narrate: 'Conveyance or transfer on sale of property: 1.5% of consideration.'
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.deadline.stamping
   when:
     instrument_executed: true
@@ -107,14 +107,14 @@ rules:
     deadline_days: 30
     narrate: Chargeable instruments must be presented for stamping within 30 days of execution (40 days where executed abroad);
       late stamping attracts penalty plus interest.
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.adjudication
   when:
     duty_uncertain: true
   then:
     decision: refer_to_adjudication
     narrate: Taxpayer may require the tax authority to adjudicate the correct duty before stamping.
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 - id: sd.exempt.govt-documents
   when:
     party:
@@ -124,8 +124,8 @@ rules:
   then:
     duty_kobo: 0
     narrate: Instruments to which a government is a party are exempt from stamp duty unless expressly charged.
-  citation: "Stamp Duties Act (as amended); Nigeria Tax Act 2025"
+  citation: Stamp Duties Act (as amended); Nigeria Tax Act 2025
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 553998e6a13a5aa5b905a22dfdbe5f807bc447822e37ca903f7b84f69ab5f1d86f81d200f569f6e3781b7b79624fde221cc6d658fb41aed7606e9bf06d961802
+  key_id: governance-board-2026-r2
+  signature: b5f8322d578809e423e6822250d6d8f6977b706d3b60655fc904609b294650b03ec3f99bd084124020650365359653dcd8c67e5dc52b2b26e07f3e35a956250e

@@ -56,5 +56,5 @@ rules:
     narrate: SEC-registered VASPs additionally carry NTA duties (rp-nta-vasp-duties); registries reconciled via identity graph.
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 61fb61aeca423f08d5a13ba3a8c26508cb4c35567c47f9076ae0ddcb8c555626c4735717216ff6f7e1b8ab119a6dad0a8a47625cb0a6c3f527ae3d234b6dfe04
+  key_id: governance-board-2026-r2
+  signature: 5f09c6a81bc3b80465025438b70b04f88b356887eeb30ca0516b7424d4b7563c08a79621623242f0c583c2739c1b85b8f09feeaca238643f314943b19017c004

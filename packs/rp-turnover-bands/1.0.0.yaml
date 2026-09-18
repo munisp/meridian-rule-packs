@@ -28,7 +28,7 @@ rules:
       max_kobo: 100000000
     band_order: 1
     narrate: 'Band 1 (micro): turnover up to N1,000,000'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.def.small
   when:
     band: small
@@ -38,7 +38,7 @@ rules:
       max_kobo: 300000000
     band_order: 2
     narrate: 'Band 2 (small): N1m - N3m'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.def.lower-medium
   when:
     band: lower_medium
@@ -48,7 +48,7 @@ rules:
       max_kobo: 500000000
     band_order: 3
     narrate: 'Band 3: N3m - N5m'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.def.medium
   when:
     band: medium
@@ -58,7 +58,7 @@ rules:
       max_kobo: 1000000000
     band_order: 4
     narrate: 'Band 4: N5m - N10m'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.def.upper-medium
   when:
     band: upper_medium
@@ -68,7 +68,7 @@ rules:
       max_kobo: 2500000000
     band_order: 5
     narrate: 'Band 5: N10m - N25m'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.def.large-informal
   when:
     band: large_informal
@@ -78,7 +78,7 @@ rules:
       max_kobo: 10000000000
     band_order: 6
     narrate: 'Band 6: N25m - N100m (ceiling for presumptive regime; above this, register and file normally)'
-  citation: "Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)"
+  citation: Nigeria Tax Act 2025; NRS Presumptive Tax Framework (draft regulations)
 - id: band.exit.register
   when:
     annual_turnover_kobo:
@@ -91,5 +91,5 @@ rules:
   citation: NTAA 2025, s.147
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 8681ebdb4c47cb689b1339913af1955d69878ba4744f9bdb08d66be342bbbdf378ebcfa36bb7951a7529fbdfd7657dae1ed72dfa222a08f7b58d6ce666aaf504
+  key_id: governance-board-2026-r2
+  signature: 15ac98db41be7e4f8dcbebadf1e2da44db8a5fce61f2ecd2173ea341181070b905bad9c11d35daf41e435f33509d7ac6ccb4f57d365b5251bf7d76bfbfba6509

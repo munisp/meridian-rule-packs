@@ -109,5 +109,5 @@ rules:
     narrate: Payment means + due date mandatory for credit invoices.
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: cddc7baf692d3f6162202a200d1e650bc69b3fbac9905a79b1c22cd36e15e75eec2491f426054be19045612698a0acb04f4de3394d49ad637f654824eb589706
+  key_id: governance-board-2026-r2
+  signature: d47c54d676211e327c7545a5205a4c7e753393f684f2a854c841c55ea70190cf63246f74e396cdba748d0167138b6d4377048b8737dee505f914c3e5ea419e08

@@ -100,5 +100,5 @@ rules:
     narrate: Capital-rich low-function Nigerian affiliates not limited to risk-free return (2018 Regs anti-erosion rule).
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: df5b3a6dc4fe530647a12d31198eee34c093bb55ca2f91883a7e206c9e989dbeed6b4401c8f6f32600d7fa67bd22ffce9e9b9c7eece41484effc80d427843b00
+  key_id: governance-board-2026-r2
+  signature: 67b420019dcd6029c2030b9744339fa12fa8a8c765ae7833931de340ff7228319f68ce9eef05d6605a724aa71745a90e9deec3413a69d38aba5aca03cd8f9705
