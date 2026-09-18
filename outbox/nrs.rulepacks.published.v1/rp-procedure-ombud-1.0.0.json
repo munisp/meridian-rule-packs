@@ -9,7 +9,7 @@
   "data": {
     "pack_id": "rp-procedure-ombud",
     "version": "1.0.0",
-    "title": "Office of the Tax Ombud — case procedure rules",
+    "title": "Office of the Tax Ombud \u2014 case procedure rules",
     "effective_from": "2026-01-01",
     "effective_to": null,
     "subject_to_regazette": true,
@@ -18,7 +18,7 @@
     "sha256": "89761ed3209dd3c20ccd1a86ef55096f4e06c4582e19fca911da78d0100adc3b",
     "key_id": "governance-board-2026-r2",
     "provenance": {
-      "as_passed": "Nigeria Tax Administration Act 2025 — Part establishing the Office of the Tax Ombud",
+      "as_passed": "Nigeria Tax Administration Act 2025 \u2014 Part establishing the Office of the Tax Ombud",
       "as_gazetted": null,
       "source_citation": "Nigeria Tax Administration Act 2025 (Tax Ombud provisions)"
     }
