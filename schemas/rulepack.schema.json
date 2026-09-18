@@ -57,6 +57,14 @@
       "description": "Named scalar parameters referenced by formulas/tables (money in integer kobo unless suffixed otherwise)",
       "additionalProperties": true
     },
+    "superseded_by": {
+      "type": ["string", "null"],
+      "description": "Retirement convention (R4): id of the pack that supersedes this one from effective_to, e.g. a consolidation pack. Combined with effective_to + status lifecycle (published -> retired) this is the documented sunset metadata."
+    },
+    "retirement_note": {
+      "type": "string",
+      "description": "Retirement convention (R4): free-text sunset/rotation note (why retired, what replaces it, from which date)"
+    },
     "rules": {
       "type": "array",
       "minItems": 1,
