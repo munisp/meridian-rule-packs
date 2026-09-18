@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-cit-legacy",
   "version": "1.0.0",
-  "sha256": "463576b2031950de460e1b409a43cd464fce57416e23d8aee9514e75e60cb064",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-cit-legacy/1.0.0/463576b2031950de.yaml",
-  "archived_at": "2026-07-31T15:20:23Z",
-  "key_id": "governance-board-2026",
-  "signature": "3da5a4e3a9f797f01390a18fbf969fdce2e7bebd0e707a75294107b688328907e6419d8d2f5b87d8b1908927ed2136c0e37863f41b4c4dcab0585d3d89d88d0b",
-  "publish_event_id": "01KYWC67NM341JNA7BTRHMA1VD",
+  "sha256": "edfbd64ab9377874d91d71a7b159fb9284b64f386ae3d0a2a1f5cba403be719a",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-cit-legacy/1.0.0/edfbd64ab9377874.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "688b8c6f69ac4602e3c19b91dce5ef3be29b6c33176e5fbcd0eb3b8de9dbf9461586015d79bfcaf6573358cd6fc2bbd2f56d5a143056daf0d6c61db2b91f2a02",
+  "publish_event_id": "01M2V1DR80TNJ2FZXDQYFK85TB",
   "immutable": true
 }

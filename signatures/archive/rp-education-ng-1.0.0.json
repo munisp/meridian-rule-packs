@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-education-ng",
   "version": "1.0.0",
-  "sha256": "42159382552ed4f773a61aed7f12dde05ab6cf67160c7beaddeddddbaef8fa66",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-education-ng/1.0.0/42159382552ed4f7.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "cf6a0e65ebc7abd92bd86cadfe3639310c09e33a4735704d06b9eb0a11072b1fe5caf82e53d822be30188520abba23a9665a002cf93aef74a65cf2f415e3a90a",
-  "publish_event_id": "01KYWC67SKKR869X4JRG1EA3M4",
+  "sha256": "35f909d2a67a0d6433e8b54edcbb9818fd060864ae369f5b7d3fb215a0220b04",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-education-ng/1.0.0/35f909d2a67a0d64.yaml",
+  "archived_at": "2026-09-18T19:55:48Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "9dccb16a88c3e5e723727c5662a4398ef3bc0afca2ef6a39beee100b1bb67e4d7c83fbc2253da2dcfd757cb9fee9953f347bead23159f4a81d62d159df844c0c",
+  "publish_event_id": "01M2V1DRE31TQRSVXE7H1RTW9P",
   "immutable": true
 }

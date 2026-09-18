@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-deposit-20pct",
   "version": "1.0.0",
-  "sha256": "5413b3d360d26265c1d5d3ad917d42b9218aa23c11afa75aaef6ab893dd4f4a2",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-deposit-20pct/1.0.0/5413b3d360d26265.yaml",
-  "archived_at": "2026-07-31T16:12:18Z",
-  "key_id": "governance-board-2026",
-  "signature": "850de316749f17fa8df3603038f854e64bc5a9608fb99566827a1eb688eaf96f4e2fe151523df7205a909cdb22376c08bf01fed3fbc5261edb34a0d8c65ed709",
-  "publish_event_id": "01KYRKHW2DVM07C4502AG56H0G",
+  "sha256": "50fa38578ac20a12ca253110859dc143b1b50f081c1194e9716a4e5ef06b3756",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-deposit-20pct/1.0.0/50fa38578ac20a12.yaml",
+  "archived_at": "2026-09-18T19:55:47Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "077a26b276f5cbdf5e1b752eb5a1bfd270eeab5f755801f13bfff51dc9eae19b6fa3c25510385d7342854bd688515ff9d31382e910b07ab0ff8f9dad5bb16d06",
+  "publish_event_id": "01M2V1DRB7ZGWFBNYVSQA18T75",
   "immutable": true
 }
