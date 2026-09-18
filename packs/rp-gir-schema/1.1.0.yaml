@@ -85,5 +85,5 @@ rules:
   citation: OECD GIR XML Schema v1.0 (2023)
 signed:
   algorithm: ed25519
-  key_id: governance-board-2026
-  signature: 1302170d3ee0d35d740a2b70e00a4e80a0edb65a00e754119991f49428be34c43a6b8f62937bade9a8f57bd79d2a09c868ffeaf31a1e1d2bca4dd55f62dc370d
+  key_id: governance-board-2026-r2
+  signature: e8bb548f099c9412c59a2098ffbbff26ebbde268730b18e46a102c5fdd76e2479d778dee6c4cca6932fa11171734b3ef54880369803632a1473892c5f122dd04
