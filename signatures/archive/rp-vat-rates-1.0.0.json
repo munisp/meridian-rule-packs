@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-vat-rates",
   "version": "1.0.0",
-  "sha256": "4cea2fbbd4d05f512a468ca59c50a7546ef9e2f30650ddd02a438b9c04e49396",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-rates/1.0.0/4cea2fbbd4d05f51.yaml",
-  "archived_at": "2026-07-31T16:12:19Z",
-  "key_id": "governance-board-2026",
-  "signature": "1b5b5532aecc81f9fedcd0d6b10e1ed1f832e6245062fe135eb7703bbcf1fa25afc0bc42a1857d29282430f8588045a699a3c1011289d95375ffc08280982d04",
-  "publish_event_id": "01KYWC687826BGK5MB8VHMKJTC",
+  "sha256": "a40ff0c9f9ec3f0277672ba5dfbdc97676dc9bdc8bcc5ba464e984a966db18c9",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-vat-rates/1.0.0/a40ff0c9f9ec3f02.yaml",
+  "archived_at": "2026-09-18T19:55:49Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "c46db479aae015e94b7f3fcd50deea7c08a69363720e733e17ac3af189be9f356dadef6250cbee4669de01f4c03a67dc5b2df6f924d194ad8de1f11207b9d30d",
+  "publish_event_id": "01M2V1DSQ72CYMKHAW8TE7YKCB",
   "immutable": true
 }

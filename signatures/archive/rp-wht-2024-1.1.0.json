@@ -1,11 +1,11 @@
 {
   "pack_id": "rp-wht-2024",
   "version": "1.1.0",
-  "sha256": "597bc736e0e1eeb87372a263dbd0f5242816f47720c30052c936dbd3c6e85c3d",
-  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-wht-2024/1.1.0/597bc736e0e1eeb8.yaml",
-  "archived_at": "2026-09-18T17:27:02Z",
-  "key_id": "governance-board-2026",
-  "signature": "376d0a1de2cbd0612b64e6ca87821cd7f98e9166e1bb227ad4993dff21276ba343659c5af35bd6df682d4c28f69939d7a0e14a25422c574aa9269f870e78b30b",
-  "publish_event_id": "01M2TRXC4B5FT0W52PZG4QV115",
+  "sha256": "277a18284a0ed8ee914182af59f65293faade2b6a469940526db561b2f7eae62",
+  "worm_uri": "worm://meridian-dev-worm/rulepacks/rp-wht-2024/1.1.0/277a18284a0ed8ee.yaml",
+  "archived_at": "2026-09-18T19:55:49Z",
+  "key_id": "governance-board-2026-r2",
+  "signature": "dc10bd639b7b576d4f99e9247f2f45cb476e867db6535374c49015f7eaf11b35c9179a70223836c26358e962ccb99d7d6e22a041177c01d5b1355b1a62a3710e",
+  "publish_event_id": "01M2V1DT65DVWKXFMPWAXYE8ZC",
   "immutable": true
 }
