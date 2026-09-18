@@ -9,7 +9,7 @@
   "data": {
     "pack_id": "rp-fmt-federal",
     "version": "1.0.0",
-    "title": "Federal filing matrix — NRS-administered taxes (VAT, CIT, WHT, CGT, TET/DevLevy, stamp duties)",
+    "title": "Federal filing matrix \u2014 NRS-administered taxes (VAT, CIT, WHT, CGT, TET/DevLevy, stamp duties)",
     "effective_from": "2026-01-01",
     "effective_to": null,
     "subject_to_regazette": true,

@@ -9,7 +9,7 @@
   "data": {
     "pack_id": "rp-excise-ng",
     "version": "1.0.0",
-    "title": "Excise duties — SSB ₦10/litre; telecom 5% abolished; alcohol/tobacco schedule 2020-2024 (2018 Order + FPM 2022 roadmap)",
+    "title": "Excise duties \u2014 SSB \u20a610/litre; telecom 5% abolished; alcohol/tobacco schedule 2020-2024 (2018 Order + FPM 2022 roadmap)",
     "effective_from": "2020-01-01",
     "effective_to": null,
     "subject_to_regazette": true,
@@ -18,7 +18,7 @@
     "sha256": "f7d54f26c5d0997e0a984dfcf84b72358521e37e8fcb6de20b8d493b66f3fa53",
     "key_id": "governance-board-2026-r2",
     "provenance": {
-      "as_passed": "Finance Act 2021 (excise on sweetened non-alcoholic beverages, ₦10/litre); Finance Act 2020 (5% excise on telecom services); Customs & Excise tariff amendment Order 2018 (3-year alcohol/tobacco roadmap, rates in force 2020-2021); Fiscal Policy Measures 2022 (excise roadmap 2022-2024, effective 1 June 2022); presidential Executive Orders July 2023 (suspension of FPM 2023 escalation); telecom excise abolished 19 Aug 2025",
+      "as_passed": "Finance Act 2021 (excise on sweetened non-alcoholic beverages, \u20a610/litre); Finance Act 2020 (5% excise on telecom services); Customs & Excise tariff amendment Order 2018 (3-year alcohol/tobacco roadmap, rates in force 2020-2021); Fiscal Policy Measures 2022 (excise roadmap 2022-2024, effective 1 June 2022); presidential Executive Orders July 2023 (suspension of FPM 2023 escalation); telecom excise abolished 19 Aug 2025",
       "as_gazetted": null,
       "source_citation": "Finance Act 2021 s.52; PwC tax alert \"Highlights of Nigeria's 2022 Fiscal Policy Measures\" (https://www.pwc.com/ng/en/assets/pdf/pwc-tax-alert-highlights-of-nigeria-2022-fiscal-policy-measures.pdf); Alawode et al. 2025, Rep Glob Health Res 8:219 (PwC 2023 rate tables) https://www.gavinpublishers.com/article/view/implementation-status-of-health-tax-policies-in-nigeria-and-their-alignment-with-global-standards ; BusinessDay 2023-05-02; TheCable 2023-05-04; DailyTrust 2023-07-23; Orbitax telecom abolition (2025-08-19)"
     }
