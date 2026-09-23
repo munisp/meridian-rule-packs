@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 import sys
 from pathlib import Path
 
@@ -39,7 +40,7 @@ def validate_schema(pack: dict, validator: jsonschema.Draft202012Validator,
         errs.append(f"pack version {pack.get('version')!r} != file name {file_name!r}")
     # rule id uniqueness
     ids = [r.get("id") for r in pack.get("rules", [])]
-    dupes = {i for i in ids if ids.count(i) > 1}
+    dupes = {i for i, n in Counter(ids).items() if n > 1}
     if dupes:
         errs.append(f"duplicate rule ids: {sorted(dupes)}")
     return errs

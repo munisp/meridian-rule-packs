@@ -147,7 +147,7 @@ def test_t7_no_tin_does_not_double_passive_income(pt):
 
 
 # ---------------------------------------------------------------- T4: legacy CIT
-CIT_LEGACY = load("rp-cit-legacy")
+CIT_LEGACY = load("rp-cit-legacy", "1.0.0")  # pinned: T4 asserts 1.0.0 effective window
 EDU = load("rp-education-ng")
 
 
