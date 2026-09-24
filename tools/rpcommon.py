@@ -7,6 +7,7 @@ width=10**6) encoded UTF-8. Deterministic across runs and machines.
 from __future__ import annotations
 
 import base64
+import functools
 import hashlib
 import json
 import os
@@ -15,6 +16,13 @@ import time
 from pathlib import Path
 
 import yaml
+
+# libyaml-backed loader/dumper are ~5-8x faster and produce identical results
+# for the data shapes used here; fall back to the pure-Python ones when the C
+# extension is unavailable. canonical_bytes() byte-equality between SafeDumper
+# and CSafeDumper is verified for all shipped packs (tests/test_canonical_bytes.py).
+_CSafeLoader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+_CSafeDumper = getattr(yaml, "CSafeDumper", yaml.SafeDumper)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PACKS_DIR = REPO_ROOT / "packs"
@@ -49,7 +57,7 @@ def trace_id() -> str:
 
 def load_pack_file(path: os.PathLike | str) -> dict:
     with open(path, encoding="utf-8") as f:
-        data = yaml.safe_load(f)
+        data = yaml.load(f, Loader=_CSafeLoader)
     if not isinstance(data, dict):
         raise ValueError(f"{path}: pack document must be a mapping")
     return data
@@ -58,8 +66,8 @@ def load_pack_file(path: os.PathLike | str) -> dict:
 def canonical_bytes(pack: dict) -> bytes:
     """Canonical YAML bytes of everything EXCEPT the `signed` block (SPEC §1.4)."""
     body = {k: v for k, v in pack.items() if k != "signed"}
-    return yaml.safe_dump(
-        body, sort_keys=True, allow_unicode=True,
+    return yaml.dump(
+        body, Dumper=_CSafeDumper, sort_keys=True, allow_unicode=True,
         default_flow_style=False, width=10**6,
     ).encode("utf-8")
 
@@ -104,11 +112,18 @@ def ensure_dev_keypair(key_id: str = DEFAULT_KEY_ID):
     return sk, sk.verify_key
 
 
-def load_verify_key(key_id: str = DEFAULT_KEY_ID):
+@functools.lru_cache(maxsize=None)
+def _verify_key_cached(keys_dir: str, key_id: str):
     from nacl.signing import VerifyKey
 
-    _, pub_path = key_paths(key_id)
+    pub_path = Path(keys_dir) / f"{key_id}.ed25519.public"
     return VerifyKey(bytes.fromhex(pub_path.read_text().strip()))
+
+
+def load_verify_key(key_id: str = DEFAULT_KEY_ID):
+    # Cache per KEYS_DIR so sandboxed key dirs (tests/ceremony) never see a
+    # stale key cached for the real key dir.
+    return _verify_key_cached(str(KEYS_DIR), key_id)
 
 
 def event_envelope(event_type: str, source: str, data: dict,

@@ -18,15 +18,35 @@ Semantics (SPEC §0, "Inherited conventions"):
 """
 from __future__ import annotations
 
+import functools
 from pathlib import Path
 
 import yaml
 
 PACKS = Path(__file__).resolve().parent.parent / "packs"
 
+_CSafeLoader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
-def load(pack_id: str) -> dict:
-    return yaml.safe_load((PACKS / pack_id / "1.0.0.yaml").read_text())
+
+def _latest_version(pack_id: str) -> str:
+    """Highest version file shipped for pack_id (semver-ish numeric sort)."""
+    def key(p: Path):
+        parts = []
+        for piece in p.stem.split("."):
+            parts.append((0, int(piece)) if piece.isdigit() else (1, piece))
+        return parts
+    return max((PACKS / pack_id).glob("*.yaml"), key=key).stem
+
+
+@functools.lru_cache(maxsize=None)
+def load(pack_id: str, version: str | None = None) -> dict:
+    """Load a pack, cached by (pack_id, version). version=None → latest shipped
+    version (previously hardcoded to '1.0.0', which silently evaluated stale
+    rules for packs that have since shipped newer versions, e.g. rp-wht-2024
+    1.1.0)."""
+    version = _latest_version(pack_id) if version is None else version
+    return yaml.load((PACKS / pack_id / f"{version}.yaml").read_text(),
+                     Loader=_CSafeLoader)
 
 
 # ---------------------------------------------------------------- mini engine
